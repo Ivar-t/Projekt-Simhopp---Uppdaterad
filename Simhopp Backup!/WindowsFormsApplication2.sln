@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCPclientJudge", "TCPclient
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "tcpServerAdmin", "tcpServerAdmin\tcpServerAdmin.csproj", "{A189E801-06D1-4414-9109-0BFD3613418E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TCPIP", "TCPIP", "{B5A70F46-43C7-4BA6-9A23-82B89195D6BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D329DA6F-972C-4DBD-AD0F-4776C3782A4F} = {B5A70F46-43C7-4BA6-9A23-82B89195D6BB}
+		{A189E801-06D1-4414-9109-0BFD3613418E} = {B5A70F46-43C7-4BA6-9A23-82B89195D6BB}
 	EndGlobalSection
 EndGlobal

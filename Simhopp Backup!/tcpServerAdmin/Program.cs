@@ -8,242 +8,194 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using WindowsFormsApplication2;
+
 using static System.Console;
+using WindowsFormsApplication2;
 
-namespace tcpServerAdmin
+namespace ServerApp
 {
-
-    /// <summary>
-    /// Ett objekt av denna klass handhar en domarklient.
-    /// Objektet har en tråd för att kommunicera med en klient.
-    /// </summary>
-
-    class HandleTcpClientJudge
+    public class HandleTcpClient
     {
-        //Medlemsvariabler
         public IPEndPoint EndPoint { get; set; } = null;
-        public NetworkStream Networkstream { get; set; } = null;
-        public StreamReader Streamreader { get; set; } = null; //ström som läser från en byteström
-        public StreamWriter Streamwriter { get; set; } = null; //ström för att skriva till en byteström
-        public TcpClient TcpClientJudge { get; set; } = null; //Bidrar med klientkopplingar för TCP
-        public Thread ThreadClientJudge { get; set; } = null; //För att få en tråd för varje judge.
-        public TcpServer TcpServerAdmin { get; set; } = null; //Bidrar med serveradmin för TCP
-        public ConcurrentQueue<String> ConcurrentQueue { get; set; } = null; //Speciell kö-datastruktur för trådar
-
-        //funktioner
-        public HandleTcpClientJudge(TcpServer tcpserveradmin, TcpClient tcpclientjudge,
-            ConcurrentQueue<String> concurrentQueue) //konstruktor för att få en till klient.
+        public NetworkStream NetworkStream { get; set; } = null;
+        public StreamReader StreamReader { get; set; } = null;
+        public StreamWriter StreamWriter { get; set; } = null;
+        public TcpClient TcpClient { get; set; } = null;
+        public Thread ThreadClient { get; set; } = null;
+        TcpServer tcpServer { get; set; } = null;
+        public bool quit = false;
+        HandleTcpClient(TcpServer tcpServer, TcpClient tcpClient)
         {
-            this.ConcurrentQueue = concurrentQueue;
-            this.TcpServerAdmin = tcpserveradmin;
-            this.TcpClientJudge = tcpclientjudge;
-            this.EndPoint = TcpClientJudge.Client.RemoteEndPoint as IPEndPoint; //sätter socket
-
-            ThreadClientJudge = new Thread(ClientJudge);
-            ThreadClientJudge.Start();
+            this.tcpServer = tcpServer;
+            this.TcpClient = tcpClient;
+            this.EndPoint = TcpClient.Client.RemoteEndPoint as IPEndPoint;
+            ThreadClient = new Thread(Client);
+            ThreadClient.Start();
         }
-
-        public void ClientJudge()
+        public void Client()
         {
-            String message = "";
             try
             {
-                Networkstream = TcpClientJudge.GetStream();
-                //Returnerar nätverkströmmen som används för att hämta och skicka data
-                Streamreader = new StreamReader(Networkstream);
-                Streamwriter = new StreamWriter(Networkstream);
-
-                int i;
-                bool quit = false;
-
+                NetworkStream = TcpClient.GetStream();
+                StreamReader = new StreamReader(NetworkStream);
+                StreamWriter = new StreamWriter(NetworkStream);
                 while (!quit)
                 {
-                    message = Streamreader.ReadLine(); //omvandlar bokstäverna  i en dataström till en sträng
-                    if (message == null || message.StartsWith("quit"))
-                        //kollar om strängen är tom eller om det står quit
-                    {
-                        quit = true;
-                        Console.WriteLine($"Quit: {message} from {EndPoint}");
-                        //skriver ut på konsolfönstret här borde vi få in en funktion som tillåter judge att ge poäng till ett hopp.
-                    }
-                    else if (message.StartsWith("points")) //om meddelandet börjar med "points"
-                    {
-                        //Dollartecknet representerar text som en serie av unicode chars. Utan den kan man inte skriva på {} sättet.
-                        Console.WriteLine($"Queue message: {message} from {EndPoint}");
-                        ConcurrentQueue.Enqueue(message + "," + EndPoint);
-                        //lägger till en sträng i datastrukturen concurrentqueue
-                    }
-                    else
-                    {
-                        Console.WriteLine($"Message: {message} from {EndPoint}");
-                    }
-
+                    ;
                 }
             }
             catch (IOException ioe)
-            {
-            }
-            finally //finally delen till för kod som måste köras även om det skapas ett exception
-            {
-                TcpClientJudge.Close(); //Stänger av och avslutar connection
-                ThreadClientJudge.IsBackground = true;
-                RemoveFromListHandleTCPclientsjudge();
-                ThreadClientJudge.Abort();
-            }
-        }
-
-        private void RemoveFromListHandleTCPclientsjudge()
-        {
-            for (int i = 0; i < TcpServerAdmin.ListHandleTcpClientsJudge.Count; i++)
-            {
-                if (this == TcpServerAdmin.ListHandleTcpClientsJudge[i])
-                {
-                    TcpServerAdmin.ListHandleTcpClientsJudge.Remove(this);
-                    break;
-                }
-            }
-        }
-    }
-
-
-    class TcpServer
-    {
-        private static TcpServer tcpServer = null; //Serverobjektet refererar ej till något.
-
-        public static TcpServer Instance() //Till för att skapa en ny instans av en server
-        {
-            if (tcpServer == null)
-                tcpServer = new TcpServer();
-            return tcpServer;
-        }
-
-        private Int32 port = 9058; //Port för att kommunicera med
-        private IPAddress localAddr = IPAddress.Parse("10.22.25.228"); //lokaladress där servern finns
-        private TcpListener server = null; //avlyssning av klienter
-        private Thread threadServer = null; //egen tråd för servern
-
-        private TcpServer()
-        {
-            tcpServer = this;
-            threadServer = new Thread(tcpServer.ThreadListener); //skapar en ny tråd för att lyssna av klienter.
-            threadServer.Start();
-        }
-
-        public ConcurrentQueue<String> ConcurrentQueue { get; set; } = new ConcurrentQueue<string>();
-        //en datastruktur som möjliggör att flera trådar kan skriva och läsa samtidigt.
-        public List<HandleTcpClientJudge> ListHandleTcpClientsJudge { get; set; } = new List<HandleTcpClientJudge>();
-        //Lista med domarklienter
-
-        private void ThreadListener()
-        {
-            try
-            {
-                server = new TcpListener(localAddr, port);
-                server.Start(); // Start listening for client requests.
-
-                while (true)
-                {
-                    Console.WriteLine("Waiting for a connection... ");
-
-                    TcpClient client = server.AcceptTcpClient();
-                    lock (ListHandleTcpClientsJudge)
-                    {
-                        ListHandleTcpClientsJudge.Add(new HandleTcpClientJudge(this, client, ConcurrentQueue));
-                    }
-                    Console.WriteLine("Connected!");
-                }
-            }
-            catch (SocketException e)
-            {
-                Console.WriteLine("SocketException: {0}", e);
-            }
+            { }
             finally
             {
-                server.Stop(); // Stop listening for new clients.
-            }
-
-            Console.WriteLine("\nHit enter to continue...");
-            Console.Read();
-        }
-
-        public void SendToAllJudgeclients(String message)
-        {
-            lock (ListHandleTcpClientsJudge)
-                //lock används för att inte varje tråd ska kunna komma in i viktig koddel. tills det blir släppt.
-            {
-                foreach (var judge in ListHandleTcpClientsJudge)
-                {
-                    judge.Streamwriter.WriteLine(message);
-                    judge.Streamwriter.Flush();
-                }
+                TcpClient.Close(); // Shutdown and end connection
+                ThreadClient.IsBackground = true;
+                ThreadClient.Abort();
             }
         }
-
-        public void ListJudges()
+        class TcpServer
         {
-            foreach (var judge in ListHandleTcpClientsJudge)
+            private static TcpServer tcpServer = null;
+            public static TcpServer Instance()
             {
-                WriteLine(judge.EndPoint); //Listar domarnas IP-adresser.
+                if (tcpServer == null)
+                    tcpServer = new TcpServer();
+                return tcpServer;
             }
-        }
-
-        public void KillThreads()
-        {
-            threadServer.IsBackground = true; //sätter en tråd till bakgrunden
-            foreach (var judge in ListHandleTcpClientsJudge)
+            private Int32 port = 9058;
+            private IPAddress localAddr = IPAddress.Parse("10.22.20.187");
+            private TcpListener server = null;
+            private Thread threadServer = null;
+            private TcpServer()
             {
-                judge.ThreadClientJudge.IsBackground = true;
+                tcpServer = this;
+                threadServer = new Thread(tcpServer.ThreadListener);
+                threadServer.Start();
             }
-        }
-    }
-
-
-
-    class Program
-        {
-            static void Main(string[] args)
+            public List<HandleTcpClient> ListHandleTcpClients { get; set; } = new List<HandleTcpClient>();
+            private void ThreadListener()
             {
-                TcpServer server = TcpServer.Instance();
                 try
                 {
-                    String str;
-                    do
+                    server = new TcpListener(localAddr, port);
+                    server.Start(); // Start listening for client requests.
+
+                    while (ListHandleTcpClients.Count < 3) //ListHandleTcpClients.Count < 3
                     {
-                       
-                        str = ReadLine() + '\n';
-                        if (str.StartsWith("quit"))
+                        Console.WriteLine("Waiting for a  judge to connect... ");
+                        TcpClient client = server.AcceptTcpClient();
+                        lock (ListHandleTcpClients)
                         {
-                            ;
+                            ListHandleTcpClients.Add(new HandleTcpClient(this, client));
                         }
-                        else if (str.StartsWith("queue"))
+                        Console.WriteLine("A judge connected to the server!");
+                    }
+                }
+                catch (SocketException e)
+                {
+                    Console.WriteLine("SocketException: {0}", e);
+                }
+                finally
+                {
+                    server.Stop();
+                }
+            }
+            public void SendToAllClients(String message)
+            {
+                lock (ListHandleTcpClients)
+                {
+                    foreach (var client in ListHandleTcpClients)
+                    {
+                        client.StreamWriter.WriteLine(message);
+                        client.StreamWriter.Flush();
+                    }
+                }
+            }
+            public void KillThreads()
+            {
+                foreach (var client in ListHandleTcpClients)
+                {
+                    client.ThreadClient.IsBackground = true;
+                }
+            }
+        }
+        class Program
+        {
+            public static void Main(string[] args)
+            {
+                Contender contender = new Contender();
+                Contender contender1 = new Contender();
+
+                Jump jump1 = new Jump();
+                Jump jump2 = new Jump();
+                Jump jump3 = new Jump();
+                Jump jump4 = new Jump();
+                jump1.Jumpstyle = "301A";
+                jump2.Jumpstyle = "31A";
+                jump3.Jumpstyle = "3901A";
+                jump4.Jumpstyle = "3081A";
+                contender.Name = "Viktor Lundin";
+                contender1.Name = "Carlos Mantero";
+                contender.Gender = "Male";
+                contender1.Gender = "Male";
+                contender.Nationality = "Sweden";
+                contender1.Nationality = "Sweden";
+                contender.add_jump(jump4);
+                contender.add_jump(jump3);
+                contender1.add_jump(jump1);
+                contender1.add_jump(jump2);
+                Contest contest = new Contest();
+
+                contest.add_contender(contender);
+                contest.add_contender(contender1);
+
+                TcpServer server = TcpServer.Instance(); //Startar servern och börjar lyssna efter domarklienter
+                String infoStringforJudges = String.Empty, str, PointString;
+                int j = 0;
+                try
+                {
+                    str = ReadLine();
+                    foreach (var x in contest.ContenderList)
+                    {
+                        for (int i = 0; i < contest.ContenderList.Count; i++)
                         {
-                            while (!server.ConcurrentQueue.IsEmpty)
+                            infoStringforJudges = (contest.ContenderList[i].Name + " " + contest.ContenderList[i].Nationality + " " + contest.ContenderList[i].Gender + " " + contest.ContenderList[i].ListJumps[j].Jumpstyle);
+                            server.SendToAllClients(infoStringforJudges);
+                            lock (server.ListHandleTcpClients)
                             {
-                                String msg;
-                                if (server.ConcurrentQueue.TryDequeue(out msg)) //out: objektet kommer initialiseras inuti funktionen
+                                foreach (var judge in server.ListHandleTcpClients)
                                 {
-                                    WriteLine(msg);
-                                }
+                                    PointString = String.Empty;
+                                    PointString = judge.StreamReader.ReadLine();
+                                    contest.ContenderList[i].ListJumps[j].Point += double.Parse(PointString, System.Globalization.NumberStyles.AllowDecimalPoint);
+                                } //För att få in jumpdifficulty gör en till foreach loop som går igenom alla hopp och gångrar med dess svårighetsgrad.
                             }
                         }
-                        else if (str.StartsWith("list")) //om strängen börjar med list så ska en lista med alla domare och dess IP addresser listas.
-                        {
-                            server.ListJudges();
-                        }
-                        else
-                        {
-                           server.SendToAllJudgeclients(str); //Tänker typ att här kommer info om deltagarna komma.
-
+                        j++;
                     }
-                } while (!str.StartsWith("quit"));
+                    foreach (var item in contest.ContenderList)
+                    {
+                        item.summeraPoints();
+                    }
+                    foreach (var item in contest.ContenderList)
+                    {
+                        Console.WriteLine(item.Name + " " + item.totalPoints);
+                    }
                 }
-                finally 
+                catch (Exception)
                 {
-                server.KillThreads();
-                WriteLine("Quit Program");
+                    throw;
+                }
+                finally
+                {
+                    Thread.Sleep(5000);
+                    server.KillThreads();
                 }
             }
         }
     }
+}
+
+
+
 

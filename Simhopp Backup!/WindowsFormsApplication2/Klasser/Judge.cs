@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Sockets;
+using System.IO;
+using System.Threading;
 
 namespace WindowsFormsApplication2
 {
@@ -18,7 +22,51 @@ namespace WindowsFormsApplication2
         public int SetPoints(int score) //domare sätter poäng för en contender och deras hopp
         {
             return score;
-        }         
+        }
+
+        void judge_contest()
+        {
+            TcpClient socketForServer;
+            try
+            {
+                socketForServer = new TcpClient("10.22.20.187", 9058);
+            }
+            catch
+            {
+                Console.WriteLine("Failed to connect");
+                return;
+            }
+            NetworkStream networkStream = socketForServer.GetStream();
+            StreamReader streamReader = new StreamReader(networkStream);
+            StreamWriter streamWriter = new StreamWriter(networkStream);
+
+            try
+            {
+                String outputString = " ", str = " ";
+                while (true)
+                {
+                    outputString = streamReader.ReadLine();
+                    Console.WriteLine(outputString);
+                    Console.WriteLine("Give score: ");
+                    str = Console.ReadLine();
+                    streamWriter.WriteLine(str);
+                    streamWriter.Flush();
+
+                }
+                if (str.StartsWith("Exit"))
+                {
+                    streamWriter.WriteLine(str);
+                    streamWriter.Flush();
+                }
+            }
+            catch
+            {
+
+                Console.WriteLine("Exception reading from server");
+            }
+            networkStream.Close();
+            socketForServer.Close();
+        }
 
 
         void WriteScore2File() { }  //skriver ner poängen för varje deltagare till en fil, samma fil som skapades av ADMIN

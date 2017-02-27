@@ -25,8 +25,8 @@ namespace WindowsFormsApplication2
         public string Name { get; set; }
         public string Gender { get; set; }
         public string Nationality { get; set; }
-        public int totalPoints { get; set; } = 0; //Håller totalpoängen för alla hopp som deltagaren har gjort.
-        public int summeraPoints()  //ej testad
+        public double totalPoints { get; set; } = 0; //Håller totalpoängen för alla hopp som deltagaren har gjort.
+        public double summeraPoints()  //ej testad
         {    // ska summera deltagarens alla 7 hopp till en variabel, totalPoints (för att sedan bestämma en vinnare av alla deltagare i tävling)
         
             foreach (var x in ListJumps) //loopar igenom alla hopp i varje deltagare

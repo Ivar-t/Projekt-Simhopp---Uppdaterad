@@ -125,10 +125,10 @@ namespace WindowsFormsApplication2
             metroComboBox6.Items.Clear();
             metroComboBox7.Items.Clear();
 
-            this.Close();
-            th = new Thread(openNewAddContendersWindowW);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
+            //this.Close();
+            //th = new Thread(openNewAddContendersWindowW);
+            //th.SetApartmentState(ApartmentState.STA);
+            //th.Start();
         }
 
         private void openNewAddContendersWindowW()

@@ -8,7 +8,7 @@ namespace WindowsFormsApplication2
 {
     public class Jump //Håller reda på poängen för ett hopp. Samt har varje hopp en hoppkod(jumpstyle).
     {
-        public int Point { get; set; } = 0;
+        public double Point { get; set; } = 0;
         public string Jumpstyle { get; set; } = "";
         public int jumpDifficulty { get; set; } = 0;
 
