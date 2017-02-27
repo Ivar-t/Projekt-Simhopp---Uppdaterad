@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C45B8EB1-A0BD-4062-8AED-114EADAF0EB4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WindowsFormsApplication2</RootNamespace>
+    <AssemblyName>WindowsFormsApplication2</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MahApps.Metro, Version=1.4.3.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.4.3\lib\net45\MahApps.Metro.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MahApps.Metro.1.4.3\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GUI\AddContendersWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AddContendersWindow.Designer.cs">
+      <DependentUpon>AddContendersWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klasser\Admin.cs" />
+    <Compile Include="GUI\AdminCreateContest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminCreateContest.Designer.cs">
+      <DependentUpon>AdminCreateContest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AdminEditContest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminEditContest.Designer.cs">
+      <DependentUpon>AdminEditContest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AdminMeny.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminMeny.Designer.cs">
+      <DependentUpon>AdminMeny.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AdminSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminSearch.Designer.cs">
+      <DependentUpon>AdminSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\AdminSelectedContest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\AdminSelectedContest.Designer.cs">
+      <DependentUpon>AdminSelectedContest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klasser\Contender.cs" />
+    <Compile Include="Klasser\Contest.cs" />
+    <Compile Include="GUI\EraseContestWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\EraseContestWindow.Designer.cs">
+      <DependentUpon>EraseContestWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Main_window.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Main_window.Designer.cs">
+      <DependentUpon>Main_window.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\HelpWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\HelpWindow.Designer.cs">
+      <DependentUpon>HelpWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klasser\Judge.cs" />
+    <Compile Include="GUI\JudgeMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\JudgeMenu.Designer.cs">
+      <DependentUpon>JudgeMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\JudgeScoresContenderWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\JudgeScoresContenderWindow.Designer.cs">
+      <DependentUpon>JudgeScoresContenderWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Klasser\Jump.cs" />
+    <Compile Include="Klasser\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\AddContendersWindow.resx">
+      <DependentUpon>AddContendersWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AdminCreateContest.resx">
+      <DependentUpon>AdminCreateContest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AdminEditContest.resx">
+      <DependentUpon>AdminEditContest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AdminMeny.resx">
+      <DependentUpon>AdminMeny.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AdminSearch.resx">
+      <DependentUpon>AdminSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\AdminSelectedContest.resx">
+      <DependentUpon>AdminSelectedContest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\EraseContestWindow.resx">
+      <DependentUpon>EraseContestWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Main_window.resx">
+      <DependentUpon>Main_window.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\HelpWindow.resx">
+      <DependentUpon>HelpWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\JudgeMenu.resx">
+      <DependentUpon>JudgeMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\JudgeScoresContenderWindow.resx">
+      <DependentUpon>JudgeScoresContenderWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GUI\App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BilderGUI\LoggaInBild.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BilderGUI\AdminMeny.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BilderGUI\judgePic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BilderGUI\HelpWindowBild.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BilderGUI\CheckMarkIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BilderGUI\CancelIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BilderGUI\SubmitJudgeScore.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BilderGUI\Aha-Soft-Free-Large-Boss-Judge.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BilderGUI\Judge-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BilderGUI\admin-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BilderGUI\2000px-Diving_pictogram.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BilderGUI\c724df86-834f-4035-b852-f0c5e3a3411a.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BilderGUI\Swimiing-pools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BilderGUI\swimming-pool-icon-png-3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BilderGUI\swimming-pool-icon-png-3 - kopia.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

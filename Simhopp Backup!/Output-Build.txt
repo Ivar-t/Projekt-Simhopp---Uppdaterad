@@ -1,0 +1,5 @@
+﻿1>------ Build started: Project: tcpServerAdmin, Configuration: Debug Any CPU ------
+1>C:\Users\vikto\OneDrive\Dokument\GitHub\Projekt-Simhopp\Projekt\tcpServerAdmin\Program.cs(57,21,57,22): warning CS0168: The variable 'i' is declared but never used
+1>C:\Users\vikto\OneDrive\Dokument\GitHub\Projekt-Simhopp\Projekt\tcpServerAdmin\Program.cs(84,32,84,35): warning CS0168: The variable 'ioe' is declared but never used
+1>  tcpServerAdmin -> C:\Users\vikto\OneDrive\Dokument\GitHub\Projekt-Simhopp\Projekt\tcpServerAdmin\bin\Debug\tcpServerAdmin.exe
+========== Build: 1 succeeded, 0 failed, 3 up-to-date, 0 skipped ==========
