@@ -10,7 +10,7 @@ namespace WindowsFormsApplication2
     {
         public double Point { get; set; } = 0;
         public string Jumpstyle { get; set; } = "";
-        public int jumpDifficulty { get; set; } = 0;
+        public double jumpDifficulty { get; set; } = 0;
 
         public void setPoint(int x) //ej testad
         {                           //sätter ett poäng i ett jumpobjekt
@@ -20,7 +20,7 @@ namespace WindowsFormsApplication2
         {                                   //sätter ett hoppstil i ett jumpobjekt
             Jumpstyle = y;
         }
-        public void setJumpDifficulty(int z)  //ej testad
+        public void setJumpDifficulty(double z)  //ej testad
         {                                   //sätter hoppsvårigheten i ett jumpobjekt
             jumpDifficulty = z;
         }
