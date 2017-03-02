@@ -2,6 +2,7 @@
 using System.Linq;
 using WindowsFormsApplication2;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ServerApp;
 
 namespace UnitTestProject
 {
@@ -90,6 +91,54 @@ namespace UnitTestProject
             contest1.find_winner();
 
             Assert.AreEqual("Jason", contest1.find_winner());
+        }
+
+        [TestMethod]
+        public void Test_contender_and_jump_classes()
+        {
+            Contender contender = new Contender();
+            Contender contender1 = new Contender();
+
+           
+
+            Jump jump1 = new Jump();
+            Jump jump2 = new Jump();
+            Jump jump3 = new Jump();
+            Jump jump4 = new Jump();
+            jump1.Jumpstyle = "301A";
+            jump2.Jumpstyle = "31A";
+            jump3.Jumpstyle = "3901A";
+            jump4.Jumpstyle = "3081A";
+            jump1.Point = 30.5;
+            jump2.Point = 31.5;
+            jump3.Point = 39.5;
+            jump4.Point = 81;
+
+            Assert.AreEqual("301A", jump1.Jumpstyle);
+            Assert.AreEqual("31A", jump2.Jumpstyle);
+            Assert.AreEqual("3901A", jump3.Jumpstyle);
+            Assert.AreEqual("3081A", jump4.Jumpstyle);
+
+
+            contender.Name = "Viktor Lundin";
+            contender1.Name = "Carlos Mantero";
+            contender.Gender = "Male";
+            contender1.Gender = "Male";
+            contender.Nationality = "Sweden";
+            contender1.Nationality = "Sweden";
+            contender.add_jump(jump4);
+            contender.add_jump(jump3);
+            contender1.add_jump(jump1);
+            contender1.add_jump(jump2);
+            Contest contest = new Contest();
+
+            contest.add_contender(contender);
+            contest.add_contender(contender1);
+            
+            Assert.AreEqual(30.5, jump1.Point);
+            Assert.AreEqual(31.5, jump2.Point);
+            Assert.AreEqual(39.5, jump3.Point);
+            Assert.AreEqual(81, jump4.Point);
         }
     }
 }
