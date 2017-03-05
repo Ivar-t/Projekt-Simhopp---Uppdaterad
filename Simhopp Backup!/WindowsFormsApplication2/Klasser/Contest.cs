@@ -17,18 +17,15 @@ namespace WindowsFormsApplication2
         public List<Contender> ContenderList = new List<Contender>(); //Skapar en lista av contenderobjekt
       
         public List<Judge> JudgeList = new List<Judge>(3); //Skapar en lista med 3 domare
-        Judge judge = new Judge();
-        Jump jump = new Jump();
-        
+
         //MedlemsVariabler
-        public int Id { get; set; } = 0;
-        public string Date { get; set; } = "";
         public string Name { get; set; } = "";
-        public int Jumpheight { get; set; } = 0;
-        public int TotJ { get; set; } = 0;
+        public string Date { get; set; } = "";
         public string GenderContest { get; set; } = ""; //La till en gender attribut så tävlingar kan delas in i kön-tävlingar / tomas
+        public int Jumpheight { get; set; } = 0;
         public string Winner { get; set; } = "";
         public bool ContestFinished = false;        //tävlingen är aktiv tills den ställs som true
+        public bool AreUnderJudging = false; // När domarna har röstat klart -> ändra till true
 
         //MedlemsFunktioner
         public void add_contender(Contender con)    //ej klarat test
@@ -41,25 +38,21 @@ namespace WindowsFormsApplication2
             JudgeList.Add(judge);
         }
 
-        public void judge_gives_jumpPoints_to_contender_in_contest(Judge judge1, Judge judge2, Judge judge3) //ej klarat test
+        public int ii = 0;  //contender counter
+        public int jj = 0;  //jump counter
+        public void judge_gives_jumpPoints_to_contender_in_contest(double score1, double score2, double score3)
         {
-            int j = 0;
-                    //ska loopa igenom varje deltagare i tävlingen
-            foreach (var x in ContenderList)
+            if (ii == this.ContenderList.Count) //nollställer ii varje gång ii gått igeonom varje contender
             {
-                for (int i = 0; i < ContenderList.Count; i++)  
-                {
-                    ContenderList[i].ListJumps[j].Point = JudgeSum(judge1, judge2, judge3, ContenderList[i].ListJumps[j].jumpDifficulty); 
-                }
-                j++;
+                ii = 0;
+                jj++;   //får inte gå över 7 | går till contenders nästa hopp
             }
+            ContenderList[ii].ListJumps[jj].Point = (score1 + score2 + score3) * ContenderList[ii].ListJumps[jj].jumpDifficulty;
+
+            ii++;
         }
 
-        public int JudgeSum(Judge judge1, Judge judge2, Judge judge3, int difficulty) //ej testad
-        {
-            TotJ = (judge1.SetPoints(1) + judge2.SetPoints(1) + judge3.SetPoints(1)) * difficulty; //summerar domarpoäng och multiplicerar med hoppets svårighet
-            return TotJ;
-        }
+   
 
         public string find_winner()     //klarat test
         {                               //går igenom deltagarlistan för att hitta deltagaren med högst totalpoäng
@@ -67,6 +60,7 @@ namespace WindowsFormsApplication2
             string winner = "";
             foreach (var x in ContenderList)
             {
+                x.summeraPoints();
                 if (tempValue < x.totalPoints)      //jämnför om den nya deltagarens totalPointes är bättre än den förras
                 {
                     tempValue = x.totalPoints;
@@ -88,6 +82,23 @@ namespace WindowsFormsApplication2
             else
                 return false;
         }
+
+        public void printShit()
+        {
+            int u = 0;
+            foreach (var x in ContenderList)
+            {
+
+                Console.WriteLine("Deltagare: {0}", u);
+                for (int t = 0; t < 7; t++)
+                {
+                    Console.WriteLine(ContenderList[u].ListJumps[t].Point);
+                }
+                Console.WriteLine();
+                u++;
+            }
+        }
+
         public void Lets_get_this_party_started() //TESTFUNKTION FÖR SERVER
         {
             TcpServer server = TcpServer.Instance(); //Startar servern och börjar lyssna efter domarklienter
@@ -100,7 +111,7 @@ namespace WindowsFormsApplication2
                 {
                     for (int i = 0; i < ContenderList.Count; i++)
                     {
-                        infoStringforJudges = (ContenderList[i].Name + " " + ContenderList[i].Nationality + " " + ContenderList[i].Gender + " " + ContenderList[i].ListJumps[j].Jumpstyle);
+                        infoStringforJudges = (ContenderList[i].Name + " " + ContenderList[i].Nationality + " " + ContenderList[i].ListJumps[j].Jumpstyle);
                         server.SendToAllClients(infoStringforJudges);
                         lock (server.ListHandleTcpClients)
                         {

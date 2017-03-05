@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace WindowsFormsApplication2
 {
@@ -27,15 +28,54 @@ namespace WindowsFormsApplication2
 
         private void buttonEraseContest_Click(object sender, EventArgs e)
         {
-            //Kod här som frågar om man vill radera tävling(OK/CANCEL)
-            //..
+        //    string cName = contestNameTextBox.Text + ".txt";
+        //    //frågar om man vill radera tävling(OK/CANCEL) kollar också om tävling existerar
+        //    if (File.Exists(cName))
+        //    {
+        //        DialogResult dialogResult = MessageBox.Show("Vill du verkligen ta bort filen: " + contestNameTextBox.Text + "?", "Radera Tävling", MessageBoxButtons.YesNo);
+        //        if (dialogResult == DialogResult.Yes)
+        //        {
+        //            int underJuding = 0;
+        //            int contestFinished = 0;
+        //            using (StreamReader sr = new StreamReader(cName))
+        //            {
+        //                string line = "";
+        //                line = sr.ReadLine();
+        //                string[] holder = line.Split(';');
+        //                underJuding = Convert.ToInt32(holder[4]);
+        //                contestFinished = Convert.ToInt32(holder[5]);
+        //            }
+        //            if ((contestFinished == 0) && (underJuding == 0))
+        //            {
+        //                File.Delete(contestNameTextBox.Text + ".txt");
+        //                MessageBox.Show("Tävling är borttagen", "Radera tävling", MessageBoxButtons.OK);
+        //                this.Close();
+        //            }
+        //            else if (contestFinished == 1)
+        //            {
+        //                MessageBox.Show("Tävlingen är redan avslutad!", "Radera tävling", MessageBoxButtons.OK);
+        //            }
+        //            else if (underJuding == 1)
+        //            {
+        //                MessageBox.Show("Tävlingen är redan startad!", "Raderea tävling", MessageBoxButtons.OK);
+        //            }
+        //            else
+        //            {
+        //                MessageBox.Show("Något gick tokigt\nFörsök igen!", "Radera tävling", MessageBoxButtons.OK);
+        //            }
 
-            //Kod här för att slänga bort vald tävlingsfil, if statement.. Släng om click_OK
-            //..
-            //Kod här som öppnar ruta som förklarar att tävling är raderad
-            //..
-
-            this.Close();
+        //        }
+        //        else
+        //        {
+        //            contestNameTextBox.Text = "";
+        //        }
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Tävlingen existerar inte", "Radera tävling", MessageBoxButtons.OK);
+        //        contestNameTextBox.Text = "";
+        //    }
+        //    this.Close();
         }
     }
 }

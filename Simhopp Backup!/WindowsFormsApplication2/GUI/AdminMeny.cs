@@ -57,11 +57,6 @@ namespace WindowsFormsApplication2
         }
         #endregion
 
-        private void AdminMeny_window_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void Backgroundpicture_adminmeny_Click(object sender, EventArgs e)
         {
            

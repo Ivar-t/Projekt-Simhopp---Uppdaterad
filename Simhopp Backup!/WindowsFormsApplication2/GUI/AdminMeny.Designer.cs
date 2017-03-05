@@ -130,7 +130,6 @@
             this.Name = "AdminMeny_window";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meny - Administratör";
-            this.Load += new System.EventHandler(this.AdminMeny_window_Load);
             ((System.ComponentModel.ISupportInitialize)(this.admin_picture_box)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Backgroundpicture_adminmeny)).EndInit();
             this.ResumeLayout(false);

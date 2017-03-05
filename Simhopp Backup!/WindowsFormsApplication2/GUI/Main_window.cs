@@ -16,10 +16,6 @@ namespace WindowsFormsApplication2
         Thread th;      //Skapar tråd objekt så vi kan skapa nya fönster
         public Main_Form1()
         {
-            //Contender con = new Contender();
-            //con.Name = "bajskorv";
-            //Console.WriteLine(con.Name);
-            //Thread.Sleep(10000);
             InitializeComponent();
         }
 

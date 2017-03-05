@@ -16,8 +16,7 @@ namespace WindowsFormsApplication2
 
         //MedlemsVariabler
         private int Id { get; set; } = 0;
-        public int TotJ { get; set; } = 0; //håller i alla 3 domares poäng
-
+        
         //MedlemsFunktioner
         public int SetPoints(int score) //domare sätter poäng för en contender och deras hopp
         {
