@@ -19,8 +19,7 @@ namespace WindowsFormsApplication2
 
         //MedlemsVariabler
         public string Name { get; set; } = "";
-        public int Jumpheight { get; set; } = 0;
-        public int TotJ { get; set; } = 0;
+        public string Date { get; set; } = "";
         public string GenderContest { get; set; } = ""; //La till en gender attribut så tävlingar kan delas in i kön-tävlingar / tomas
         public int Jumpheight { get; set; } = 0;
         public string Winner { get; set; } = "";
@@ -44,18 +43,11 @@ namespace WindowsFormsApplication2
         {
             if (ii == this.ContenderList.Count) //nollställer ii varje gång ii gått igeonom varje contender
             {
-                for (int i = 0; i < ContenderList.Count; i++)  
-                {
-                    ContenderList[i].ListJumps[j].Point = JudgeSum(judge1, judge2, judge3, ContenderList[i].ListJumps[j].jumpDifficulty); 
-                }
-                j++;
+                ii = 0;
+                jj++;
             }
-        }
-
-        public int JudgeSum(Judge judge1, Judge judge2, Judge judge3, int difficulty) //ej testad
-        {
-            TotJ = (judge1.SetPoints(1) + judge2.SetPoints(1) + judge3.SetPoints(1)) * difficulty; //summerar domarpoäng och multiplicerar med hoppets svårighet
-            return TotJ;
+            ContenderList[ii].ListJumps[jj].Point = (score1 + score2 + score3) * ContenderList[ii].ListJumps[jj].jumpDifficulty;
+            ii++;
         }
 
         public string find_winner()     //klarat test
@@ -85,6 +77,21 @@ namespace WindowsFormsApplication2
                 return true;
             else
                 return false;
+        }
+        public void printShit()
+        {
+            int u = 0;
+            foreach (var x in ContenderList)
+            {
+
+                Console.WriteLine("Deltagare: {0}", u);
+                for (int t = 0; t < 7; t++)
+                {
+                    Console.WriteLine(ContenderList[u].ListJumps[t].Point);
+                }
+                Console.WriteLine();
+                u++;
+            }
         }
         public void Lets_get_this_party_started() //TESTFUNKTION FÖR SERVER
         {
