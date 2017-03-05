@@ -2,6 +2,7 @@
 using System.Linq;
 using WindowsFormsApplication2;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using ServerApp;
 
 namespace UnitTestProject
 {
@@ -277,7 +278,5 @@ namespace UnitTestProject
             Assert.AreEqual(true, SimOS2017.ContestFinished);
 
         }
-
-
     }
 }

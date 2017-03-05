@@ -18,7 +18,7 @@ namespace WindowsFormsApplication2
         private int Id { get; set; } = 0;
         
         //MedlemsFunktioner
-        public int SetPoints(int score) //domare sätter poäng för en contender och deras hopp
+        public double SetPoints(double score) //domare sätter poäng för en contender och deras hopp
         {
             return score;
         }
@@ -28,14 +28,14 @@ namespace WindowsFormsApplication2
             TcpClient socketForServer;
             try
             {
-                socketForServer = new TcpClient("10.22.20.187", 9058);
+                socketForServer = new TcpClient("10.22.20.187", 9058); //Ansluter till admins server
             }
             catch
             {
-                Console.WriteLine("Failed to connect");
+                Console.WriteLine("Failed to connect"); //IFall servern inte är igång.
                 return;
             }
-            NetworkStream networkStream = socketForServer.GetStream();
+            NetworkStream networkStream = socketForServer.GetStream(); //För att kunna läsa från och skriva till servern
             StreamReader streamReader = new StreamReader(networkStream);
             StreamWriter streamWriter = new StreamWriter(networkStream);
 
@@ -44,11 +44,11 @@ namespace WindowsFormsApplication2
                 String outputString = " ", str = " ";
                 while (true)
                 {
-                    outputString = streamReader.ReadLine();
-                    Console.WriteLine(outputString);
+                    outputString = streamReader.ReadLine(); //Läser in vad servern har skickat
+                    Console.WriteLine(outputString); //Skriver ut vad som lästs in
                     Console.WriteLine("Give score: ");
-                    str = Console.ReadLine();
-                    streamWriter.WriteLine(str);
+                    str = Console.ReadLine(); //Läser in poäng från judge
+                    streamWriter.WriteLine(str); //Skickar iväg poängen med flush
                     streamWriter.Flush();
 
                 }

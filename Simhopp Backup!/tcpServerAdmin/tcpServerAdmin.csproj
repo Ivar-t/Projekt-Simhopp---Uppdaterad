@@ -67,10 +67,6 @@
       <Project>{d329da6f-972c-4dbd-ad0f-4776c3782a4f}</Project>
       <Name>TCPclientJudge</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UnitTestProject\UnitTestProject.csproj">
-      <Project>{628bfa8e-29de-4e15-9dd3-40db54894947}</Project>
-      <Name>UnitTestProject</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WindowsFormsApplication2\WindowsFormsApplication2.csproj">
       <Project>{c45b8eb1-a0bd-4062-8aed-114eadaf0eb4}</Project>
       <Name>WindowsFormsApplication2</Name>

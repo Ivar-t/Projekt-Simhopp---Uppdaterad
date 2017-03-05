@@ -181,8 +181,7 @@
             this.Hopp_nr2.BackColor = System.Drawing.Color.Transparent;
             this.Hopp_nr2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.Hopp_nr2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.Hopp_nr2.Location = new System.Drawing.Point(23, 180);
-            this.Hopp_nr2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Hopp_nr2.Location = new System.Drawing.Point(17, 103);
             this.Hopp_nr2.Name = "Hopp_nr2";
             this.Hopp_nr2.Size = new System.Drawing.Size(144, 36);
             this.Hopp_nr2.TabIndex = 31;
@@ -195,8 +194,7 @@
             this.metroLabel2.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.Location = new System.Drawing.Point(23, 324);
-            this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel2.Location = new System.Drawing.Point(17, 220);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(144, 36);
             this.metroLabel2.TabIndex = 32;
@@ -209,8 +207,7 @@
             this.metroLabel3.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.Location = new System.Drawing.Point(23, 227);
-            this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel3.Location = new System.Drawing.Point(17, 141);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(144, 36);
             this.metroLabel3.TabIndex = 32;
@@ -223,8 +220,7 @@
             this.metroLabel4.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel4.Location = new System.Drawing.Point(23, 276);
-            this.metroLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel4.Location = new System.Drawing.Point(17, 181);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(144, 36);
             this.metroLabel4.TabIndex = 33;
@@ -237,8 +233,7 @@
             this.metroLabel5.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel5.Location = new System.Drawing.Point(23, 374);
-            this.metroLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel5.Location = new System.Drawing.Point(17, 261);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(144, 36);
             this.metroLabel5.TabIndex = 34;
@@ -251,8 +246,7 @@
             this.metroLabel6.BackColor = System.Drawing.Color.Transparent;
             this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel6.Location = new System.Drawing.Point(23, 421);
-            this.metroLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel6.Location = new System.Drawing.Point(17, 299);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(144, 36);
             this.metroLabel6.TabIndex = 35;

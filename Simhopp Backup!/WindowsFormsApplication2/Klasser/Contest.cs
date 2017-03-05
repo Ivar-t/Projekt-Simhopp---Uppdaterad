@@ -15,12 +15,12 @@ namespace WindowsFormsApplication2
     public class Contest
     {
         public List<Contender> ContenderList = new List<Contender>(); //Skapar en lista av contenderobjekt
-      
         public List<Judge> JudgeList = new List<Judge>(3); //Skapar en lista med 3 domare
 
         //MedlemsVariabler
         public string Name { get; set; } = "";
-        public string Date { get; set; } = "";
+        public int Jumpheight { get; set; } = 0;
+        public int TotJ { get; set; } = 0;
         public string GenderContest { get; set; } = ""; //La till en gender attribut så tävlingar kan delas in i kön-tävlingar / tomas
         public int Jumpheight { get; set; } = 0;
         public string Winner { get; set; } = "";
@@ -44,15 +44,19 @@ namespace WindowsFormsApplication2
         {
             if (ii == this.ContenderList.Count) //nollställer ii varje gång ii gått igeonom varje contender
             {
-                ii = 0;
-                jj++;   //får inte gå över 7 | går till contenders nästa hopp
+                for (int i = 0; i < ContenderList.Count; i++)  
+                {
+                    ContenderList[i].ListJumps[j].Point = JudgeSum(judge1, judge2, judge3, ContenderList[i].ListJumps[j].jumpDifficulty); 
+                }
+                j++;
             }
-            ContenderList[ii].ListJumps[jj].Point = (score1 + score2 + score3) * ContenderList[ii].ListJumps[jj].jumpDifficulty;
-
-            ii++;
         }
 
-   
+        public int JudgeSum(Judge judge1, Judge judge2, Judge judge3, int difficulty) //ej testad
+        {
+            TotJ = (judge1.SetPoints(1) + judge2.SetPoints(1) + judge3.SetPoints(1)) * difficulty; //summerar domarpoäng och multiplicerar med hoppets svårighet
+            return TotJ;
+        }
 
         public string find_winner()     //klarat test
         {                               //går igenom deltagarlistan för att hitta deltagaren med högst totalpoäng
@@ -82,23 +86,6 @@ namespace WindowsFormsApplication2
             else
                 return false;
         }
-
-        public void printShit()
-        {
-            int u = 0;
-            foreach (var x in ContenderList)
-            {
-
-                Console.WriteLine("Deltagare: {0}", u);
-                for (int t = 0; t < 7; t++)
-                {
-                    Console.WriteLine(ContenderList[u].ListJumps[t].Point);
-                }
-                Console.WriteLine();
-                u++;
-            }
-        }
-
         public void Lets_get_this_party_started() //TESTFUNKTION FÖR SERVER
         {
             TcpServer server = TcpServer.Instance(); //Startar servern och börjar lyssna efter domarklienter
@@ -120,7 +107,7 @@ namespace WindowsFormsApplication2
                                 PointString = String.Empty;
                                 PointString = judge.StreamReader.ReadLine();
                                 ContenderList[i].ListJumps[j].Point += double.Parse(PointString, System.Globalization.NumberStyles.AllowDecimalPoint);
-                            } //För att få in jumpdifficulty gör en till foreach loop som går igenom alla hopp och gångrar med dess svårighetsgrad.
+                            } //För att få in jumpdifficulty, gör en till foreach loop som går igenom alla hopp och gångrar poängen med dess svårighetsgrad.
                         }
                     }
                     j++;
@@ -135,33 +122,32 @@ namespace WindowsFormsApplication2
                 Thread.Sleep(5000);
                 server.KillThreads();
             }
-
         }
         public class HandleTcpClient
         {
             public IPEndPoint EndPoint { get; set; } = null;
-            public NetworkStream NetworkStream { get; set; } = null;
-            public StreamReader StreamReader { get; set; } = null;
-            public StreamWriter StreamWriter { get; set; } = null;
+            public NetworkStream NetworkStream { get; set; } = null;//För att kunna läsa och skriva till klienter
+            public StreamReader StreamReader { get; set; } = null; //För att kunna läsa till klienter
+            public StreamWriter StreamWriter { get; set; } = null; //För att kunna skriva till klienter
             public TcpClient TcpClient { get; set; } = null;
-            public Thread ThreadClient { get; set; } = null;
+            public Thread ThreadClient { get; set; } = null; //Tråd för varje klient
             TcpServer tcpServer { get; set; } = null;
             public bool quit = false;
             public HandleTcpClient(TcpServer tcpServer, TcpClient tcpClient)
             {
                 this.tcpServer = tcpServer;
                 this.TcpClient = tcpClient;
-                this.EndPoint = TcpClient.Client.RemoteEndPoint as IPEndPoint;
-                ThreadClient = new Thread(Client);
+                this.EndPoint = TcpClient.Client.RemoteEndPoint as IPEndPoint; //Vilken IP-address som klienten har
+                ThreadClient = new Thread(Client); //Skapar en ny tråd för varje klient
                 ThreadClient.Start();
             }
             public void Client()
             {
                 try
                 {
-                    NetworkStream = TcpClient.GetStream();
-                    StreamReader = new StreamReader(NetworkStream);
-                    StreamWriter = new StreamWriter(NetworkStream);
+                    NetworkStream = TcpClient.GetStream(); //För att kunna läsa och skriva till klienter
+                    StreamReader = new StreamReader(NetworkStream);  //För att kunna läsa och skriva till klienter
+                    StreamWriter = new StreamWriter(NetworkStream); //För att kunna läsa och skriva till klienter
                     while (!quit)
                     {
                         ;
@@ -186,17 +172,17 @@ namespace WindowsFormsApplication2
                     tcpServer = new TcpServer();
                 return tcpServer;
             }
-            private Int32 port = 9058;
-            private IPAddress localAddr = IPAddress.Parse("10.22.20.187");
+            private Int32 port = 9058; //Vilken port som klienterna ska ansluta till.
+            private IPAddress localAddr = IPAddress.Parse("10.22.20.187"); //Vilken address som klienterna ska ansluta till.
             private TcpListener server = null;
             private Thread threadServer = null;
             private TcpServer()
             {
                 tcpServer = this;
-                threadServer = new Thread(tcpServer.ThreadListener);
+                threadServer = new Thread(tcpServer.ThreadListener); //Startar tråd för servern och lyssnar efter domarklienter
                 threadServer.Start();
             }
-            public List<HandleTcpClient> ListHandleTcpClients { get; set; } = new List<HandleTcpClient>();
+            public List<HandleTcpClient> ListHandleTcpClients { get; set; } = new List<HandleTcpClient>(); //Lista med alla domarklienter
             private void ThreadListener()
             {
                 try
@@ -204,13 +190,13 @@ namespace WindowsFormsApplication2
                     server = new TcpListener(localAddr, port);
                     server.Start(); // Start listening for client requests.
 
-                    while (ListHandleTcpClients.Count < 3) //ListHandleTcpClients.Count < 3
+                    while (ListHandleTcpClients.Count < 3) // 3 = Antalet domare som väntas döma tävlingen. Loopar tills alla domare har anslutit sig. 
                     {
                         Console.WriteLine("Waiting for a  judge to connect... ");
                         TcpClient client = server.AcceptTcpClient();
-                        lock (ListHandleTcpClients)
+                        lock (ListHandleTcpClients) //Bara en domare i taget kan slängas in i listan, lär inte märka någon delay med så få klienter som vi har tänkt.
                         {
-                            ListHandleTcpClients.Add(new HandleTcpClient(this, client));
+                            ListHandleTcpClients.Add(new HandleTcpClient(this, client)); //Lägger till domarklient i en lista för domarklienter
                         }
                         Console.WriteLine("A judge connected to the server!");
                     }
@@ -224,7 +210,7 @@ namespace WindowsFormsApplication2
                     server.Stop();
                 }
             }
-            public void SendToAllClients(String message)
+            public void SendToAllClients(String message) //Skickar meddelande om information till alla domarklienter
             {
                 lock (ListHandleTcpClients)
                 {
@@ -235,7 +221,7 @@ namespace WindowsFormsApplication2
                     }
                 }
             }
-            public void KillThreads()
+            public void KillThreads() //Stänger av alla domarklient-trådar
             {
                 foreach (var client in ListHandleTcpClients)
                 {
