@@ -78,7 +78,7 @@ namespace WindowsFormsApplication2
             else
                 return false;
         }
-        public void printShit()
+        public void printShit() //testfunktion för att se vad deltagarna har fått för poäng för sina hopp
         {
             int u = 0;
             foreach (var x in ContenderList)
@@ -88,6 +88,24 @@ namespace WindowsFormsApplication2
                 for (int t = 0; t < 7; t++)
                 {
                     Console.WriteLine(ContenderList[u].ListJumps[t].Point);
+                }
+                Console.WriteLine();
+                u++;
+            }
+        }
+        public void printContest()  //testfunktion för att se vad som vad en contest från fil innehåller
+        {
+
+            Console.WriteLine("Tävling: {0} | {1} | {2} | {3}", this.Name, this.Date, this.GenderContest, this.Jumpheight);
+            Console.WriteLine();
+            Console.WriteLine("Deltagare");
+            int u = 0;
+            foreach (var x in ContenderList)
+            {
+                Console.Write("{0} | {1} | {2}", this.ContenderList[u].Name, this.ContenderList[u].Id, this.ContenderList[u].Nationality);
+                for (int t = 0; t < 7; t++)
+                {
+                    Console.Write(" | {0}",ContenderList[u].ListJumps[t].Jumpstyle);
                 }
                 Console.WriteLine();
                 u++;

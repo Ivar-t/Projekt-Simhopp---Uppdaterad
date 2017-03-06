@@ -29,10 +29,28 @@ namespace WindowsFormsApplication2
         {
             //skapar en fil för tävling
             //skriver in tävlings info i början av filen
-            string line = contestNameTextBox.Text + ";" + dateTextBox.Text + ";" + genderTextBox.Text + ";" + jumpheightTextBox.Text + "m;" + 0 + ";" + 0 + ";";
+            string line = contestNameTextBox.Text + ";" + dateTextBox.Text + ";" + genderTextBox.Text + ";" + jumpheightTextBox.Text + ";" + 0 + ";" + 0 + ";";
             //                 Name                             Date                   GenderContest                Jumpheight      ContestFinished  AreUnderJudging
 
             string cName = contestNameTextBox.Text + ".txt";
+
+            if (!File.Exists("ListOfContest.txt"))
+            {
+                FileStream fileOfContest = new FileStream("ListOfContest.txt", FileMode.CreateNew, FileAccess.ReadWrite); //lägger in tävlingsnamn vi skapat in i en fil
+                fileOfContest.Close();
+
+                using (StreamWriter sw = File.AppendText("ListOfContest.txt"))   //öppnar och lägger in tävlingsnamn i filen
+                {
+                    sw.WriteLine(contestNameTextBox.Text);
+                }
+            }
+            else
+            {
+                using (StreamWriter sw = File.AppendText("ListOfContest.txt"))   //öppnar och lägger in tävlingsnamn i filen
+                {
+                    sw.WriteLine(contestNameTextBox.Text);
+                }
+            }
 
             if (!File.Exists(cName))
             {
