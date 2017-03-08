@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.IO;
+using ClassLibrary1;
+using WindowsFormsApplication2.Klasser;
 
 namespace WindowsFormsApplication2
 {
@@ -19,8 +21,6 @@ namespace WindowsFormsApplication2
         public AdminMeny_window()
         {
             InitializeComponent();
-            if (File.Exists("ListOfContest.txt"))
-            {
                 using (StreamReader sr = new StreamReader("ListOfContest.txt"))
                 {
                     string line;
@@ -34,7 +34,6 @@ namespace WindowsFormsApplication2
                         contestComboBox.Items.Insert(q, x);
                         q++;
                     }
-                }
             }
         }
 
@@ -79,7 +78,8 @@ namespace WindowsFormsApplication2
         {
             Contest _contest = new Contest();
             int underJuding;
-            int contestFinished;
+            int contestFinished = 0;
+            String infoStringforJudges = String.Empty, PointString= String.Empty;
 
             if (File.Exists(contestComboBox.Text + ".txt"))
             {
@@ -116,6 +116,14 @@ namespace WindowsFormsApplication2
             else
             {
                 MessageBox.Show("Tävling finns inte", "Starta tävling", MessageBoxButtons.OK);
+            }
+            HandleTcpClient.TcpServer server = HandleTcpClient.TcpServer.Instance(); // mio Startar servern och börjar lyssna efter domarklienter
+            int j = 0;
+
+            StartContest start = new StartContest();
+            while (contestFinished == 0)
+            {
+                start.gogogo(server, _contest, infoStringforJudges, PointString, contestFinished);
             }
         }
         #endregion

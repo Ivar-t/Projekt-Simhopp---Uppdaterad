@@ -103,6 +103,7 @@
     <Compile Include="GUI\AdminSelectedContest.Designer.cs">
       <DependentUpon>AdminSelectedContest.cs</DependentUpon>
     </Compile>
+    <Compile Include="TCPIP\Client.cs" />
     <Compile Include="Klasser\Contender.cs" />
     <Compile Include="Klasser\Contest.cs" />
     <Compile Include="GUI\EraseContestWindow.cs">
@@ -138,6 +139,8 @@
     </Compile>
     <Compile Include="Klasser\Jump.cs" />
     <Compile Include="Klasser\Program.cs" />
+    <Compile Include="TCPIP\Server.cs" />
+    <Compile Include="TCPIP\StartContest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUI\AddContendersWindow.resx">
       <DependentUpon>AddContendersWindow.cs</DependentUpon>

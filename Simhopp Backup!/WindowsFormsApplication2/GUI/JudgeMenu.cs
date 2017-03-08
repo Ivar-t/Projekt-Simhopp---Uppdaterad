@@ -34,7 +34,7 @@ namespace WindowsFormsApplication2
 
         private void buttonJudgeContest_Click(object sender, EventArgs e)
         {
-            JudgeScoresContenderWindow jscw = new JudgeScoresContenderWindow();
+            JudgeScoresContenderWindow jscw = new JudgeScoresContenderWindow(this);
             jscw.ShowDialog();
         }
         #endregion
