@@ -103,7 +103,6 @@ namespace WindowsFormsApplication2
             item7.SubItems.Add(metroComboBox7.Text); // Lägger till vilket hopp man valt //
             item7.SubItems.Add("MaxPoints");
 
-
             //Lägger till alla ovan till vår listview //
             listView1.Items.Add(item);
             listView1.Items.Add(item1);

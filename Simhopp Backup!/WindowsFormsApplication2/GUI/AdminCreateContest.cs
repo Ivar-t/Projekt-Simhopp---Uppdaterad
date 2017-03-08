@@ -53,5 +53,10 @@ namespace WindowsFormsApplication2
         }
 
         #endregion
+
+        private void dateTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

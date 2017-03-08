@@ -279,7 +279,7 @@
             this.groupBox1.Controls.Add(this.buttonS6);
             this.groupBox1.Controls.Add(this.buttonS5_5);
             this.groupBox1.Controls.Add(this.menuStrip1);
-            this.groupBox1.Location = new System.Drawing.Point(304, 12);
+            this.groupBox1.Location = new System.Drawing.Point(383, 158);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(316, 271);
             this.groupBox1.TabIndex = 20;
@@ -296,8 +296,9 @@
             // labelJudgeScore
             // 
             this.labelJudgeScore.AutoSize = true;
+            this.labelJudgeScore.BackColor = System.Drawing.Color.Transparent;
             this.labelJudgeScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelJudgeScore.Location = new System.Drawing.Point(12, 28);
+            this.labelJudgeScore.Location = new System.Drawing.Point(289, 9);
             this.labelJudgeScore.Name = "labelJudgeScore";
             this.labelJudgeScore.Size = new System.Drawing.Size(235, 73);
             this.labelJudgeScore.TabIndex = 20;
@@ -319,7 +320,7 @@
             // 
             this.buttonSubmitScore.Image = global::WindowsFormsApplication2.Properties.Resources.SubmitJudgeScore;
             this.buttonSubmitScore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSubmitScore.Location = new System.Drawing.Point(55, 121);
+            this.buttonSubmitScore.Location = new System.Drawing.Point(173, 379);
             this.buttonSubmitScore.Name = "buttonSubmitScore";
             this.buttonSubmitScore.Size = new System.Drawing.Size(192, 42);
             this.buttonSubmitScore.TabIndex = 21;

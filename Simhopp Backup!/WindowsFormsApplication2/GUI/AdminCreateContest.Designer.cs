@@ -147,6 +147,7 @@
             this.dateTextBox.Name = "dateTextBox";
             this.dateTextBox.Size = new System.Drawing.Size(123, 29);
             this.dateTextBox.TabIndex = 2;
+            this.dateTextBox.TextChanged += new System.EventHandler(this.dateTextBox_TextChanged);
             // 
             // genderTextBox
             // 
