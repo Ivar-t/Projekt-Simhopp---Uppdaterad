@@ -19,18 +19,21 @@ namespace WindowsFormsApplication2
         public AdminMeny_window()
         {
             InitializeComponent();
-            using (StreamReader sr = new StreamReader("ListOfContest.txt"))
+            if (File.Exists("ListOfContest.txt"))
             {
-                string line;
-                while((line = sr.ReadLine()) != null)
+                using (StreamReader sr = new StreamReader("ListOfContest.txt"))
                 {
-                    contestNameFiles.Add(line);
-                }
-                int q = 0;
-                foreach(var x in contestNameFiles)
-                {
-                    contestComboBox.Items.Insert(q,x);
-                    q++;
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        contestNameFiles.Add(line);
+                    }
+                    int q = 0;
+                    foreach (var x in contestNameFiles)
+                    {
+                        contestComboBox.Items.Insert(q, x);
+                        q++;
+                    }
                 }
             }
         }

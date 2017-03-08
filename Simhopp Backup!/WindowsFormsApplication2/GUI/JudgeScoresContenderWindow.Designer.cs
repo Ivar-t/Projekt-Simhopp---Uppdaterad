@@ -53,7 +53,9 @@
             this.labelJudgeScore = new System.Windows.Forms.Label();
             this.buttonCancel = new System.Windows.Forms.Button();
             this.buttonSubmitScore = new System.Windows.Forms.Button();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonS0_5
@@ -327,6 +329,14 @@
             this.buttonSubmitScore.UseVisualStyleBackColor = true;
             this.buttonSubmitScore.Click += new System.EventHandler(this.buttonSubmitScore_Click);
             // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(714, 68);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar1.Size = new System.Drawing.Size(45, 361);
+            this.trackBar1.TabIndex = 23;
+            // 
             // JudgeScoresContenderWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,6 +344,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.Swimiing_pools;
             this.ClientSize = new System.Drawing.Size(784, 441);
+            this.Controls.Add(this.trackBar1);
             this.Controls.Add(this.labelJudgeScore);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSubmitScore);
@@ -345,6 +356,7 @@
             this.Text = "JudgeScoresContenderWindow";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -377,5 +389,6 @@
         private System.Windows.Forms.Button buttonSubmitScore;
         private System.Windows.Forms.Button buttonCancel;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.TrackBar trackBar1;
     }
 }
