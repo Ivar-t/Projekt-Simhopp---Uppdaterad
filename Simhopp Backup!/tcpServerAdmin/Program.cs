@@ -63,7 +63,7 @@ namespace ServerApp
                 return tcpServer;
             }
             private Int32 port = 9058;
-            private IPAddress localAddr = IPAddress.Parse("10.22.20.187");
+            private IPAddress localAddr = IPAddress.Parse("10.22.21.196");
             private TcpListener server = null;
             private Thread threadServer = null;
             private TcpServer()
