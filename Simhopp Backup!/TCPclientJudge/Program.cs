@@ -17,7 +17,7 @@ namespace ConsoleApplication1
             TcpClient socketForServer;
             try
             {
-                socketForServer = new TcpClient("10.22.20.187", 9058);
+                socketForServer = new TcpClient("10.22.21.196", 9058);
             }
             catch
             {

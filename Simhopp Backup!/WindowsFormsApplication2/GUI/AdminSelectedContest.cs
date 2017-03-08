@@ -17,6 +17,12 @@ namespace WindowsFormsApplication2
             InitializeComponent();
         }
 
+        public AdminSelectedContest_window(string dataRecieved)
+        {
+            InitializeComponent();
+            contestInfoTextBox.Text = dataRecieved;
+        }
+
         #region buttonClicks
         private void buttonDone_Click(object sender, EventArgs e)
         {

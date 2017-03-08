@@ -63,7 +63,7 @@ namespace ServerApp
                 return tcpServer;
             }
             private Int32 port = 9058;
-            private IPAddress localAddr = IPAddress.Parse("10.22.20.187");
+            private IPAddress localAddr = IPAddress.Parse("10.22.21.196");
             private TcpListener server = null;
             private Thread threadServer = null;
             private TcpServer()
@@ -136,8 +136,6 @@ namespace ServerApp
                 jump4.Jumpstyle = "3081A";
                 contender.Name = "Viktor Lundin";
                 contender1.Name = "Carlos Mantero";
-                contender.Gender = "Male";
-                contender1.Gender = "Male";
                 contender.Nationality = "Sweden";
                 contender1.Nationality = "Sweden";
                 contender.add_jump(jump4);
@@ -159,7 +157,7 @@ namespace ServerApp
                     {
                         for (int i = 0; i < contest.ContenderList.Count; i++)
                         {
-                            infoStringforJudges = (contest.ContenderList[i].Name + " " + contest.ContenderList[i].Nationality + " " + contest.ContenderList[i].Gender + " " + contest.ContenderList[i].ListJumps[j].Jumpstyle);
+                            infoStringforJudges = (contest.ContenderList[i].Name + " " + contest.ContenderList[i].Nationality + " " + contest.ContenderList[i].ListJumps[j].Jumpstyle);
                             server.SendToAllClients(infoStringforJudges);
                             lock (server.ListHandleTcpClients)
                             {

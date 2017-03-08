@@ -36,10 +36,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(279, 144);
+            this.textBox1.Location = new System.Drawing.Point(372, 177);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 29);
+            this.textBox1.Size = new System.Drawing.Size(273, 35);
             this.textBox1.TabIndex = 0;
             // 
             // label1
@@ -48,9 +49,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(248, 98);
+            this.label1.Location = new System.Drawing.Point(331, 121);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(270, 29);
+            this.label1.Size = new System.Drawing.Size(338, 36);
             this.label1.TabIndex = 3;
             this.label1.Text = "Skriv in tävlingens namn";
             // 
@@ -58,9 +60,10 @@
             // 
             this.buttonCancel.Image = global::WindowsFormsApplication2.Properties.Resources.CancelIcon;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancel.Location = new System.Drawing.Point(388, 196);
+            this.buttonCancel.Location = new System.Drawing.Point(517, 241);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCancel.Name = "buttonCancel";
-            this.buttonCancel.Size = new System.Drawing.Size(169, 42);
+            this.buttonCancel.Size = new System.Drawing.Size(225, 52);
             this.buttonCancel.TabIndex = 2;
             this.buttonCancel.Text = "Avbryt";
             this.buttonCancel.UseVisualStyleBackColor = true;
@@ -70,9 +73,10 @@
             // 
             this.buttonSearch.Image = global::WindowsFormsApplication2.Properties.Resources.CheckMarkIcon;
             this.buttonSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSearch.Location = new System.Drawing.Point(213, 196);
+            this.buttonSearch.Location = new System.Drawing.Point(284, 241);
+            this.buttonSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(169, 42);
+            this.buttonSearch.Size = new System.Drawing.Size(225, 52);
             this.buttonSearch.TabIndex = 1;
             this.buttonSearch.Text = "Sök";
             this.buttonSearch.UseVisualStyleBackColor = true;
@@ -80,18 +84,19 @@
             // 
             // AdminSearch_window
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.Swimiing_pools1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 441);
+            this.ClientSize = new System.Drawing.Size(1045, 543);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSearch);
             this.Controls.Add(this.textBox1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdminSearch_window";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sök Tävling";
