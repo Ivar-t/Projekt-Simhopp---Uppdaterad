@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using MetroFramework.Controls;
+using System.IO;
 
 
 
@@ -19,11 +20,20 @@ namespace WindowsFormsApplication2
         public ListViewItem lv1;
 
         Thread th; //Skapar tråd objekt så vi kan skapa nya fönster
-
+        string fileNameHolder = "";
+        List<string> checkConflictID = new List<string>();
+        bool allowedID = true;
         public AddContenders_Window()
         {
             InitializeComponent();
         }
+        public AddContenders_Window(string dataRecieved) //skapar en ny konstruktor så vi kan ta emot info från andra forms
+        {
+            InitializeComponent();
+            contestNameLabel.Text = contestNameLabel.Text + dataRecieved;  //Skriver ut tävlingens namn på fönstret
+            fileNameHolder = dataRecieved; //ska hämta filnamn
+        }
+
 
         #region buttonClicks
 
@@ -43,6 +53,48 @@ namespace WindowsFormsApplication2
             this.Close();
         }
 
+
+        //private void buttonAddAnotherContender_Click(object sender, EventArgs e)
+        //{
+        //    //Kod här som slänger in informationen till ett objekt som i sin tur går till en ContestList
+        //    //..
+
+        //    string line = NameTextBox.Text + ";" + IDTextBox.Text + ";" + NationalityTextBox.Text + ";" + Hopp1TextBox.Text + ";" + Hopp2TextBox.Text + ";" + Hopp3TextBox.Text + ";" + Hopp4TextBox.Text + ";" + Hopp5TextBox.Text + ";" + Hopp6TextBox.Text + ";" + Hopp7TextBox.Text + ";";
+        //    string cName = fileNameHolder + ".txt";
+        //    using (StreamReader sr = new StreamReader(cName))
+        //    {
+        //        string fileLine = "";
+        //        string firstLineJunk = "";      //behöver ignorera första linjen i filen
+        //        firstLineJunk = sr.ReadLine();
+        //        while ((fileLine = sr.ReadLine()) != null)
+        //        {
+        //            string[] holder = fileLine.Split(';');
+        //            checkConflictID.Add(holder[1]);
+        //        }
+        //    }
+
+        //    foreach (var x in checkConflictID)
+        //    {
+        //        if (x == IDTextBox.Text)
+        //        {
+        //            MessageBox.Show("ID är redan upptaget!\nTesta ett annat", "ID-konflikt", MessageBoxButtons.OK);
+        //            IDTextBox.Text = "";
+        //            allowedID = false;
+        //            break;
+        //        }
+        //    }
+
+        //    if (allowedID == true)
+        //    {
+        //        using (StreamWriter sw = File.AppendText(cName))
+        //        {
+        //            sw.WriteLine(line);
+        //        }
+        //        this.Close();
+        //        AddContendersWindow acw = new AddContendersWindow(fileNameHolder);
+        //        acw.ShowDialog();
+        //    }
+        //}
         private void buttonAddAnotherContender_Click(object sender, EventArgs e)
         {
 

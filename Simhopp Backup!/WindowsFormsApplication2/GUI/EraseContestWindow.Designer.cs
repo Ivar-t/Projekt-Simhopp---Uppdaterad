@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.contestNameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonCancelEraseContest = new System.Windows.Forms.Button();
             this.buttonEraseContest = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // contestNameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(291, 176);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 29);
-            this.textBox1.TabIndex = 0;
+            this.contestNameTextBox.Location = new System.Drawing.Point(291, 176);
+            this.contestNameTextBox.Multiline = true;
+            this.contestNameTextBox.Name = "contestNameTextBox";
+            this.contestNameTextBox.Size = new System.Drawing.Size(206, 29);
+            this.contestNameTextBox.TabIndex = 0;
             // 
             // label1
             // 
@@ -88,7 +88,7 @@
             this.Controls.Add(this.buttonCancelEraseContest);
             this.Controls.Add(this.buttonEraseContest);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.contestNameTextBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "EraseContest_form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -100,7 +100,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox contestNameTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonEraseContest;
         private System.Windows.Forms.Button buttonCancelEraseContest;

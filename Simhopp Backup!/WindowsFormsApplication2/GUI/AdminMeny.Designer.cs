@@ -35,6 +35,8 @@
             this.buttonCreateContest = new System.Windows.Forms.Button();
             this.admin_picture_box = new System.Windows.Forms.PictureBox();
             this.Backgroundpicture_adminmeny = new System.Windows.Forms.PictureBox();
+            this.buttonStartContest = new System.Windows.Forms.Button();
+            this.contestComboBox = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.admin_picture_box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Backgroundpicture_adminmeny)).BeginInit();
             this.SuspendLayout();
@@ -111,6 +113,24 @@
             this.Backgroundpicture_adminmeny.TabStop = false;
             this.Backgroundpicture_adminmeny.Click += new System.EventHandler(this.Backgroundpicture_adminmeny_Click);
             // 
+            // buttonStartContest
+            // 
+            this.buttonStartContest.Location = new System.Drawing.Point(314, 23);
+            this.buttonStartContest.Name = "buttonStartContest";
+            this.buttonStartContest.Size = new System.Drawing.Size(145, 40);
+            this.buttonStartContest.TabIndex = 10;
+            this.buttonStartContest.Text = "Starta tävling";
+            this.buttonStartContest.UseVisualStyleBackColor = true;
+            this.buttonStartContest.Click += new System.EventHandler(this.buttonStartContest_Click);
+            // 
+            // contestComboBox
+            // 
+            this.contestComboBox.FormattingEnabled = true;
+            this.contestComboBox.Location = new System.Drawing.Point(325, 80);
+            this.contestComboBox.Name = "contestComboBox";
+            this.contestComboBox.Size = new System.Drawing.Size(121, 21);
+            this.contestComboBox.TabIndex = 11;
+            // 
             // AdminMeny_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,6 +138,8 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(784, 441);
+            this.Controls.Add(this.contestComboBox);
+            this.Controls.Add(this.buttonStartContest);
             this.Controls.Add(this.admin_picture_box);
             this.Controls.Add(this.buttonCreateContest);
             this.Controls.Add(this.buttonEraseContestW);
@@ -130,7 +152,6 @@
             this.Name = "AdminMeny_window";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meny - Administratör";
-            this.Load += new System.EventHandler(this.AdminMeny_window_Load);
             ((System.ComponentModel.ISupportInitialize)(this.admin_picture_box)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Backgroundpicture_adminmeny)).EndInit();
             this.ResumeLayout(false);
@@ -145,5 +166,7 @@
         private System.Windows.Forms.Button buttonCreateContest;
         private System.Windows.Forms.PictureBox admin_picture_box;
         private System.Windows.Forms.PictureBox Backgroundpicture_adminmeny;
+        private System.Windows.Forms.Button buttonStartContest;
+        private System.Windows.Forms.ComboBox contestComboBox;
     }
 }

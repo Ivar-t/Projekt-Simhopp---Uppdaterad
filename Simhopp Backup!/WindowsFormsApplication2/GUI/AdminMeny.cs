@@ -8,15 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using System.IO;
 
 namespace WindowsFormsApplication2
 {
     public partial class AdminMeny_window : Form
     {
+        List<string> contestNameFiles = new List<string>();
         Thread th;      //Skapar tråd objekt så vi kan skapa nya fönster
         public AdminMeny_window()
         {
             InitializeComponent();
+            using (StreamReader sr = new StreamReader("ListOfContest.txt"))
+            {
+                string line;
+                while((line = sr.ReadLine()) != null)
+                {
+                    contestNameFiles.Add(line);
+                }
+                int q = 0;
+                foreach(var x in contestNameFiles)
+                {
+                    contestComboBox.Items.Insert(q,x);
+                    q++;
+                }
+            }
         }
 
         #region buttonClicks
@@ -55,16 +71,57 @@ namespace WindowsFormsApplication2
             AdminSearch_window asw = new AdminSearch_window();
             asw.ShowDialog();
         }
-        #endregion
 
-        private void AdminMeny_window_Load(object sender, EventArgs e)
+        private void buttonStartContest_Click(object sender, EventArgs e)   // hämtar all tävlingsinformation och lägger det i contest objekt till judgeclient
         {
+            Contest _contest = new Contest();
+            int underJuding;
+            int contestFinished;
 
+            if (File.Exists(contestComboBox.Text + ".txt"))
+            {
+                using (StreamReader sr = new StreamReader(contestComboBox.Text + ".txt"))
+                {
+                    string line = "";
+                    line = sr.ReadLine();
+                    string[] holder = line.Split(';');
+                    _contest.Name = holder[0];
+                    _contest.Date = holder[1];
+                    _contest.GenderContest = holder[2];
+                    _contest.Jumpheight = Convert.ToInt32(holder[3]);
+                    underJuding = Convert.ToInt32(holder[4]);
+                    contestFinished = Convert.ToInt32(holder[5]);
+
+                    while ((line = sr.ReadLine()) != null && line.CompareTo("") != 0)
+                    {
+                        Contender _contender = new Contender();
+                        holder = line.Split(';');
+                        _contender.Name = holder[0];
+                        _contender.Id = Convert.ToInt32(holder[1]);
+                        _contender.Nationality = holder[2];
+                        for (int i = 3; i < 10; i++)
+                        {
+                            Jump _jump = new Jump();
+                            _jump.Jumpstyle = holder[i];
+                            _contender.add_jump(_jump);
+                        }
+                        _contest.add_contender(_contender);
+                    }
+                    _contest.printContest();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tävling finns inte", "Starta tävling", MessageBoxButtons.OK);
+            }
         }
+        #endregion
 
         private void Backgroundpicture_adminmeny_Click(object sender, EventArgs e)
         {
            
         }
+
+
     }
 }

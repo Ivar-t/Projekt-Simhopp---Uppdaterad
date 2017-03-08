@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.buttonDone = new System.Windows.Forms.Button();
+            this.contestInfoTextBox = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // buttonDone
@@ -42,6 +43,14 @@
             this.buttonDone.UseVisualStyleBackColor = true;
             this.buttonDone.Click += new System.EventHandler(this.buttonDone_Click);
             // 
+            // contestInfoTextBox
+            // 
+            this.contestInfoTextBox.Location = new System.Drawing.Point(94, 25);
+            this.contestInfoTextBox.Name = "contestInfoTextBox";
+            this.contestInfoTextBox.Size = new System.Drawing.Size(599, 339);
+            this.contestInfoTextBox.TabIndex = 1;
+            this.contestInfoTextBox.Text = "";
+            // 
             // AdminSelectedContest_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -49,6 +58,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.Swimiing_pools;
             this.ClientSize = new System.Drawing.Size(784, 441);
+            this.Controls.Add(this.contestInfoTextBox);
             this.Controls.Add(this.buttonDone);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -62,5 +72,6 @@
         #endregion
 
         private System.Windows.Forms.Button buttonDone;
+        private System.Windows.Forms.RichTextBox contestInfoTextBox;
     }
 }

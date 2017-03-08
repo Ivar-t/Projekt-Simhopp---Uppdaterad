@@ -14,7 +14,6 @@ namespace WindowsFormsApplication2
 {
     public partial class AdminCreateContest_window : Form
     {
-        Thread th;      //Skapar tråd objekt så vi kan skapa nya fönster
         public AdminCreateContest_window()
         {
             InitializeComponent();
@@ -28,28 +27,54 @@ namespace WindowsFormsApplication2
 
         private void buttonCreateContest_Click(object sender, EventArgs e)
         {
-            //Fil-funktions koder här
-            //..
+            //skapar en fil för tävling
             //skriver in tävlings info i början av filen
-            string line = contestNameTextBox.Text + "; " + dateTextBox.Text + "; " + genderTextBox.Text + "; " + jumpheightTextBox.Text + "m;";
-            string cName = contestNameTextBox.Text + ".htm"; 
+            string line = contestNameTextBox.Text + ";" + dateTextBox.Text + ";" + genderTextBox.Text + ";" + jumpheightTextBox.Text + ";" + 0 + ";" + 0 + ";";
+            //                 Name                             Date                   GenderContest                Jumpheight      ContestFinished  AreUnderJudging
 
-            FileStream fs = new FileStream(cName,FileMode.CreateNew,FileAccess.ReadWrite); //skapar fil
-            fs.Close();
+            string cName = contestNameTextBox.Text + ".txt";
 
-            using (StreamWriter sw = new StreamWriter(cName))   //öppnar, gör sitt skit och stänger filen efter sig 
+            if (!File.Exists("ListOfContest.txt"))
             {
-                sw.Write(line);
+                FileStream fileOfContest = new FileStream("ListOfContest.txt", FileMode.CreateNew, FileAccess.ReadWrite); //lägger in tävlingsnamn vi skapat in i en fil
+                fileOfContest.Close();
+
+                using (StreamWriter sw = File.AppendText("ListOfContest.txt"))   //öppnar och lägger in tävlingsnamn i filen
+                {
+                    sw.WriteLine(contestNameTextBox.Text);
+                }
+            }
+            else
+            {
+                using (StreamWriter sw = File.AppendText("ListOfContest.txt"))   //öppnar och lägger in tävlingsnamn i filen
+                {
+                    sw.WriteLine(contestNameTextBox.Text);
+                }
             }
 
-            this.Close();
-            th = new Thread(openAddContender2ContestW);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
-        }
-        private void openAddContender2ContestW(object obj)
-        {
-            Application.Run(new AddContenders_Window());
+            if (!File.Exists(cName))
+            {
+
+                FileStream fs = new FileStream(cName, FileMode.CreateNew, FileAccess.ReadWrite); //skapar fil
+                fs.Close();
+
+                using (StreamWriter sw = new StreamWriter(cName))   //öppnar, gör sitt skit och stänger filen efter sig 
+                {
+                    sw.WriteLine(line);
+                }
+
+                this.Close();
+                AddContenders_Window acw = new AddContenders_Window(contestNameTextBox.Text);
+                acw.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Tävling Existerar redan", "Skapa tävling", MessageBoxButtons.OK);
+                contestNameTextBox.Text = "";
+                dateTextBox.Text = "";
+                genderTextBox.Text = "";
+                jumpheightTextBox.Text = "";
+            }
         }
 
         #endregion

@@ -12,7 +12,7 @@ namespace WindowsFormsApplication2
         public string Jumpstyle { get; set; } = "";
         public double jumpDifficulty { get; set; } = 0;
 
-        public void setPoint(int x) //ej testad
+        public void setPoint(double x) //ej testad
         {                           //sätter ett poäng i ett jumpobjekt
             Point = x;
         }
