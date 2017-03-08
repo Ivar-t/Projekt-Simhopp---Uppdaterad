@@ -43,7 +43,7 @@
             // 
             // buttonAdminLoggaUt
             // 
-            this.buttonAdminLoggaUt.BackColor = System.Drawing.Color.Silver;
+            this.buttonAdminLoggaUt.BackColor = System.Drawing.Color.White;
             this.buttonAdminLoggaUt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAdminLoggaUt.Location = new System.Drawing.Point(310, 294);
             this.buttonAdminLoggaUt.Name = "buttonAdminLoggaUt";
@@ -55,7 +55,7 @@
             // 
             // buttonEditContest
             // 
-            this.buttonEditContest.BackColor = System.Drawing.Color.Silver;
+            this.buttonEditContest.BackColor = System.Drawing.Color.White;
             this.buttonEditContest.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEditContest.Location = new System.Drawing.Point(310, 248);
             this.buttonEditContest.Name = "buttonEditContest";
@@ -67,7 +67,7 @@
             // 
             // buttonSearchContest
             // 
-            this.buttonSearchContest.BackColor = System.Drawing.Color.Silver;
+            this.buttonSearchContest.BackColor = System.Drawing.Color.White;
             this.buttonSearchContest.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSearchContest.Location = new System.Drawing.Point(310, 202);
             this.buttonSearchContest.Name = "buttonSearchContest";
@@ -79,7 +79,7 @@
             // 
             // buttonEraseContestW
             // 
-            this.buttonEraseContestW.BackColor = System.Drawing.Color.Silver;
+            this.buttonEraseContestW.BackColor = System.Drawing.Color.White;
             this.buttonEraseContestW.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEraseContestW.Location = new System.Drawing.Point(310, 156);
             this.buttonEraseContestW.Name = "buttonEraseContestW";
@@ -91,7 +91,7 @@
             // 
             // buttonCreateContest
             // 
-            this.buttonCreateContest.BackColor = System.Drawing.Color.Silver;
+            this.buttonCreateContest.BackColor = System.Drawing.Color.White;
             this.buttonCreateContest.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonCreateContest.Location = new System.Drawing.Point(310, 110);
             this.buttonCreateContest.Name = "buttonCreateContest";
@@ -125,7 +125,7 @@
             // 
             // buttonStartContest
             // 
-            this.buttonStartContest.Location = new System.Drawing.Point(314, 23);
+            this.buttonStartContest.Location = new System.Drawing.Point(310, 23);
             this.buttonStartContest.Name = "buttonStartContest";
             this.buttonStartContest.Size = new System.Drawing.Size(145, 40);
             this.buttonStartContest.TabIndex = 10;

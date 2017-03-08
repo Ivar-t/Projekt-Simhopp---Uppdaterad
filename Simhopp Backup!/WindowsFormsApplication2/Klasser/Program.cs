@@ -16,7 +16,7 @@ namespace WindowsFormsApplication2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddContenders_Window());       //Ska stå: Application.Run(new Main_Form1());
+            Application.Run(new Main_Form1());       //Ska stå: Application.Run(new Main_Form1());
         }
     }
 }

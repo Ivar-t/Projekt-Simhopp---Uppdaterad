@@ -45,7 +45,7 @@
             // 
             // contestInfoTextBox
             // 
-            this.contestInfoTextBox.Location = new System.Drawing.Point(94, 25);
+            this.contestInfoTextBox.Location = new System.Drawing.Point(89, 12);
             this.contestInfoTextBox.Name = "contestInfoTextBox";
             this.contestInfoTextBox.Size = new System.Drawing.Size(599, 339);
             this.contestInfoTextBox.TabIndex = 1;
