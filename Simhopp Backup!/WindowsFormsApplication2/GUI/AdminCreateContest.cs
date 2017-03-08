@@ -29,7 +29,7 @@ namespace WindowsFormsApplication2
         {
             //skapar en fil för tävling
             //skriver in tävlings info i början av filen
-            string line = contestNameTextBox.Text + ";" + dateTextBox.Text + ";" + genderTextBox.Text + ";" + jumpheightTextBox.Text + ";" + 0 + ";" + 0 + ";";
+            string line = contestNameTextBox.Text + ";" + dateTimePicker1 + ";" + genderTextBox.Text + ";" + jumpheightTextBox.Text + ";" + 0 + ";" + 0 + ";";
             //                 Name                             Date                   GenderContest                Jumpheight      ContestFinished  AreUnderJudging
 
             string cName = contestNameTextBox.Text + ".txt";
@@ -71,7 +71,7 @@ namespace WindowsFormsApplication2
             {
                 MessageBox.Show("Tävling Existerar redan", "Skapa tävling", MessageBoxButtons.OK);
                 contestNameTextBox.Text = "";
-                dateTextBox.Text = "";
+                dateTimePicker1.Text = "";
                 genderTextBox.Text = "";
                 jumpheightTextBox.Text = "";
             }
@@ -89,6 +89,16 @@ namespace WindowsFormsApplication2
                     this.GetNextControl(ActiveControl, true).Focus();
                 }
             }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
