@@ -156,8 +156,8 @@
             this.dateTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTextBox.Multiline = true;
             this.dateTextBox.Name = "dateTextBox";
-            this.dateTextBox.Size = new System.Drawing.Size(163, 35);
-            this.dateTextBox.TabIndex = 1;
+            this.dateTextBox.Size = new System.Drawing.Size(123, 29);
+            this.dateTextBox.TabIndex = 2;
             // 
             // genderTextBox
             // 
