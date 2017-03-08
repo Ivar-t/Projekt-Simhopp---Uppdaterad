@@ -17,7 +17,7 @@ namespace WindowsFormsApplication2.Klasser
         public int gogogo(HandleTcpClient.TcpServer tcpServerObj, Contest contestObj, string infoStringforJudges, string PointString, int contestfinished)
         {
             int j = 0;
-            if (tcpServerObj.ListHandleTcpClients.Count == 1)
+            if (tcpServerObj.ListHandleTcpClients.Count == 3)
             {
                 try
                 {
@@ -25,7 +25,7 @@ namespace WindowsFormsApplication2.Klasser
                     {
                         for (int i = 0; i < contestObj.ContenderList.Count; i++)
                         {
-                            infoStringforJudges = (contestObj.ContenderList[i].Name + Environment.NewLine + contestObj.ContenderList[i].Nationality + Environment.NewLine + contestObj.ContenderList[i].ListJumps[j].Jumpstyle);
+                            infoStringforJudges = (contestObj.ContenderList[i].Name + " " + contestObj.ContenderList[i].Nationality + " " + contestObj.ContenderList[i].ListJumps[j].Jumpstyle);
                             tcpServerObj.SendToAllClients(infoStringforJudges);
                             lock (tcpServerObj.ListHandleTcpClients)
                             {
@@ -42,6 +42,7 @@ namespace WindowsFormsApplication2.Klasser
                         j++;
                     }
 
+                    tcpServerObj.SendToAllClients("quit");
                     foreach (var item in contestObj.ContenderList)    //// mio cambie a commentario ambos foreach loops
                     {
                         item.summeraPoints();

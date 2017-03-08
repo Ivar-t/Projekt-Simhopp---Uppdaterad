@@ -15,11 +15,16 @@ namespace WindowsFormsApplication2
     public partial class JudgeScoresContenderWindow : Form
     {
         Thread th;
+        double show = 0;
         private JudgeMenu judgeMenuObj = null; //mio
         public ClassClient clientobj = new ClassClient();
         public JudgeScoresContenderWindow(JudgeMenu instanceOfJudgeConnectionCreatedInJudgeMenu)
         {
             InitializeComponent();
+            judgepointstrackbar.Minimum = 0;
+            judgepointstrackbar.Maximum = 20;
+            judgepointstrackbar.TickStyle = TickStyle.BottomRight;
+            judgepointstrackbar.TickFrequency = 1;
             clientobj.connectToServerfunc();
             judgeMenuObj = instanceOfJudgeConnectionCreatedInJudgeMenu;
             String str = "";
@@ -36,15 +41,24 @@ namespace WindowsFormsApplication2
 
         private void buttonSubmitScore_Click(object sender, EventArgs e)
         {
-            
-            clientobj.streamWriter.WriteLine(Judgepointscombobox.Text);
+            clientobj.streamWriter.WriteLine(show);
             clientobj.streamWriter.Flush();
-            Judgepointscombobox.SelectedIndex = -1;
             labelinfodeltagare.Text = clientobj.streamReader.ReadLine();
-            
-            
+            String checkquit = labelinfodeltagare.Text;
+            if (checkquit.StartsWith("quit"))
+            {
+                this.Close();
+            }
+
+
         }
-        
+
         #endregion
+        private void judgepointstrackbar_Scroll(object sender, EventArgs e)
+        {
+            show = judgepointstrackbar.Value;
+            show = show * 0.5;
+            labelshowpoint.Text = show.ToString();
+        }
     }
 }

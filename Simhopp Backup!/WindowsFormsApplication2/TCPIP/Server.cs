@@ -82,7 +82,7 @@ namespace ClassLibrary1
                     server = new TcpListener(localAddr, port);
                     server.Start(); // Start listening for client requests.
 
-                    while (ListHandleTcpClients.Count < 1) 
+                    while (ListHandleTcpClients.Count < 3) 
                     {
 
                         TcpClient client = server.AcceptTcpClient();
