@@ -22,7 +22,7 @@ namespace WindowsFormsApplication2.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace WindowsFormsApplication2.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("WindowsFormsApplication2.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace WindowsFormsApplication2.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2000px_Diving_pictogram_svg {
+        public static System.Drawing.Bitmap _2000px_Diving_pictogram_svg {
             get {
                 object obj = ResourceManager.GetObject("2000px-Diving_pictogram.svg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2000px_Diving_pictogram1 {
+        public static System.Drawing.Bitmap _2000px_Diving_pictogram1 {
             get {
                 object obj = ResourceManager.GetObject("2000px-Diving_pictogram1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2000px_Diving_pictogram2 {
+        public static System.Drawing.Bitmap _2000px_Diving_pictogram2 {
             get {
                 object obj = ResourceManager.GetObject("2000px-Diving_pictogram2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +93,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2000px_Diving_pictogram3 {
+        public static System.Drawing.Bitmap _2000px_Diving_pictogram3 {
             get {
                 object obj = ResourceManager.GetObject("2000px-Diving_pictogram3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +103,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _2000px_Diving_pictogram4 {
+        public static System.Drawing.Bitmap _2000px_Diving_pictogram4 {
             get {
                 object obj = ResourceManager.GetObject("2000px-Diving_pictogram4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +113,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap admin_icon {
+        public static System.Drawing.Bitmap admin_icon {
             get {
                 object obj = ResourceManager.GetObject("admin-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +123,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AdminMeny {
+        public static System.Drawing.Bitmap AdminMeny {
             get {
                 object obj = ResourceManager.GetObject("AdminMeny", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +133,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Aha_Soft_Free_Large_Boss_Judge {
+        public static System.Drawing.Bitmap Aha_Soft_Free_Large_Boss_Judge {
             get {
                 object obj = ResourceManager.GetObject("Aha-Soft-Free-Large-Boss-Judge", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,7 +143,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Aha_Soft_Free_Large_Boss_Judge1 {
+        public static System.Drawing.Bitmap Aha_Soft_Free_Large_Boss_Judge1 {
             get {
                 object obj = ResourceManager.GetObject("Aha-Soft-Free-Large-Boss-Judge1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -153,7 +153,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap c724df86_834f_4035_b852_f0c5e3a3411a {
+        public static System.Drawing.Bitmap c724df86_834f_4035_b852_f0c5e3a3411a {
             get {
                 object obj = ResourceManager.GetObject("c724df86-834f-4035-b852-f0c5e3a3411a", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -163,7 +163,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap c724df86_834f_4035_b852_f0c5e3a3411a1 {
+        public static System.Drawing.Bitmap c724df86_834f_4035_b852_f0c5e3a3411a1 {
             get {
                 object obj = ResourceManager.GetObject("c724df86-834f-4035-b852-f0c5e3a3411a1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -173,7 +173,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CancelIcon {
+        public static System.Drawing.Bitmap CancelIcon {
             get {
                 object obj = ResourceManager.GetObject("CancelIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -183,7 +183,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CheckMarkIcon {
+        public static System.Drawing.Bitmap CheckMarkIcon {
             get {
                 object obj = ResourceManager.GetObject("CheckMarkIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -193,7 +193,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap HelpWindowBild {
+        public static System.Drawing.Bitmap HelpWindowBild {
             get {
                 object obj = ResourceManager.GetObject("HelpWindowBild", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -207,7 +207,7 @@ namespace WindowsFormsApplication2.Properties {
         ///dipsauce;ducksauce
         ///;.
         /// </summary>
-        internal static string Inloggning {
+        public static string Inloggning {
             get {
                 return ResourceManager.GetString("Inloggning", resourceCulture);
             }
@@ -216,7 +216,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Judge_icon {
+        public static System.Drawing.Bitmap Judge_icon {
             get {
                 object obj = ResourceManager.GetObject("Judge-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -226,7 +226,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap judgePic {
+        public static System.Drawing.Bitmap judgePic {
             get {
                 object obj = ResourceManager.GetObject("judgePic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -238,7 +238,7 @@ namespace WindowsFormsApplication2.Properties {
         ///appor
         ///.
         /// </summary>
-        internal static string ListOfContest {
+        public static string ListOfContest {
             get {
                 return ResourceManager.GetString("ListOfContest", resourceCulture);
             }
@@ -264,7 +264,7 @@ namespace WindowsFormsApplication2.Properties {
         ///302A;1
         ///302B;0.9.
         /// </summary>
-        internal static string ListOfJump {
+        public static string ListOfJump {
             get {
                 return ResourceManager.GetString("ListOfJump", resourceCulture);
             }
@@ -273,7 +273,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap LoggaInBild {
+        public static System.Drawing.Bitmap LoggaInBild {
             get {
                 object obj = ResourceManager.GetObject("LoggaInBild", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -283,7 +283,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SubmitJudgeScore {
+        public static System.Drawing.Bitmap SubmitJudgeScore {
             get {
                 object obj = ResourceManager.GetObject("SubmitJudgeScore", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -293,7 +293,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Swimiing_pools {
+        public static System.Drawing.Bitmap Swimiing_pools {
             get {
                 object obj = ResourceManager.GetObject("Swimiing-pools", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -303,7 +303,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Swimiing_pools1 {
+        public static System.Drawing.Bitmap Swimiing_pools1 {
             get {
                 object obj = ResourceManager.GetObject("Swimiing-pools1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -313,7 +313,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Swimiing_pools2 {
+        public static System.Drawing.Bitmap Swimiing_pools2 {
             get {
                 object obj = ResourceManager.GetObject("Swimiing-pools2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -323,7 +323,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Swimiing_pools3 {
+        public static System.Drawing.Bitmap Swimiing_pools3 {
             get {
                 object obj = ResourceManager.GetObject("Swimiing-pools3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -333,7 +333,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap swimming_pool_icon_png_3 {
+        public static System.Drawing.Bitmap swimming_pool_icon_png_3 {
             get {
                 object obj = ResourceManager.GetObject("swimming-pool-icon-png-3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -343,7 +343,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap swimming_pool_icon_png_3___kopia {
+        public static System.Drawing.Bitmap swimming_pool_icon_png_3___kopia {
             get {
                 object obj = ResourceManager.GetObject("swimming-pool-icon-png-3 - kopia", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -353,7 +353,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap swimming_pool_icon_png_3___kopia1 {
+        public static System.Drawing.Bitmap swimming_pool_icon_png_3___kopia1 {
             get {
                 object obj = ResourceManager.GetObject("swimming-pool-icon-png-3 - kopia1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -363,7 +363,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap swimming_pool_icon_png_3___kopia2 {
+        public static System.Drawing.Bitmap swimming_pool_icon_png_3___kopia2 {
             get {
                 object obj = ResourceManager.GetObject("swimming-pool-icon-png-3 - kopia2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -373,7 +373,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap swimming_pool_icon_png_31 {
+        public static System.Drawing.Bitmap swimming_pool_icon_png_31 {
             get {
                 object obj = ResourceManager.GetObject("swimming-pool-icon-png-31", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -383,7 +383,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap swimming_pool_icon_png_32 {
+        public static System.Drawing.Bitmap swimming_pool_icon_png_32 {
             get {
                 object obj = ResourceManager.GetObject("swimming-pool-icon-png-32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -393,7 +393,7 @@ namespace WindowsFormsApplication2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap swimming_pool_icon_png_33 {
+        public static System.Drawing.Bitmap swimming_pool_icon_png_33 {
             get {
                 object obj = ResourceManager.GetObject("swimming-pool-icon-png-33", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
