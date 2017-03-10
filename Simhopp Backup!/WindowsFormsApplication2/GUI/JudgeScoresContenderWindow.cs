@@ -11,7 +11,7 @@ using System.Threading;
 using ClassLibrary1;
 
 namespace WindowsFormsApplication2
-{
+{ //Viktor was here
     public partial class JudgeScoresContenderWindow : Form
     {
         Thread th;
