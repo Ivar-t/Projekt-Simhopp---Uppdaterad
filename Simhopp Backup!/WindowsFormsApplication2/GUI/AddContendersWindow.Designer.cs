@@ -50,13 +50,13 @@
             this.Nationalitet_lägg_till_deltagare = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Typ_av_hopp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Svårighetsgrad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.metroComboBox7 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox6 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox5 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox4 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox3 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.Hopp7TextBox = new MetroFramework.Controls.MetroComboBox();
+            this.Hopp6TextBox = new MetroFramework.Controls.MetroComboBox();
+            this.Hopp5TextBox = new MetroFramework.Controls.MetroComboBox();
+            this.Hopp4TextBox = new MetroFramework.Controls.MetroComboBox();
+            this.Hopp3TextBox = new MetroFramework.Controls.MetroComboBox();
+            this.Hopp2TextBox = new MetroFramework.Controls.MetroComboBox();
+            this.Hopp1TextBox = new MetroFramework.Controls.MetroComboBox();
             this.contestNameLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -291,93 +291,79 @@
             this.Svårighetsgrad.Text = "Svårighetsgrad";
             this.Svårighetsgrad.Width = 93;
             // 
-            // metroComboBox7
+            // Hopp7TextBox
             // 
-            this.metroComboBox7.FormattingEnabled = true;
-            this.metroComboBox7.ItemHeight = 23;
-            this.metroComboBox7.Items.AddRange(new object[] {
-            "Test 7"});
-            this.metroComboBox7.Location = new System.Drawing.Point(137, 342);
-            this.metroComboBox7.Name = "metroComboBox7";
-            this.metroComboBox7.Size = new System.Drawing.Size(103, 29);
-            this.metroComboBox7.TabIndex = 42;
-            this.metroComboBox7.UseSelectable = true;
+            this.Hopp7TextBox.FormattingEnabled = true;
+            this.Hopp7TextBox.ItemHeight = 23;
+            this.Hopp7TextBox.Location = new System.Drawing.Point(137, 342);
+            this.Hopp7TextBox.Name = "Hopp7TextBox";
+            this.Hopp7TextBox.Size = new System.Drawing.Size(103, 29);
+            this.Hopp7TextBox.TabIndex = 42;
+            this.Hopp7TextBox.UseSelectable = true;
             // 
-            // metroComboBox6
+            // Hopp6TextBox
             // 
-            this.metroComboBox6.FormattingEnabled = true;
-            this.metroComboBox6.ItemHeight = 23;
-            this.metroComboBox6.Items.AddRange(new object[] {
-            "Test6"});
-            this.metroComboBox6.Location = new System.Drawing.Point(137, 304);
-            this.metroComboBox6.Name = "metroComboBox6";
-            this.metroComboBox6.Size = new System.Drawing.Size(103, 29);
-            this.metroComboBox6.TabIndex = 41;
-            this.metroComboBox6.UseSelectable = true;
+            this.Hopp6TextBox.FormattingEnabled = true;
+            this.Hopp6TextBox.ItemHeight = 23;
+            this.Hopp6TextBox.Location = new System.Drawing.Point(137, 304);
+            this.Hopp6TextBox.Name = "Hopp6TextBox";
+            this.Hopp6TextBox.Size = new System.Drawing.Size(103, 29);
+            this.Hopp6TextBox.TabIndex = 41;
+            this.Hopp6TextBox.UseSelectable = true;
             // 
-            // metroComboBox5
+            // Hopp5TextBox
             // 
-            this.metroComboBox5.FormattingEnabled = true;
-            this.metroComboBox5.ItemHeight = 23;
-            this.metroComboBox5.Items.AddRange(new object[] {
-            "Test5"});
-            this.metroComboBox5.Location = new System.Drawing.Point(137, 263);
-            this.metroComboBox5.Name = "metroComboBox5";
-            this.metroComboBox5.Size = new System.Drawing.Size(103, 29);
-            this.metroComboBox5.TabIndex = 40;
-            this.metroComboBox5.UseSelectable = true;
+            this.Hopp5TextBox.FormattingEnabled = true;
+            this.Hopp5TextBox.ItemHeight = 23;
+            this.Hopp5TextBox.Location = new System.Drawing.Point(137, 263);
+            this.Hopp5TextBox.Name = "Hopp5TextBox";
+            this.Hopp5TextBox.Size = new System.Drawing.Size(103, 29);
+            this.Hopp5TextBox.TabIndex = 40;
+            this.Hopp5TextBox.UseSelectable = true;
             // 
-            // metroComboBox4
+            // Hopp4TextBox
             // 
-            this.metroComboBox4.FormattingEnabled = true;
-            this.metroComboBox4.ItemHeight = 23;
-            this.metroComboBox4.Items.AddRange(new object[] {
-            "Test 4"});
-            this.metroComboBox4.Location = new System.Drawing.Point(137, 224);
-            this.metroComboBox4.Name = "metroComboBox4";
-            this.metroComboBox4.Size = new System.Drawing.Size(103, 29);
-            this.metroComboBox4.TabIndex = 39;
-            this.metroComboBox4.UseSelectable = true;
+            this.Hopp4TextBox.FormattingEnabled = true;
+            this.Hopp4TextBox.ItemHeight = 23;
+            this.Hopp4TextBox.Location = new System.Drawing.Point(137, 224);
+            this.Hopp4TextBox.Name = "Hopp4TextBox";
+            this.Hopp4TextBox.Size = new System.Drawing.Size(103, 29);
+            this.Hopp4TextBox.TabIndex = 39;
+            this.Hopp4TextBox.UseSelectable = true;
+            this.Hopp4TextBox.SelectedIndexChanged += new System.EventHandler(this.metroComboBox4_SelectedIndexChanged);
             // 
-            // metroComboBox3
+            // Hopp3TextBox
             // 
-            this.metroComboBox3.FormattingEnabled = true;
-            this.metroComboBox3.ItemHeight = 23;
-            this.metroComboBox3.Items.AddRange(new object[] {
-            "Test 3"});
-            this.metroComboBox3.Location = new System.Drawing.Point(137, 184);
-            this.metroComboBox3.Name = "metroComboBox3";
-            this.metroComboBox3.Size = new System.Drawing.Size(103, 29);
-            this.metroComboBox3.TabIndex = 38;
-            this.metroComboBox3.UseSelectable = true;
-            this.metroComboBox3.SelectedIndexChanged += new System.EventHandler(this.metroComboBox3_SelectedIndexChanged);
+            this.Hopp3TextBox.FormattingEnabled = true;
+            this.Hopp3TextBox.ItemHeight = 23;
+            this.Hopp3TextBox.Location = new System.Drawing.Point(137, 184);
+            this.Hopp3TextBox.Name = "Hopp3TextBox";
+            this.Hopp3TextBox.Size = new System.Drawing.Size(103, 29);
+            this.Hopp3TextBox.TabIndex = 38;
+            this.Hopp3TextBox.UseSelectable = true;
+            this.Hopp3TextBox.SelectedIndexChanged += new System.EventHandler(this.metroComboBox3_SelectedIndexChanged);
             // 
-            // metroComboBox2
+            // Hopp2TextBox
             // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 23;
-            this.metroComboBox2.Items.AddRange(new object[] {
-            "Test test1"});
-            this.metroComboBox2.Location = new System.Drawing.Point(137, 146);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.Size = new System.Drawing.Size(103, 29);
-            this.metroComboBox2.TabIndex = 37;
-            this.metroComboBox2.UseSelectable = true;
-            this.metroComboBox2.SelectedIndexChanged += new System.EventHandler(this.metroComboBox2_SelectedIndexChanged);
+            this.Hopp2TextBox.FormattingEnabled = true;
+            this.Hopp2TextBox.ItemHeight = 23;
+            this.Hopp2TextBox.Location = new System.Drawing.Point(137, 146);
+            this.Hopp2TextBox.Name = "Hopp2TextBox";
+            this.Hopp2TextBox.Size = new System.Drawing.Size(103, 29);
+            this.Hopp2TextBox.TabIndex = 37;
+            this.Hopp2TextBox.UseSelectable = true;
+            this.Hopp2TextBox.SelectedIndexChanged += new System.EventHandler(this.metroComboBox2_SelectedIndexChanged);
             // 
-            // metroComboBox1
+            // Hopp1TextBox
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 23;
-            this.metroComboBox1.Items.AddRange(new object[] {
-            "AB200",
-            "BA200"});
-            this.metroComboBox1.Location = new System.Drawing.Point(137, 108);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.Size = new System.Drawing.Size(103, 29);
-            this.metroComboBox1.TabIndex = 36;
-            this.metroComboBox1.UseSelectable = true;
-            this.metroComboBox1.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
+            this.Hopp1TextBox.FormattingEnabled = true;
+            this.Hopp1TextBox.ItemHeight = 23;
+            this.Hopp1TextBox.Location = new System.Drawing.Point(137, 108);
+            this.Hopp1TextBox.Name = "Hopp1TextBox";
+            this.Hopp1TextBox.Size = new System.Drawing.Size(103, 29);
+            this.Hopp1TextBox.TabIndex = 36;
+            this.Hopp1TextBox.UseSelectable = true;
+            this.Hopp1TextBox.SelectedIndexChanged += new System.EventHandler(this.metroComboBox1_SelectedIndexChanged);
             // 
             // contestNameLabel
             // 
@@ -400,13 +386,13 @@
             this.ClientSize = new System.Drawing.Size(784, 441);
             this.Controls.Add(this.contestNameLabel);
             this.Controls.Add(this.listView1);
-            this.Controls.Add(this.metroComboBox7);
-            this.Controls.Add(this.metroComboBox6);
-            this.Controls.Add(this.metroComboBox5);
-            this.Controls.Add(this.metroComboBox4);
-            this.Controls.Add(this.metroComboBox3);
-            this.Controls.Add(this.metroComboBox2);
-            this.Controls.Add(this.metroComboBox1);
+            this.Controls.Add(this.Hopp7TextBox);
+            this.Controls.Add(this.Hopp6TextBox);
+            this.Controls.Add(this.Hopp5TextBox);
+            this.Controls.Add(this.Hopp4TextBox);
+            this.Controls.Add(this.Hopp3TextBox);
+            this.Controls.Add(this.Hopp2TextBox);
+            this.Controls.Add(this.Hopp1TextBox);
             this.Controls.Add(this.metroLabel6);
             this.Controls.Add(this.metroLabel5);
             this.Controls.Add(this.metroLabel4);
@@ -458,13 +444,13 @@
         private System.Windows.Forms.ColumnHeader Nationalitet_lägg_till_deltagare;
         private System.Windows.Forms.ColumnHeader Typ_av_hopp;
         private System.Windows.Forms.ColumnHeader Svårighetsgrad;
-        private MetroFramework.Controls.MetroComboBox metroComboBox7;
-        private MetroFramework.Controls.MetroComboBox metroComboBox6;
-        private MetroFramework.Controls.MetroComboBox metroComboBox5;
-        private MetroFramework.Controls.MetroComboBox metroComboBox4;
-        private MetroFramework.Controls.MetroComboBox metroComboBox3;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroComboBox Hopp7TextBox;
+        private MetroFramework.Controls.MetroComboBox Hopp6TextBox;
+        private MetroFramework.Controls.MetroComboBox Hopp5TextBox;
+        private MetroFramework.Controls.MetroComboBox Hopp4TextBox;
+        private MetroFramework.Controls.MetroComboBox Hopp3TextBox;
+        private MetroFramework.Controls.MetroComboBox Hopp2TextBox;
+        private MetroFramework.Controls.MetroComboBox Hopp1TextBox;
         private System.Windows.Forms.Label contestNameLabel;
     }
 }

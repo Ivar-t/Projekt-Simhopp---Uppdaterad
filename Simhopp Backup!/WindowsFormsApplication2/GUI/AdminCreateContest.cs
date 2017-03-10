@@ -29,7 +29,7 @@ namespace WindowsFormsApplication2
         {
             //skapar en fil för tävling
             //skriver in tävlings info i början av filen
-            string line = contestNameTextBox.Text + ";" + dateTimePicker1 + ";" + genderTextBox.Text + ";" + jumpheightTextBox.Text + ";" + 0 + ";" + 0 + ";";
+            string line = contestNameTextBox.Text + ";" + dateTimePicker1 + ";" + genderTextBox.Text + ";" + jumpheightTextBox.Text + ";" + 0 + ";" + 0;
             //                 Name                             Date                   GenderContest                Jumpheight      ContestFinished  AreUnderJudging
 
             string cName = contestNameTextBox.Text + ".txt";

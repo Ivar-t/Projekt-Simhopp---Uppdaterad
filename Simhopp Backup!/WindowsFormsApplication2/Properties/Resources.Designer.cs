@@ -201,6 +201,19 @@ namespace WindowsFormsApplication2.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kjell;drejjgon
+        ///Tomas;MyHorse
+        ///Funky;Slipknot
+        ///dipsauce;ducksauce
+        ///;.
+        /// </summary>
+        internal static string Inloggning {
+            get {
+                return ResourceManager.GetString("Inloggning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Judge_icon {
@@ -217,6 +230,43 @@ namespace WindowsFormsApplication2.Properties {
             get {
                 object obj = ResourceManager.GetObject("judgePic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to asdffef
+        ///appor
+        ///.
+        /// </summary>
+        internal static string ListOfContest {
+            get {
+                return ResourceManager.GetString("ListOfContest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 100A;0.5
+        ///100B;0.4
+        ///101A;0.6
+        ///101B;0.7
+        ///102A;0.9
+        ///102B;0.8
+        ///200A;0.2
+        ///200B;0.1
+        ///201A;0.4
+        ///201B;0.6
+        ///202A;0.5
+        ///202B;0.3
+        ///300A;0.4
+        ///300B;0.7
+        ///301A;0.8
+        ///301B;0.3
+        ///302A;1
+        ///302B;0.9.
+        /// </summary>
+        internal static string ListOfJump {
+            get {
+                return ResourceManager.GetString("ListOfJump", resourceCulture);
             }
         }
         
