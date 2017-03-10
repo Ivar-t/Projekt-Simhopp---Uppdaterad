@@ -14,9 +14,28 @@ namespace WindowsFormsApplication2
     public partial class EraseContest_form1 : Form
     {
         List<string> LOC = new List<string>(); // Tar emot den nya listan av tävlingsnamn efter vi raderat vald fil
+        List<string> contestNameFiles = new List<string>();
         public EraseContest_form1()
         {
             InitializeComponent();
+            if (File.Exists("ListOfContest.txt"))
+            {
+                using (StreamReader sr = new StreamReader("ListOfContest.txt"))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        contestNameFiles.Add(line);
+                    }
+                    int q = 0;
+                    contestNameFiles.Sort();
+                    foreach (var x in contestNameFiles)
+                    {
+                        contestNameComboBox.Items.Insert(q, x);
+                        q++;
+                    }
+                }
+            }
         }
 
         #region buttonClicks
@@ -29,11 +48,11 @@ namespace WindowsFormsApplication2
 
         private void buttonEraseContest_Click(object sender, EventArgs e)
         {
-            string cName = contestNameTextBox.Text + ".txt";
+            string cName = contestNameComboBox.Text + ".txt";
             //frågar om man vill radera tävling(OK/CANCEL) kollar också om tävling existerar
             if (File.Exists(cName))
             {
-                DialogResult dialogResult = MessageBox.Show("Vill du verkligen ta bort filen: " + contestNameTextBox.Text + "?", "Radera Tävling", MessageBoxButtons.YesNo);
+                DialogResult dialogResult = MessageBox.Show("Vill du verkligen ta bort filen: " + contestNameComboBox.Text + "?", "Radera Tävling", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
                     int underJuding = 0;
@@ -54,7 +73,7 @@ namespace WindowsFormsApplication2
                             string line;
                             while((line = sr.ReadLine()) != null)
                             {
-                                if(!(line == contestNameTextBox.Text))
+                                if(!(line == contestNameComboBox.Text))
                                 {
                                     LOC.Add(line);
                                 }
@@ -71,7 +90,7 @@ namespace WindowsFormsApplication2
                             }
                         }
 
-                        File.Delete(contestNameTextBox.Text + ".txt");
+                        File.Delete(contestNameComboBox.Text + ".txt");
                         MessageBox.Show("Tävling är borttagen", "Radera tävling", MessageBoxButtons.OK);
                         this.Close();
                     }
@@ -91,15 +110,15 @@ namespace WindowsFormsApplication2
                 }
                 else
                 {
-                    contestNameTextBox.Text = "";
+                    contestNameComboBox.Text = "";
                 }
             }
             else
             {
                 MessageBox.Show("Tävlingen existerar inte", "Radera tävling", MessageBoxButtons.OK);
-                contestNameTextBox.Text = "";
+                contestNameComboBox.Text = "";
             }
-            this.Close();
+            contestNameComboBox.Text = "";
         }
     }
 }

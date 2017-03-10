@@ -105,7 +105,7 @@ namespace WindowsFormsApplication2
                 Console.Write("{0} | {1} | {2}", this.ContenderList[u].Name, this.ContenderList[u].Id, this.ContenderList[u].Nationality);
                 for (int t = 0; t < 7; t++)
                 {
-                    Console.Write(" | {0}",ContenderList[u].ListJumps[t].Jumpstyle);
+                    Console.Write(" | {0} | {1}",ContenderList[u].ListJumps[t].Jumpstyle, ContenderList[u].ListJumps[t].jumpDifficulty);
                 }
                 Console.WriteLine();
                 u++;

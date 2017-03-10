@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonCancelEditContest = new System.Windows.Forms.Button();
             this.buttonEditContest = new System.Windows.Forms.Button();
+            this.contestNameComboBox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -45,14 +45,6 @@
             this.label1.Size = new System.Drawing.Size(422, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "Ange tävlingens namn som ska ändras";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(311, 139);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(206, 29);
-            this.textBox1.TabIndex = 2;
             // 
             // buttonCancelEditContest
             // 
@@ -80,6 +72,15 @@
             this.buttonEditContest.UseVisualStyleBackColor = true;
             this.buttonEditContest.Click += new System.EventHandler(this.buttonEditContest_Click);
             // 
+            // contestNameComboBox
+            // 
+            this.contestNameComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contestNameComboBox.FormattingEnabled = true;
+            this.contestNameComboBox.Location = new System.Drawing.Point(307, 141);
+            this.contestNameComboBox.Name = "contestNameComboBox";
+            this.contestNameComboBox.Size = new System.Drawing.Size(181, 32);
+            this.contestNameComboBox.TabIndex = 4;
+            // 
             // AdminEditContest_window
             // 
             this.AcceptButton = this.buttonCancelEditContest;
@@ -89,8 +90,8 @@
             this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.Swimiing_pools3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 441);
+            this.Controls.Add(this.contestNameComboBox);
             this.Controls.Add(this.buttonCancelEditContest);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonEditContest);
             this.DoubleBuffered = true;
@@ -108,7 +109,7 @@
 
         private System.Windows.Forms.Button buttonEditContest;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonCancelEditContest;
+        private System.Windows.Forms.ComboBox contestNameComboBox;
     }
 }

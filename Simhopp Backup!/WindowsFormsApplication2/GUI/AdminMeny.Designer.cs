@@ -125,10 +125,11 @@
             // 
             // contestComboBox
             // 
+            this.contestComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contestComboBox.FormattingEnabled = true;
-            this.contestComboBox.Location = new System.Drawing.Point(325, 80);
+            this.contestComboBox.Location = new System.Drawing.Point(314, 83);
             this.contestComboBox.Name = "contestComboBox";
-            this.contestComboBox.Size = new System.Drawing.Size(121, 21);
+            this.contestComboBox.Size = new System.Drawing.Size(145, 32);
             this.contestComboBox.TabIndex = 11;
             // 
             // AdminMeny_window
