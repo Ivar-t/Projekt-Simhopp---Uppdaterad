@@ -53,9 +53,6 @@ namespace WindowsFormsApplication2.Klasser
                             Console.WriteLine(item.Name + " " + item.totalPoints);
                         }
                     tcpServerObj.SendToAllClients("Vinnare! : " + contestObj.find_winner() + ": " + contestObj.find_winners_score() + "p");
-
-
-                   
                     tcpServerObj.SendToAllClients("quit");
                         
                     }

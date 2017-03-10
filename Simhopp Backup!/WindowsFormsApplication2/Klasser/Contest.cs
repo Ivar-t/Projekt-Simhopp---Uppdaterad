@@ -55,7 +55,6 @@ namespace WindowsFormsApplication2
             string winner = "";
             foreach (var x in ContenderList)
             {
-                x.summeraPoints();
                 if (tempValue < x.totalPoints)      //jämnför om den nya deltagarens totalPointes är bättre än den förras
                 {
                     tempValue = x.totalPoints;
@@ -71,7 +70,7 @@ namespace WindowsFormsApplication2
             
             foreach (var x in ContenderList)
             {
-                x.summeraPoints();
+               
                 if (HighestValue < x.totalPoints)      //jämnför om den nya deltagarens totalPointes är bättre än den förras
                 {
                     HighestValue = x.totalPoints;

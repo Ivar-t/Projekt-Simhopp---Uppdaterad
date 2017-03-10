@@ -130,7 +130,7 @@ namespace WindowsFormsApplication2
                 HandleTcpClient.TcpServer server = HandleTcpClient.TcpServer.Instance(); // mio Startar servern och börjar lyssna efter domarklienter
 
                 StartContest start = new StartContest();
-                while (contestFinished == 0)
+                while (contestFinished == 0) //När tävlingen är avslutad skickar funktionen ut en etta för att avbryta while loopen.
                 {
                   contestFinished = start.gogogo(server, _contest, infoStringforJudges, PointString, contestFinished);
                 }
