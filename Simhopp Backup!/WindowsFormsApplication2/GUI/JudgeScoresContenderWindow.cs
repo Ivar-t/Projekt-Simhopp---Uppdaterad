@@ -18,6 +18,7 @@ namespace WindowsFormsApplication2
         double show = 0;
         String str = "";
         private JudgeMenu judgeMenuObj = null; //mio
+        
         public ClassClient clientobj = new ClassClient();
         public JudgeScoresContenderWindow(JudgeMenu instanceOfJudgeConnectionCreatedInJudgeMenu)
         {
