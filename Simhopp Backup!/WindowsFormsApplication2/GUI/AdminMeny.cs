@@ -81,52 +81,59 @@ namespace WindowsFormsApplication2
             int underJuding;
             int contestFinished = 0;
             String infoStringforJudges = String.Empty, PointString= String.Empty;
-            //region för att läsa in från fil till contestobjektet.
-            #region
-            if (File.Exists(contestComboBox.Text + ".txt"))
+            if (contestComboBox.SelectedIndex == -1)
             {
-                using (StreamReader sr = new StreamReader(contestComboBox.Text + ".txt"))
-                {
-                    string line = "";
-                    line = sr.ReadLine();
-                    string[] holder = line.Split(';');
-                    _contest.Name = holder[0];
-                    _contest.Date = holder[1];
-                    _contest.GenderContest = holder[2];
-                    _contest.Jumpheight = Convert.ToInt32(holder[3]);
-                    underJuding = Convert.ToInt32(holder[4]);
-                    contestFinished = Convert.ToInt32(holder[5]);
-
-                    while ((line = sr.ReadLine()) != null && line.CompareTo("") != 0)
-                    {
-                        Contender _contender = new Contender();
-                        holder = line.Split(';');
-                        _contender.Name = holder[0];
-                        _contender.Id = Convert.ToInt32(holder[1]);
-                        _contender.Nationality = holder[2];
-                        for (int i = 3; i < holder.Length; i=i+2)
-                        {
-                            Jump _jump = new Jump();
-                            _jump.Jumpstyle = holder[i];
-                            _jump.jumpDifficulty = double.Parse(holder[i+1], CultureInfo.InvariantCulture);
-                            _contender.add_jump(_jump);
-                        }
-                        _contest.add_contender(_contender);
-                    }
-                    _contest.printContest();
-                }
+                MessageBox.Show("Select a contest");
             }
             else
             {
-                MessageBox.Show("Tävling finns inte", "Starta tävling", MessageBoxButtons.OK);
-            }
-            #endregion
-            HandleTcpClient.TcpServer server = HandleTcpClient.TcpServer.Instance(); // mio Startar servern och börjar lyssna efter domarklienter
+                //region för att läsa in från fil till contestobjektet.
+                #region
+                if (File.Exists(contestComboBox.Text + ".txt"))
+                {
+                    using (StreamReader sr = new StreamReader(contestComboBox.Text + ".txt"))
+                    {
+                        string line = "";
+                        line = sr.ReadLine();
+                        string[] holder = line.Split(';');
+                        _contest.Name = holder[0];
+                        _contest.Date = holder[1];
+                        _contest.GenderContest = holder[2];
+                        _contest.Jumpheight = Convert.ToInt32(holder[3]);
+                        underJuding = Convert.ToInt32(holder[4]);
+                        contestFinished = Convert.ToInt32(holder[5]);
 
-            StartContest start = new StartContest();
-            while (contestFinished == 0)
-            {
-                start.gogogo(server, _contest, infoStringforJudges, PointString, contestFinished);
+                        while ((line = sr.ReadLine()) != null && line.CompareTo("") != 0)
+                        {
+                            Contender _contender = new Contender();
+                            holder = line.Split(';');
+                            _contender.Name = holder[0];
+                            _contender.Id = Convert.ToInt32(holder[1]);
+                            _contender.Nationality = holder[2];
+                            for (int i = 3; i < holder.Length; i = i + 2)
+                            {
+                                Jump _jump = new Jump();
+                                _jump.Jumpstyle = holder[i];
+                                _jump.jumpDifficulty = double.Parse(holder[i + 1], CultureInfo.InvariantCulture);
+                                _contender.add_jump(_jump);
+                            }
+                            _contest.add_contender(_contender);
+                        }
+                        _contest.printContest();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Tävling finns inte", "Starta tävling", MessageBoxButtons.OK);
+                }
+                #endregion
+                HandleTcpClient.TcpServer server = HandleTcpClient.TcpServer.Instance(); // mio Startar servern och börjar lyssna efter domarklienter
+
+                StartContest start = new StartContest();
+                while (contestFinished == 0)
+                {
+                  contestFinished = start.gogogo(server, _contest, infoStringforJudges, PointString, contestFinished);
+                }
             }
         }
         #endregion

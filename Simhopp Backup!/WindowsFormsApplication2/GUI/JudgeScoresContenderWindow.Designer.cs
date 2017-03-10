@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.labelinfodeltagare = new System.Windows.Forms.Label();
             this.labelshowpoint = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.judgepointstrackbar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -90,7 +91,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(96, 178);
+            this.label2.Location = new System.Drawing.Point(117, 233);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 25);
             this.label2.TabIndex = 25;
@@ -101,7 +102,7 @@
             this.labelinfodeltagare.AutoSize = true;
             this.labelinfodeltagare.BackColor = System.Drawing.Color.Transparent;
             this.labelinfodeltagare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelinfodeltagare.Location = new System.Drawing.Point(83, 255);
+            this.labelinfodeltagare.Location = new System.Drawing.Point(97, 311);
             this.labelinfodeltagare.Name = "labelinfodeltagare";
             this.labelinfodeltagare.Size = new System.Drawing.Size(145, 24);
             this.labelinfodeltagare.TabIndex = 26;
@@ -117,6 +118,17 @@
             this.labelshowpoint.TabIndex = 27;
             this.labelshowpoint.Text = "label3";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Elephant", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(68, 283);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(217, 18);
+            this.label3.TabIndex = 28;
+            this.label3.Text = "Namn,    Nationalitet,    Hopp";
+            // 
             // JudgeScoresContenderWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -124,6 +136,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.Swimiing_pools;
             this.ClientSize = new System.Drawing.Size(1045, 543);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.labelshowpoint);
             this.Controls.Add(this.labelinfodeltagare);
             this.Controls.Add(this.label2);
@@ -150,5 +163,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelinfodeltagare;
         private System.Windows.Forms.Label labelshowpoint;
+        private System.Windows.Forms.Label label3;
     }
 }

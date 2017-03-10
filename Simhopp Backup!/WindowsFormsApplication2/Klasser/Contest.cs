@@ -22,7 +22,6 @@ namespace WindowsFormsApplication2
         public string Date { get; set; } = "";
         public string GenderContest { get; set; } = ""; //La till en gender attribut så tävlingar kan delas in i kön-tävlingar / tomas
         public int Jumpheight { get; set; } = 0;
-        public string Winner { get; set; } = "";
         public bool ContestFinished = false;        //tävlingen är aktiv tills den ställs som true
         public bool AreUnderJudging = false; // När domarna har röstat klart -> ändra till true
 
@@ -64,6 +63,21 @@ namespace WindowsFormsApplication2
                 }
             }
             return winner;                          // returnerar vinnarens namn
+        }
+
+        public double find_winners_score()     //klarat test
+        {                               //går igenom deltagarlistan för att hitta deltagaren med högst totalpoäng
+            double HighestValue = 0;
+            
+            foreach (var x in ContenderList)
+            {
+                x.summeraPoints();
+                if (HighestValue < x.totalPoints)      //jämnför om den nya deltagarens totalPointes är bättre än den förras
+                {
+                    HighestValue = x.totalPoints;
+                }
+            }
+            return HighestValue;                          // returnerar vinnarens namn
         }
 
         public void EndContest()        //ej klarat test
