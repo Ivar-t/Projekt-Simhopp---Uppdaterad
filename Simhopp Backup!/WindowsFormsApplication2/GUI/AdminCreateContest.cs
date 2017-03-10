@@ -13,7 +13,7 @@ using System.Threading;
 namespace WindowsFormsApplication2
 {
     public partial class AdminCreateContest_window : Form
-    {
+    { //viktor was here
         public AdminCreateContest_window()
         {
             InitializeComponent();
