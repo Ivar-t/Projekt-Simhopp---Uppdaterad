@@ -76,18 +76,11 @@ namespace WindowsFormsApplication2
 
         private void buttonStartContest_Click(object sender, EventArgs e)   // hämtar all tävlingsinformation och lägger det i contest objekt till judgeclient
         {
-            Thread thread = new Thread(t =>
-            {
-            })
-            { IsBackground = true };
-            thread.Start();
-
             Contest _contest = new Contest();
             int underJuding;
             int contestFinished = 0;
             String infoStringforJudges = String.Empty, PointString= String.Empty;
-            //Läs in från fil till ett contest objekt
-            #region
+
             if (File.Exists(contestComboBox.Text + ".txt"))
             {
                 using (StreamReader sr = new StreamReader(contestComboBox.Text + ".txt"))
@@ -124,15 +117,14 @@ namespace WindowsFormsApplication2
             {
                 MessageBox.Show("Tävling finns inte", "Starta tävling", MessageBoxButtons.OK);
             }
-            #endregion 
             HandleTcpClient.TcpServer server = HandleTcpClient.TcpServer.Instance(); // mio Startar servern och börjar lyssna efter domarklienter
             int j = 0;
+
             StartContest start = new StartContest();
-            while (contestFinished == 0) //Kör igång själva tävlingen som går igenom varje deltagare och deras hopp. Samt läser in vad domarna ger för poäng
+            while (contestFinished == 0)
             {
                 start.gogogo(server, _contest, infoStringforJudges, PointString, contestFinished);
             }
-            _contest.find_winner();
         }
         #endregion
 

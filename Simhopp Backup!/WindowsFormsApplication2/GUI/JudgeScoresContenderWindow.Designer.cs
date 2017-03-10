@@ -43,7 +43,7 @@
             this.buttonCancel.Image = global::WindowsFormsApplication2.Properties.Resources.CancelIcon;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCancel.Location = new System.Drawing.Point(523, 619);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(256, 52);
             this.buttonCancel.TabIndex = 22;
@@ -56,7 +56,7 @@
             this.buttonSubmitScore.Image = global::WindowsFormsApplication2.Properties.Resources.SubmitJudgeScore;
             this.buttonSubmitScore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSubmitScore.Location = new System.Drawing.Point(631, 338);
-            this.buttonSubmitScore.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonSubmitScore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonSubmitScore.Name = "buttonSubmitScore";
             this.buttonSubmitScore.Size = new System.Drawing.Size(256, 52);
             this.buttonSubmitScore.TabIndex = 21;
@@ -66,9 +66,8 @@
             // 
             // judgepointstrackbar
             // 
-            this.judgepointstrackbar.BackColor = System.Drawing.Color.Aquamarine;
             this.judgepointstrackbar.Location = new System.Drawing.Point(529, 255);
-            this.judgepointstrackbar.Margin = new System.Windows.Forms.Padding(4);
+            this.judgepointstrackbar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.judgepointstrackbar.Name = "judgepointstrackbar";
             this.judgepointstrackbar.Size = new System.Drawing.Size(444, 56);
             this.judgepointstrackbar.TabIndex = 23;
@@ -87,10 +86,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(92, 131);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(100, 147);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(135, 29);
+            this.label2.Size = new System.Drawing.Size(95, 20);
             this.label2.TabIndex = 25;
             this.label2.Text = "Nu hoppar";
             // 
@@ -107,11 +106,11 @@
             // 
             this.labelshowpoint.AutoSize = true;
             this.labelshowpoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelshowpoint.Location = new System.Drawing.Point(721, 187);
+            this.labelshowpoint.Location = new System.Drawing.Point(695, 171);
             this.labelshowpoint.Name = "labelshowpoint";
-            this.labelshowpoint.Size = new System.Drawing.Size(32, 32);
+            this.labelshowpoint.Size = new System.Drawing.Size(99, 32);
             this.labelshowpoint.TabIndex = 27;
-            this.labelshowpoint.Text = "0";
+            this.labelshowpoint.Text = "label3";
             // 
             // JudgeScoresContenderWindow
             // 
@@ -128,10 +127,11 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSubmitScore);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "JudgeScoresContenderWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JudgeScoresContenderWindow";
+            
             ((System.ComponentModel.ISupportInitialize)(this.judgepointstrackbar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -15,7 +15,6 @@ namespace WindowsFormsApplication2
     public partial class JudgeScoresContenderWindow : Form
     {
         Thread th;
-        String str = "";
         double show = 0;
         private JudgeMenu judgeMenuObj = null; //mio
         public ClassClient clientobj = new ClassClient();
@@ -27,12 +26,10 @@ namespace WindowsFormsApplication2
             judgepointstrackbar.TickStyle = TickStyle.BottomRight;
             judgepointstrackbar.TickFrequency = 1;
             clientobj.connectToServerfunc();
-            lock (clientobj)
-            {
-                judgeMenuObj = instanceOfJudgeConnectionCreatedInJudgeMenu;
-                str = clientobj.streamReader.ReadLine();
-                labelinfodeltagare.Text = str;
-            }
+            judgeMenuObj = instanceOfJudgeConnectionCreatedInJudgeMenu;
+            String str = "";
+            str = clientobj.streamReader.ReadLine();
+            labelinfodeltagare.Text = str;
         }
 
         #region buttonClicks
@@ -44,21 +41,18 @@ namespace WindowsFormsApplication2
 
         private void buttonSubmitScore_Click(object sender, EventArgs e)
         {
-            lock(clientobj)
-             {
-                clientobj.streamWriter.WriteLine(show);
-                clientobj.streamWriter.Flush();
-                labelinfodeltagare.Text = clientobj.streamReader.ReadLine();
-                String checkquitstr = labelinfodeltagare.Text;
-
-                if (checkquitstr.StartsWith("quit"))
-                {
-                    clientobj.networkStream.Close();
-                    clientobj.socketForServer.Close();
-                    this.Close();
-                }
+            clientobj.streamWriter.WriteLine(show);
+            clientobj.streamWriter.Flush();
+            labelinfodeltagare.Text = clientobj.streamReader.ReadLine();
+            String checkquit = labelinfodeltagare.Text;
+            if (checkquit.StartsWith("quit"))
+            {
+                this.Close();
             }
+
+
         }
+
         #endregion
         private void judgepointstrackbar_Scroll(object sender, EventArgs e)
         {
