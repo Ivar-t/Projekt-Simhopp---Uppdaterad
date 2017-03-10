@@ -120,5 +120,10 @@ namespace WindowsFormsApplication2
             }
             contestNameComboBox.Text = "";
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

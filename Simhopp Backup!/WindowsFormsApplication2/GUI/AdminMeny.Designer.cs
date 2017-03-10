@@ -43,52 +43,62 @@
             // 
             // buttonAdminLoggaUt
             // 
-            this.buttonAdminLoggaUt.Location = new System.Drawing.Point(622, 387);
+            this.buttonAdminLoggaUt.BackColor = System.Drawing.Color.White;
+            this.buttonAdminLoggaUt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdminLoggaUt.Location = new System.Drawing.Point(310, 294);
             this.buttonAdminLoggaUt.Name = "buttonAdminLoggaUt";
-            this.buttonAdminLoggaUt.Size = new System.Drawing.Size(150, 40);
+            this.buttonAdminLoggaUt.Size = new System.Drawing.Size(145, 40);
             this.buttonAdminLoggaUt.TabIndex = 1;
             this.buttonAdminLoggaUt.Text = "Logga ut";
-            this.buttonAdminLoggaUt.UseVisualStyleBackColor = true;
+            this.buttonAdminLoggaUt.UseVisualStyleBackColor = false;
             this.buttonAdminLoggaUt.Click += new System.EventHandler(this.buttonAdminLoggaUt_Click);
             // 
             // buttonEditContest
             // 
-            this.buttonEditContest.Location = new System.Drawing.Point(471, 387);
+            this.buttonEditContest.BackColor = System.Drawing.Color.White;
+            this.buttonEditContest.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEditContest.Location = new System.Drawing.Point(310, 248);
             this.buttonEditContest.Name = "buttonEditContest";
             this.buttonEditContest.Size = new System.Drawing.Size(145, 40);
             this.buttonEditContest.TabIndex = 2;
             this.buttonEditContest.Text = "Redigera tävling";
-            this.buttonEditContest.UseVisualStyleBackColor = true;
+            this.buttonEditContest.UseVisualStyleBackColor = false;
             this.buttonEditContest.Click += new System.EventHandler(this.buttonEditContest_Click);
             // 
             // buttonSearchContest
             // 
-            this.buttonSearchContest.Location = new System.Drawing.Point(314, 387);
+            this.buttonSearchContest.BackColor = System.Drawing.Color.White;
+            this.buttonSearchContest.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSearchContest.Location = new System.Drawing.Point(310, 202);
             this.buttonSearchContest.Name = "buttonSearchContest";
             this.buttonSearchContest.Size = new System.Drawing.Size(145, 40);
             this.buttonSearchContest.TabIndex = 3;
             this.buttonSearchContest.Text = "Sök";
-            this.buttonSearchContest.UseVisualStyleBackColor = true;
+            this.buttonSearchContest.UseVisualStyleBackColor = false;
             this.buttonSearchContest.Click += new System.EventHandler(this.buttonSearchContest_Click);
             // 
             // buttonEraseContestW
             // 
-            this.buttonEraseContestW.Location = new System.Drawing.Point(163, 387);
+            this.buttonEraseContestW.BackColor = System.Drawing.Color.White;
+            this.buttonEraseContestW.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonEraseContestW.Location = new System.Drawing.Point(310, 156);
             this.buttonEraseContestW.Name = "buttonEraseContestW";
             this.buttonEraseContestW.Size = new System.Drawing.Size(145, 40);
             this.buttonEraseContestW.TabIndex = 4;
             this.buttonEraseContestW.Text = "Ta bort tävling";
-            this.buttonEraseContestW.UseVisualStyleBackColor = true;
+            this.buttonEraseContestW.UseVisualStyleBackColor = false;
             this.buttonEraseContestW.Click += new System.EventHandler(this.buttonEraseContestW_Click);
             // 
             // buttonCreateContest
             // 
-            this.buttonCreateContest.Location = new System.Drawing.Point(12, 387);
+            this.buttonCreateContest.BackColor = System.Drawing.Color.White;
+            this.buttonCreateContest.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCreateContest.Location = new System.Drawing.Point(310, 110);
             this.buttonCreateContest.Name = "buttonCreateContest";
             this.buttonCreateContest.Size = new System.Drawing.Size(145, 40);
             this.buttonCreateContest.TabIndex = 5;
             this.buttonCreateContest.Text = "Skapa ny tävling";
-            this.buttonCreateContest.UseVisualStyleBackColor = true;
+            this.buttonCreateContest.UseVisualStyleBackColor = false;
             this.buttonCreateContest.Click += new System.EventHandler(this.buttonCreateContest_Click);
             // 
             // admin_picture_box
@@ -115,7 +125,7 @@
             // 
             // buttonStartContest
             // 
-            this.buttonStartContest.Location = new System.Drawing.Point(314, 23);
+            this.buttonStartContest.Location = new System.Drawing.Point(310, 23);
             this.buttonStartContest.Name = "buttonStartContest";
             this.buttonStartContest.Size = new System.Drawing.Size(145, 40);
             this.buttonStartContest.TabIndex = 10;

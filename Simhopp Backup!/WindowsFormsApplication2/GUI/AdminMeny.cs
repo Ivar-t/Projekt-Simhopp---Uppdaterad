@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
 using System.IO;
-using System.Globalization;
+using ClassLibrary1;
+using WindowsFormsApplication2.Klasser;
 
 namespace WindowsFormsApplication2
 {
@@ -20,8 +21,6 @@ namespace WindowsFormsApplication2
         public AdminMeny_window()
         {
             InitializeComponent();
-            if (File.Exists("ListOfContest.txt"))
-            {
                 using (StreamReader sr = new StreamReader("ListOfContest.txt"))
                 {
                     string line;
@@ -30,13 +29,11 @@ namespace WindowsFormsApplication2
                         contestNameFiles.Add(line);
                     }
                     int q = 0;
-                    contestNameFiles.Sort();
                     foreach (var x in contestNameFiles)
                     {
                         contestComboBox.Items.Insert(q, x);
                         q++;
                     }
-                }
             }
         }
 
@@ -77,16 +74,12 @@ namespace WindowsFormsApplication2
             asw.ShowDialog();
         }
 
-        public void conversion(string x)
-        {
-
-        }
-
         private void buttonStartContest_Click(object sender, EventArgs e)   // hämtar all tävlingsinformation och lägger det i contest objekt till judgeclient
         {
             Contest _contest = new Contest();
             int underJuding;
-            int contestFinished;
+            int contestFinished = 0;
+            String infoStringforJudges = String.Empty, PointString= String.Empty;
 
             if (File.Exists(contestComboBox.Text + ".txt"))
             {
@@ -109,28 +102,12 @@ namespace WindowsFormsApplication2
                         _contender.Name = holder[0];
                         _contender.Id = Convert.ToInt32(holder[1]);
                         _contender.Nationality = holder[2];
-                        for (int i = 3; i < 15; i=i+2)
+                        for (int i = 3; i < 10; i++)
                         {
                             Jump _jump = new Jump();
                             _jump.Jumpstyle = holder[i];
-                            _jump.jumpDifficulty = Double.Parse(holder[i+1], CultureInfo.InvariantCulture);
-                            
-                            try
-                            {
-                                double result = Convert.ToDouble(holder[i + 1]);
-                                Console.WriteLine("Converted '{0}' to {1}.", holder[i + 1], result);
-                            }
-                            catch (FormatException)
-                            {
-                                Console.WriteLine("Unable to convert '{0}' to a Double.", holder[i+1]);
-                            }
-                            catch (OverflowException)
-                            {
-                                Console.WriteLine("'{0}' is outside the range of a Double.", holder[i + 1]);
-                            }
                             _contender.add_jump(_jump);
                         }
-                        
                         _contest.add_contender(_contender);
                     }
                     _contest.printContest();
@@ -139,6 +116,14 @@ namespace WindowsFormsApplication2
             else
             {
                 MessageBox.Show("Tävling finns inte", "Starta tävling", MessageBoxButtons.OK);
+            }
+            HandleTcpClient.TcpServer server = HandleTcpClient.TcpServer.Instance(); // mio Startar servern och börjar lyssna efter domarklienter
+            int j = 0;
+
+            StartContest start = new StartContest();
+            while (contestFinished == 0)
+            {
+                start.gogogo(server, _contest, infoStringforJudges, PointString, contestFinished);
             }
         }
         #endregion

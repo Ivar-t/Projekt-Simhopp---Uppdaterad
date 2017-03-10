@@ -70,14 +70,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TCPclientJudge\TCPclientJudge.csproj">
-      <Project>{d329da6f-972c-4dbd-ad0f-4776c3782a4f}</Project>
-      <Name>TCPclientJudge</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\tcpServerAdmin\tcpServerAdmin.csproj">
-      <Project>{a189e801-06d1-4414-9109-0bfd3613418e}</Project>
-      <Name>tcpServerAdmin</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WindowsFormsApplication2\WindowsFormsApplication2.csproj">
       <Project>{c45b8eb1-a0bd-4062-8aed-114eadaf0eb4}</Project>
       <Name>WindowsFormsApplication2</Name>
