@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button_LogInJudge = new System.Windows.Forms.Button();
-            this.buttonLogInAdmin = new System.Windows.Forms.Button();
             this.buttonHelp = new System.Windows.Forms.Button();
             this.buttonAvsluta = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -44,6 +42,9 @@
             this.UsernameTextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.checkBoxJudge = new System.Windows.Forms.CheckBox();
+            this.checkBoxAdm = new System.Windows.Forms.CheckBox();
+            this.buttonLogIn = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.divin_logo)).BeginInit();
@@ -51,29 +52,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.admin_picture_box)).BeginInit();
             this.SuspendLayout();
             // 
-            // button_LogInJudge
-            // 
-            this.button_LogInJudge.Location = new System.Drawing.Point(12, 299);
-            this.button_LogInJudge.Name = "button_LogInJudge";
-            this.button_LogInJudge.Size = new System.Drawing.Size(170, 24);
-            this.button_LogInJudge.TabIndex = 1;
-            this.button_LogInJudge.Text = "Domare";
-            this.button_LogInJudge.UseVisualStyleBackColor = true;
-            this.button_LogInJudge.Click += new System.EventHandler(this.buttonLogInJudge_Click);
-            // 
-            // buttonLogInAdmin
-            // 
-            this.buttonLogInAdmin.Location = new System.Drawing.Point(602, 299);
-            this.buttonLogInAdmin.Name = "buttonLogInAdmin";
-            this.buttonLogInAdmin.Size = new System.Drawing.Size(170, 24);
-            this.buttonLogInAdmin.TabIndex = 2;
-            this.buttonLogInAdmin.Text = "Administratör";
-            this.buttonLogInAdmin.UseVisualStyleBackColor = true;
-            this.buttonLogInAdmin.Click += new System.EventHandler(this.buttonLogInAdmin_Click);
-            // 
             // buttonHelp
             // 
-            this.buttonHelp.Location = new System.Drawing.Point(242, 376);
+            this.buttonHelp.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonHelp.Location = new System.Drawing.Point(12, 362);
             this.buttonHelp.Name = "buttonHelp";
             this.buttonHelp.Size = new System.Drawing.Size(139, 53);
             this.buttonHelp.TabIndex = 3;
@@ -83,7 +65,8 @@
             // 
             // buttonAvsluta
             // 
-            this.buttonAvsluta.Location = new System.Drawing.Point(417, 376);
+            this.buttonAvsluta.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAvsluta.Location = new System.Drawing.Point(633, 364);
             this.buttonAvsluta.Name = "buttonAvsluta";
             this.buttonAvsluta.Size = new System.Drawing.Size(139, 51);
             this.buttonAvsluta.TabIndex = 5;
@@ -147,36 +130,33 @@
             this.divin_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.divin_logo.TabIndex = 11;
             this.divin_logo.TabStop = false;
-            this.divin_logo.Click += new System.EventHandler(this.divin_logo_Click);
             // 
             // judge_picture_box
             // 
             this.judge_picture_box.BackColor = System.Drawing.Color.Transparent;
             this.judge_picture_box.Image = global::WindowsFormsApplication2.Properties.Resources.Judge_icon;
-            this.judge_picture_box.Location = new System.Drawing.Point(12, 123);
+            this.judge_picture_box.Location = new System.Drawing.Point(12, 76);
             this.judge_picture_box.Name = "judge_picture_box";
             this.judge_picture_box.Size = new System.Drawing.Size(170, 170);
             this.judge_picture_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.judge_picture_box.TabIndex = 8;
             this.judge_picture_box.TabStop = false;
-            this.judge_picture_box.Click += new System.EventHandler(this.Judg_picture_box_Click);
             // 
             // admin_picture_box
             // 
             this.admin_picture_box.BackColor = System.Drawing.Color.Transparent;
             this.admin_picture_box.Image = global::WindowsFormsApplication2.Properties.Resources.admin_icon;
-            this.admin_picture_box.Location = new System.Drawing.Point(602, 123);
+            this.admin_picture_box.Location = new System.Drawing.Point(602, 76);
             this.admin_picture_box.Name = "admin_picture_box";
             this.admin_picture_box.Size = new System.Drawing.Size(170, 170);
             this.admin_picture_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.admin_picture_box.TabIndex = 7;
             this.admin_picture_box.TabStop = false;
-            this.admin_picture_box.Click += new System.EventHandler(this.admin_picture_box_Click);
             // 
             // PasswordTextBox
             // 
             this.PasswordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PasswordTextBox.Location = new System.Drawing.Point(436, 319);
+            this.PasswordTextBox.Location = new System.Drawing.Point(430, 306);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(100, 29);
             this.PasswordTextBox.TabIndex = 13;
@@ -185,7 +165,7 @@
             // UsernameTextBox
             // 
             this.UsernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UsernameTextBox.Location = new System.Drawing.Point(436, 281);
+            this.UsernameTextBox.Location = new System.Drawing.Point(430, 268);
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.Size = new System.Drawing.Size(100, 29);
             this.UsernameTextBox.TabIndex = 14;
@@ -195,7 +175,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(254, 281);
+            this.label1.Location = new System.Drawing.Point(278, 268);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(144, 24);
             this.label1.TabIndex = 15;
@@ -204,12 +184,50 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(254, 319);
+            this.label2.Location = new System.Drawing.Point(278, 306);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 24);
             this.label2.TabIndex = 16;
             this.label2.Text = "Lösenord:";
+            // 
+            // checkBoxJudge
+            // 
+            this.checkBoxJudge.AutoSize = true;
+            this.checkBoxJudge.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxJudge.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxJudge.Location = new System.Drawing.Point(430, 362);
+            this.checkBoxJudge.Name = "checkBoxJudge";
+            this.checkBoxJudge.Size = new System.Drawing.Size(85, 24);
+            this.checkBoxJudge.TabIndex = 17;
+            this.checkBoxJudge.Text = "Domare";
+            this.checkBoxJudge.UseVisualStyleBackColor = false;
+            this.checkBoxJudge.MouseClick += new System.Windows.Forms.MouseEventHandler(this.checkBoxJudge_MouseClick);
+            // 
+            // checkBoxAdm
+            // 
+            this.checkBoxAdm.AutoSize = true;
+            this.checkBoxAdm.BackColor = System.Drawing.Color.Transparent;
+            this.checkBoxAdm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxAdm.Location = new System.Drawing.Point(430, 390);
+            this.checkBoxAdm.Name = "checkBoxAdm";
+            this.checkBoxAdm.Size = new System.Drawing.Size(122, 24);
+            this.checkBoxAdm.TabIndex = 18;
+            this.checkBoxAdm.Text = "Administratör";
+            this.checkBoxAdm.UseVisualStyleBackColor = false;
+            this.checkBoxAdm.MouseClick += new System.Windows.Forms.MouseEventHandler(this.checkBoxAdm_MouseClick);
+            // 
+            // buttonLogIn
+            // 
+            this.buttonLogIn.Font = new System.Drawing.Font("Modern No. 20", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogIn.Location = new System.Drawing.Point(282, 363);
+            this.buttonLogIn.Name = "buttonLogIn";
+            this.buttonLogIn.Size = new System.Drawing.Size(139, 53);
+            this.buttonLogIn.TabIndex = 19;
+            this.buttonLogIn.Text = "Logga in";
+            this.buttonLogIn.UseVisualStyleBackColor = true;
+            this.buttonLogIn.Click += new System.EventHandler(this.buttonLogIn_Click_1);
             // 
             // Main_Form1
             // 
@@ -218,6 +236,9 @@
             this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.Swimiing_pools1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(784, 441);
+            this.Controls.Add(this.buttonLogIn);
+            this.Controls.Add(this.checkBoxAdm);
+            this.Controls.Add(this.checkBoxJudge);
             this.Controls.Add(this.PasswordTextBox);
             this.Controls.Add(this.UsernameTextBox);
             this.Controls.Add(this.label2);
@@ -227,8 +248,6 @@
             this.Controls.Add(this.admin_picture_box);
             this.Controls.Add(this.buttonAvsluta);
             this.Controls.Add(this.buttonHelp);
-            this.Controls.Add(this.buttonLogInAdmin);
-            this.Controls.Add(this.button_LogInJudge);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.divin_logo);
             this.DoubleBuffered = true;
@@ -250,8 +269,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button button_LogInJudge;
-        private System.Windows.Forms.Button buttonLogInAdmin;
         private System.Windows.Forms.Button buttonHelp;
         private System.Windows.Forms.Button buttonAvsluta;
         private System.Windows.Forms.MenuStrip menuStrip1;
@@ -266,6 +283,9 @@
         private System.Windows.Forms.TextBox UsernameTextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkBoxJudge;
+        private System.Windows.Forms.CheckBox checkBoxAdm;
+        private System.Windows.Forms.Button buttonLogIn;
     }
 }
 

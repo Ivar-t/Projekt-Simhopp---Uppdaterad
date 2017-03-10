@@ -93,22 +93,24 @@ namespace WindowsFormsApplication2
             Application.Run(new JudgeMenu());
         }
 
+        private void buttonLogIn_Click_1(object sender, EventArgs e)
+        {
+            if (checkBoxAdm.Checked == true)
+            {
+                tryToLoginAdmin(1);
+            }
+            else if (checkBoxJudge.Checked == true)
+            {
+                tryToLoginAdmin(2);
+            }
+            else
+            {
+                MessageBox.Show("Kryssa för rutan du vill logga in som!", "Logga in", MessageBoxButtons.OK);
+            }
+        }
+
         #endregion
 
-        private void asdasdToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Judg_picture_box_Click(object sender, EventArgs e)
-        {
-            tryToLoginAdmin(2);
-        }
-
-        private void admin_picture_box_Click(object sender, EventArgs e)
-        {
-            tryToLoginAdmin(1);
-        }
 
         private void hjälpToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -121,9 +123,20 @@ namespace WindowsFormsApplication2
             Application.Exit();
         }
 
-        private void divin_logo_Click(object sender, EventArgs e)
+        private void checkBoxAdm_MouseClick(object sender, MouseEventArgs e)
         {
+            if (checkBoxAdm.Checked == true)
+            {
+                checkBoxJudge.Checked = false;
+            }
+        }
 
+        private void checkBoxJudge_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (checkBoxJudge.Checked == true)
+            {
+                checkBoxAdm.Checked = false;
+            }
         }
     }
 }

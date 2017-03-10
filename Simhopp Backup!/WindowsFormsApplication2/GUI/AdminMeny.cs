@@ -19,6 +19,8 @@ namespace WindowsFormsApplication2
     {
         List<string> contestNameFiles = new List<string>();
         Thread th;      //Skapar tråd objekt så vi kan skapa nya fönster
+        int underJudging;
+        int contetstFinished;
         public AdminMeny_window()
         {
             InitializeComponent();
@@ -79,63 +81,91 @@ namespace WindowsFormsApplication2
         {
             Contest _contest = new Contest();
             int underJuding;
-            int contestFinished = 0;
-            String infoStringforJudges = String.Empty, PointString= String.Empty;
-            //region för att läsa in från fil till contestobjektet.
-            #region
+            int contestFinished;
+            String infoStringforJudges = String.Empty, PointString= String.Empty; 
             if (File.Exists(contestComboBox.Text + ".txt"))
             {
+                string firstLine;
                 using (StreamReader sr = new StreamReader(contestComboBox.Text + ".txt"))
                 {
-                    string line = "";
-                    line = sr.ReadLine();
-                    string[] holder = line.Split(';');
-                    _contest.Name = holder[0];
-                    _contest.Date = holder[1];
-                    _contest.GenderContest = holder[2];
-                    _contest.Jumpheight = Convert.ToInt32(holder[3]);
+                    firstLine = sr.ReadLine();
+                    string[] holder = firstLine.Split(';');
                     underJuding = Convert.ToInt32(holder[4]);
                     contestFinished = Convert.ToInt32(holder[5]);
-
-                    while ((line = sr.ReadLine()) != null && line.CompareTo("") != 0)
+                }
+                if (underJudging == 0 && contestFinished == 0)
+                {
+                    using (StreamReader sr = new StreamReader(contestComboBox.Text + ".txt"))
                     {
-                        Contender _contender = new Contender();
-                        holder = line.Split(';');
-                        _contender.Name = holder[0];
-                        _contender.Id = Convert.ToInt32(holder[1]);
-                        _contender.Nationality = holder[2];
-                        for (int i = 3; i < holder.Length; i=i+2)
+                        string line = "";
+                        line = sr.ReadLine();
+                        string[] holder = line.Split(';');
+                        _contest.Name = holder[0];
+                        _contest.Date = holder[1];
+                        _contest.GenderContest = holder[2];
+                        _contest.Jumpheight = Convert.ToInt32(holder[3]);
+                        underJuding = Convert.ToInt32(holder[4]);
+                        contestFinished = Convert.ToInt32(holder[5]);
+
+                        while ((line = sr.ReadLine()) != null && line.CompareTo("") != 0)
                         {
-                            Jump _jump = new Jump();
-                            _jump.Jumpstyle = holder[i];
-                            _jump.jumpDifficulty = double.Parse(holder[i+1], CultureInfo.InvariantCulture);
-                            _contender.add_jump(_jump);
+                            Contender _contender = new Contender();
+                            holder = line.Split(';');
+                            _contender.Name = holder[0];
+                            _contender.Id = Convert.ToInt32(holder[1]);
+                            _contender.Nationality = holder[2];
+                            for (int i = 3; i < holder.Length; i = i + 2)
+                            {
+                                Jump _jump = new Jump();
+                                _jump.Jumpstyle = holder[i];
+                                _jump.jumpDifficulty = double.Parse(holder[i + 1], CultureInfo.InvariantCulture);
+                                _contender.add_jump(_jump);
+                            }
+                            _contest.add_contender(_contender);
                         }
-                        _contest.add_contender(_contender);
+                        _contest.printContest();
                     }
-                    _contest.printContest();
+                    string[] lines = File.ReadAllLines(contestComboBox.Text + ".txt");
+                    using (StreamWriter sw = new StreamWriter(contestComboBox.Text + ".txt"))
+                    {
+                        string[] holder = firstLine.Split(';');
+                        holder[5] = "1";
+                        for(int i = 0; i<lines.Length; i++)
+                        {
+                            if(i == 0)
+                            {
+                                sw.WriteLine(holder[0] + ";" + holder[1] + ";" + holder[2] + ";" + holder[3] + ";" + holder[4] + ";" + holder[5]);
+                            }
+                            else
+                            {
+                                sw.WriteLine(lines[i]);
+                            }
+                        }
+
+                    }
+
+                    HandleTcpClient.TcpServer server = HandleTcpClient.TcpServer.Instance(); // mio Startar servern och börjar lyssna efter domarklienter
+
+                    StartContest start = new StartContest();
+                    while (contestFinished == 0)
+                    {
+                        start.gogogo(server, _contest, infoStringforJudges, PointString, contestFinished);
+                    }
+                }
+                else if(underJudging == 1)
+                {
+                    MessageBox.Show("Tävlingen pågår redan","Starta tävling", MessageBoxButtons.OK);
+                }
+                else if(contestFinished == 1)
+                {
+                    MessageBox.Show("Tävlingen är redan avslutad", "Starta tävling", MessageBoxButtons.OK);
                 }
             }
             else
             {
                 MessageBox.Show("Tävling finns inte", "Starta tävling", MessageBoxButtons.OK);
             }
-            #endregion
-            HandleTcpClient.TcpServer server = HandleTcpClient.TcpServer.Instance(); // mio Startar servern och börjar lyssna efter domarklienter
-
-            StartContest start = new StartContest();
-            while (contestFinished == 0)
-            {
-                start.gogogo(server, _contest, infoStringforJudges, PointString, contestFinished);
-            }
         }
         #endregion
-
-        private void Backgroundpicture_adminmeny_Click(object sender, EventArgs e)
-        {
-           
-        }
-
-
     }
 }
