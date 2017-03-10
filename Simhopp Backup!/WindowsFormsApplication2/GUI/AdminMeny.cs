@@ -22,20 +22,7 @@ namespace WindowsFormsApplication2
         public AdminMeny_window()
         {
             InitializeComponent();
-                using (StreamReader sr = new StreamReader("ListOfContest.txt"))
-                {
-                    string line;
-                    while ((line = sr.ReadLine()) != null)
-                    {
-                        contestNameFiles.Add(line);
-                    }
-                    int q = 0;
-                    foreach (var x in contestNameFiles)
-                    {
-                        contestComboBox.Items.Insert(q, x);
-                        q++;
-                    }
-            }
+                
         }
 
         #region buttonClicks
@@ -175,6 +162,24 @@ namespace WindowsFormsApplication2
            
         }
 
-
+        private void contestComboBox_Click(object sender, EventArgs e)
+        {
+            using (StreamReader sr = new StreamReader("ListOfContest.txt"))
+            {
+                string line;
+                contestNameFiles.Clear();
+                contestComboBox.Items.Clear();
+                while ((line = sr.ReadLine()) != null)
+                {
+                    contestNameFiles.Add(line);
+                }
+                int q = 0;
+                foreach (var x in contestNameFiles)
+                {
+                    contestComboBox.Items.Insert(q, x);
+                    q++;
+                }
+            }
+        }
     }
 }
