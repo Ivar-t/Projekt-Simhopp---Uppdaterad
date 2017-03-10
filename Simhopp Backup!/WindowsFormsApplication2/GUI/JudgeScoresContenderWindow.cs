@@ -16,6 +16,7 @@ namespace WindowsFormsApplication2
     {
         Thread th;
         double show = 0;
+        String str = "";
         private JudgeMenu judgeMenuObj = null; //mio
         public ClassClient clientobj = new ClassClient();
         public JudgeScoresContenderWindow(JudgeMenu instanceOfJudgeConnectionCreatedInJudgeMenu)
@@ -27,9 +28,12 @@ namespace WindowsFormsApplication2
             judgepointstrackbar.TickFrequency = 1;
             clientobj.connectToServerfunc();
             judgeMenuObj = instanceOfJudgeConnectionCreatedInJudgeMenu;
-            String str = "";
-            str = clientobj.streamReader.ReadLine();
-            labelinfodeltagare.Text = str;
+            lock (clientobj)
+            {
+                str = clientobj.streamReader.ReadLine();
+                labelinfodeltagare.Text = str;
+            }
+            
         }
 
         #region buttonClicks
@@ -41,13 +45,16 @@ namespace WindowsFormsApplication2
 
         private void buttonSubmitScore_Click(object sender, EventArgs e)
         {
-            clientobj.streamWriter.WriteLine(show);
-            clientobj.streamWriter.Flush();
-            labelinfodeltagare.Text = clientobj.streamReader.ReadLine();
-            String checkquit = labelinfodeltagare.Text;
-            if (checkquit.StartsWith("quit"))
+            lock (clientobj)
             {
-                this.Close();
+                clientobj.streamWriter.WriteLine(show);
+                clientobj.streamWriter.Flush();
+                labelinfodeltagare.Text = clientobj.streamReader.ReadLine();
+                String checkquit = labelinfodeltagare.Text;
+                if (checkquit.StartsWith("quit"))
+                {
+                    this.Close();
+                }
             }
 
 

@@ -33,31 +33,5 @@ namespace ClassLibrary1
                 return;
             }
         }
-        public void comp()
-        {
-            networkStream = socketForServer.GetStream();
-            streamReader = new StreamReader(networkStream);
-            streamWriter = new StreamWriter(networkStream);
-
-            try
-            {
-                String str = " ";
-                while (true)
-                {
-                }
-                if (str.StartsWith("Exit"))
-                {
-                    streamWriter.WriteLine(str);
-                    streamWriter.Flush();
-                }
-            }
-            catch
-            {
-
-                Console.WriteLine("Exception reading from server");
-            }
-            networkStream.Close();
-            socketForServer.Close();
-        }
     }
 }

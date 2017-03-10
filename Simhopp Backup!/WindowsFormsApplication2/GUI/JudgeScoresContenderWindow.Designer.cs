@@ -43,7 +43,7 @@
             this.buttonCancel.Image = global::WindowsFormsApplication2.Properties.Resources.CancelIcon;
             this.buttonCancel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonCancel.Location = new System.Drawing.Point(523, 619);
-            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCancel.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(256, 52);
             this.buttonCancel.TabIndex = 22;
@@ -56,7 +56,7 @@
             this.buttonSubmitScore.Image = global::WindowsFormsApplication2.Properties.Resources.SubmitJudgeScore;
             this.buttonSubmitScore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.buttonSubmitScore.Location = new System.Drawing.Point(631, 338);
-            this.buttonSubmitScore.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSubmitScore.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSubmitScore.Name = "buttonSubmitScore";
             this.buttonSubmitScore.Size = new System.Drawing.Size(256, 52);
             this.buttonSubmitScore.TabIndex = 21;
@@ -66,8 +66,9 @@
             // 
             // judgepointstrackbar
             // 
+            this.judgepointstrackbar.BackColor = System.Drawing.Color.DarkBlue;
             this.judgepointstrackbar.Location = new System.Drawing.Point(529, 255);
-            this.judgepointstrackbar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.judgepointstrackbar.Margin = new System.Windows.Forms.Padding(4);
             this.judgepointstrackbar.Name = "judgepointstrackbar";
             this.judgepointstrackbar.Size = new System.Drawing.Size(444, 56);
             this.judgepointstrackbar.TabIndex = 23;
@@ -76,8 +77,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(479, 110);
+            this.label1.Location = new System.Drawing.Point(421, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(531, 24);
             this.label1.TabIndex = 24;
@@ -86,29 +88,32 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(100, 147);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(96, 178);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 20);
+            this.label2.Size = new System.Drawing.Size(112, 25);
             this.label2.TabIndex = 25;
             this.label2.Text = "Nu hoppar";
             // 
             // labelinfodeltagare
             // 
             this.labelinfodeltagare.AutoSize = true;
-            this.labelinfodeltagare.Location = new System.Drawing.Point(104, 171);
+            this.labelinfodeltagare.BackColor = System.Drawing.Color.Transparent;
+            this.labelinfodeltagare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelinfodeltagare.Location = new System.Drawing.Point(83, 255);
             this.labelinfodeltagare.Name = "labelinfodeltagare";
-            this.labelinfodeltagare.Size = new System.Drawing.Size(110, 17);
+            this.labelinfodeltagare.Size = new System.Drawing.Size(145, 24);
             this.labelinfodeltagare.TabIndex = 26;
             this.labelinfodeltagare.Text = "infoomdeltagare";
             // 
             // labelshowpoint
             // 
             this.labelshowpoint.AutoSize = true;
-            this.labelshowpoint.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelshowpoint.Font = new System.Drawing.Font("Rockwell Extra Bold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelshowpoint.Location = new System.Drawing.Point(695, 171);
             this.labelshowpoint.Name = "labelshowpoint";
-            this.labelshowpoint.Size = new System.Drawing.Size(99, 32);
+            this.labelshowpoint.Size = new System.Drawing.Size(119, 32);
             this.labelshowpoint.TabIndex = 27;
             this.labelshowpoint.Text = "label3";
             // 
@@ -127,11 +132,10 @@
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonSubmitScore);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "JudgeScoresContenderWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "JudgeScoresContenderWindow";
-            
             ((System.ComponentModel.ISupportInitialize)(this.judgepointstrackbar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

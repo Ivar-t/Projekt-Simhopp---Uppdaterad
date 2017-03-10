@@ -81,7 +81,8 @@ namespace WindowsFormsApplication2
             int underJuding;
             int contestFinished = 0;
             String infoStringforJudges = String.Empty, PointString= String.Empty;
-
+            //region för att läsa in från fil till contestobjektet.
+            #region
             if (File.Exists(contestComboBox.Text + ".txt"))
             {
                 using (StreamReader sr = new StreamReader(contestComboBox.Text + ".txt"))
@@ -119,8 +120,8 @@ namespace WindowsFormsApplication2
             {
                 MessageBox.Show("Tävling finns inte", "Starta tävling", MessageBoxButtons.OK);
             }
+            #endregion
             HandleTcpClient.TcpServer server = HandleTcpClient.TcpServer.Instance(); // mio Startar servern och börjar lyssna efter domarklienter
-            int j = 0;
 
             StartContest start = new StartContest();
             while (contestFinished == 0)
