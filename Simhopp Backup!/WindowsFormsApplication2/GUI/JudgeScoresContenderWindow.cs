@@ -23,18 +23,17 @@ namespace WindowsFormsApplication2
         public JudgeScoresContenderWindow(JudgeMenu instanceOfJudgeConnectionCreatedInJudgeMenu)
         {
             InitializeComponent();
+            clientobj.connectToServerfunc();
             judgepointstrackbar.Minimum = 0;
             judgepointstrackbar.Maximum = 20;
             judgepointstrackbar.TickStyle = TickStyle.BottomRight;
             judgepointstrackbar.TickFrequency = 1;
-            clientobj.connectToServerfunc();
+            labelshowpoint.Text = "0";
             judgeMenuObj = instanceOfJudgeConnectionCreatedInJudgeMenu;
-            lock (clientobj)
-            {
-                str = clientobj.streamReader.ReadLine();
-                labelinfodeltagare.Text = str;
-            }
+            str = clientobj.streamReader.ReadLine();
+            labelinfodeltagare.Text = str;
             
+          
         }
 
         #region buttonClicks
@@ -46,17 +45,33 @@ namespace WindowsFormsApplication2
 
         private void buttonSubmitScore_Click(object sender, EventArgs e)
         {
-            lock (clientobj)
+            try
             {
                 clientobj.streamWriter.WriteLine(show);
                 clientobj.streamWriter.Flush();
                 labelinfodeltagare.Text = clientobj.streamReader.ReadLine();
-                String checkquit = labelinfodeltagare.Text;
-                if (checkquit.StartsWith("quit"))
+                str = labelinfodeltagare.Text;
+                if (str.StartsWith("Vinn"))
                 {
+                    labelinfodeltagare.Font = new Font("Latin", 22);
+                    labelinfodeltagare.ForeColor = System.Drawing.Color.Green;
+                    label2.Visible = false;
+                    label3.Visible = false;
+                    buttonSubmitScore.Text = "Avsluta";
+                }
+                else if (str.StartsWith("quit"))
+                {
+                    clientobj.networkStream.Close();
+                    clientobj.socketForServer.Close();
                     this.Close();
                 }
             }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+            }
+            
+           
 
 
         }

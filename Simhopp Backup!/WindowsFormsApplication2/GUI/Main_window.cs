@@ -93,25 +93,12 @@ namespace WindowsFormsApplication2
             Application.Run(new JudgeMenu());
         }
 
-        private void buttonLogIn_Click_1(object sender, EventArgs e)
-        {
-            if (checkBoxAdm.Checked == true)
-            {
-                tryToLoginAdmin(1);
-            }
-            else if (checkBoxJudge.Checked == true)
-            {
-                tryToLoginAdmin(2);
-            }
-            else
-            {
-                MessageBox.Show("Kryssa för rutan du vill logga in som!", "Logga in", MessageBoxButtons.OK);
-            }
-        }
-
         #endregion
 
+        private void asdasdToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
+        }
         private void hjälpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HelpWindow_form1 openHelpWindow = new HelpWindow_form1();
@@ -123,19 +110,40 @@ namespace WindowsFormsApplication2
             Application.Exit();
         }
 
-        private void checkBoxAdm_MouseClick(object sender, MouseEventArgs e)
+        private void divin_logo_Click(object sender, EventArgs e)
         {
-            if (checkBoxAdm.Checked == true)
+
+        }
+
+        private void checkBoxdomare_Click(object sender, EventArgs e)
+        {
+            if (checkBoxdomare.Checked == true)
             {
-                checkBoxJudge.Checked = false;
+                checkBoxAdmin.Checked = false;
             }
         }
 
-        private void checkBoxJudge_MouseClick(object sender, MouseEventArgs e)
+        private void checkBoxAdmin_Click(object sender, EventArgs e)
         {
-            if (checkBoxJudge.Checked == true)
+            if (checkBoxAdmin.Checked == true)
             {
-                checkBoxAdm.Checked = false;
+                checkBoxdomare.Checked = false;
+            }
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            if (checkBoxAdmin.Checked == true)
+            {
+                tryToLoginAdmin(1);
+            }
+            else if (checkBoxdomare.Checked == true)
+            {
+                tryToLoginAdmin(2);
+            }
+            else
+            {
+                MessageBox.Show("Kryssa för rutan som du vill logga in som", "Logga in", MessageBoxButtons.OK);
             }
         }
     }
