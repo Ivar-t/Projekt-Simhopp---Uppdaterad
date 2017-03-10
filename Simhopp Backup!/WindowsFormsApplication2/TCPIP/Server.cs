@@ -99,7 +99,7 @@ namespace ClassLibrary1
                 }
                 finally
                 {
-                    Thread.Sleep(5000);
+                    Thread.Sleep(10000);
                     server.Stop();
                 }
             }

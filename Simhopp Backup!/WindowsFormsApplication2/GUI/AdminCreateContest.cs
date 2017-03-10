@@ -14,6 +14,7 @@ namespace WindowsFormsApplication2
 {
     public partial class AdminCreateContest_window : Form
     { //viktor was here
+        string genderVar = "man";
         public AdminCreateContest_window()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace WindowsFormsApplication2
         {
             //skapar en fil för tävling
             //skriver in tävlings info i början av filen
-            string line = contestNameTextBox.Text + ";" + dateTimePicker1.Text + ";" + genderTextBox.Text + ";" + jumpheightTextBox.Text + ";" + 0 + ";" + 0;
+            string line = contestNameTextBox.Text + ";" + dateTimePicker1.Text + ";" + genderVar + ";" + jumpheightTextBox.Text + ";" + 0 + ";" + 0;
             //                 Name                             Date                   GenderContest                Jumpheight      ContestFinished  AreUnderJudging
 
             string cName = contestNameTextBox.Text + ".txt";
@@ -72,7 +73,8 @@ namespace WindowsFormsApplication2
                 MessageBox.Show("Tävling Existerar redan", "Skapa tävling", MessageBoxButtons.OK);
                 contestNameTextBox.Text = "";
                 dateTimePicker1.Text = "";
-                genderTextBox.Text = "";
+                checkBoxman.Checked = false;
+                checkBoxwoman.Checked = false;
                 jumpheightTextBox.Text = "";
             }
         }
@@ -91,14 +93,23 @@ namespace WindowsFormsApplication2
             }
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+   
+        private void checkBoxwoman_Click(object sender, EventArgs e)
         {
-
+            if (checkBoxwoman.Checked == true)
+            {
+                checkBoxman.Checked = false;
+                genderVar = "Kvinna";
+            }
         }
 
-        private void dateTextBox_TextChanged(object sender, EventArgs e)
+        private void checkBoxman_Click(object sender, EventArgs e)
         {
-
+            if (checkBoxman.Checked == true)
+            {
+                checkBoxwoman.Checked = false;
+                genderVar = "Man";
+            }
         }
     }
 }

@@ -99,17 +99,6 @@ namespace WindowsFormsApplication2
         {
 
         }
-
-        private void Judg_picture_box_Click(object sender, EventArgs e)
-        {
-            tryToLoginAdmin(2);
-        }
-
-        private void admin_picture_box_Click(object sender, EventArgs e)
-        {
-            tryToLoginAdmin(1);
-        }
-
         private void hjälpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HelpWindow_form1 openHelpWindow = new HelpWindow_form1();
@@ -124,6 +113,38 @@ namespace WindowsFormsApplication2
         private void divin_logo_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkBoxdomare_Click(object sender, EventArgs e)
+        {
+            if (checkBoxdomare.Checked == true)
+            {
+                checkBoxAdmin.Checked = false;
+            }
+        }
+
+        private void checkBoxAdmin_Click(object sender, EventArgs e)
+        {
+            if (checkBoxAdmin.Checked == true)
+            {
+                checkBoxdomare.Checked = false;
+            }
+        }
+
+        private void buttonLogin_Click(object sender, EventArgs e)
+        {
+            if (checkBoxAdmin.Checked == true)
+            {
+                tryToLoginAdmin(1);
+            }
+            else if (checkBoxdomare.Checked == true)
+            {
+                tryToLoginAdmin(2);
+            }
+            else
+            {
+                MessageBox.Show("Kryssa för rutan som du vill logga in som", "Logga in", MessageBoxButtons.OK);
+            }
         }
     }
 }

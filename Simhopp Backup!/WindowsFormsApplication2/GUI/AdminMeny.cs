@@ -78,19 +78,25 @@ namespace WindowsFormsApplication2
         private void buttonStartContest_Click(object sender, EventArgs e)   // hämtar all tävlingsinformation och lägger det i contest objekt till judgeclient
         {
             Contest _contest = new Contest();
-            int underJuding;
+            int underJudging;
             int contestFinished = 0;
             String infoStringforJudges = String.Empty, PointString= String.Empty;
-            if (contestComboBox.SelectedIndex == -1)
+            if (File.Exists(contestComboBox.Text + ".txt"))
             {
-                MessageBox.Show("Select a contest");
-            }
-            else
-            {
-                //region för att läsa in från fil till contestobjektet.
-                #region
-                if (File.Exists(contestComboBox.Text + ".txt"))
+                string firstline;
+                using (StreamReader sr = new StreamReader(contestComboBox.Text + ".txt"))
                 {
+                    firstline = sr.ReadLine();
+                    string[] holder = firstline.Split(';');
+                    underJudging = Convert.ToInt32(holder[4]);
+                    contestFinished = Convert.ToInt32(holder[5]);
+
+                }
+                if (underJudging == 0 && contestFinished == 0)
+                {
+
+
+
                     using (StreamReader sr = new StreamReader(contestComboBox.Text + ".txt"))
                     {
                         string line = "";
@@ -100,7 +106,7 @@ namespace WindowsFormsApplication2
                         _contest.Date = holder[1];
                         _contest.GenderContest = holder[2];
                         _contest.Jumpheight = Convert.ToInt32(holder[3]);
-                        underJuding = Convert.ToInt32(holder[4]);
+                        underJudging = Convert.ToInt32(holder[4]);
                         contestFinished = Convert.ToInt32(holder[5]);
 
                         while ((line = sr.ReadLine()) != null && line.CompareTo("") != 0)
@@ -121,19 +127,45 @@ namespace WindowsFormsApplication2
                         }
                         _contest.printContest();
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Tävling finns inte", "Starta tävling", MessageBoxButtons.OK);
-                }
-                #endregion
-                HandleTcpClient.TcpServer server = HandleTcpClient.TcpServer.Instance(); // mio Startar servern och börjar lyssna efter domarklienter
+                    string[] lines = File.ReadAllLines(contestComboBox.Text + ".txt");
+                    using (StreamWriter sw = new StreamWriter(contestComboBox.Text + ".txt"))
+                    {
+                        string[] holder = firstline.Split(';');
+                        holder[5] = "1";
+                        for (int i = 0; i < lines.Length; i++)
+                        {
+                            if (i == 0)
+                            {
+                                sw.WriteLine(holder[0] + ";" + holder[1] + ";" + holder[2] + ";" + holder[3] + ";" + holder[4] + ";" + holder[5]);
+                            }
+                            else
+                            {
+                                sw.WriteLine(lines[i]);
+                            }
+                        }
+                    }
+                    HandleTcpClient.TcpServer server = HandleTcpClient.TcpServer.Instance(); // mio Startar servern och börjar lyssna efter domarklienter
 
-                StartContest start = new StartContest();
-                while (contestFinished == 0) //När tävlingen är avslutad skickar funktionen ut en etta för att avbryta while loopen.
-                {
-                  contestFinished = start.gogogo(server, _contest, infoStringforJudges, PointString, contestFinished);
+                    StartContest start = new StartContest();
+                    while (contestFinished == 0) //När tävlingen är avslutad skickar funktionen ut en etta för att avbryta while loopen.
+                    {
+                        contestFinished = start.gogogo(server, _contest, infoStringforJudges, PointString, contestFinished);
+                    }
                 }
+                else if(underJudging == 1)
+                {
+                        MessageBox.Show("Tävlingen pågår redan", "Starta tävling", MessageBoxButtons.OK);
+                }
+                else if (contestFinished == 1)
+                {
+                        MessageBox.Show("Tävlingen är redan avslutad", "Starta tävling", MessageBoxButtons.OK);
+                }
+            else
+            {
+                MessageBox.Show("Tävling finns inte", "Starta tävling", MessageBoxButtons.OK);
+            }
+                
+                
             }
         }
         #endregion
