@@ -11,6 +11,7 @@ using System.Threading;
 using System.IO;
 using ClassLibrary1;
 using WindowsFormsApplication2.Klasser;
+using System.Globalization;
 
 namespace WindowsFormsApplication2
 {
@@ -102,10 +103,11 @@ namespace WindowsFormsApplication2
                         _contender.Name = holder[0];
                         _contender.Id = Convert.ToInt32(holder[1]);
                         _contender.Nationality = holder[2];
-                        for (int i = 3; i < 10; i++)
+                        for (int i = 3; i < holder.Length; i=i+2)
                         {
                             Jump _jump = new Jump();
                             _jump.Jumpstyle = holder[i];
+                            _jump.jumpDifficulty = double.Parse(holder[i+1], CultureInfo.InvariantCulture);
                             _contender.add_jump(_jump);
                         }
                         _contest.add_contender(_contender);
