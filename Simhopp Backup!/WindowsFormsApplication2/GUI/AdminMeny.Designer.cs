@@ -128,7 +128,6 @@
             this.Backgroundpicture_adminmeny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.Backgroundpicture_adminmeny.TabIndex = 9;
             this.Backgroundpicture_adminmeny.TabStop = false;
-            this.Backgroundpicture_adminmeny.Click += new System.EventHandler(this.Backgroundpicture_adminmeny_Click);
             // 
             // buttonStartContest
             // 
