@@ -45,11 +45,11 @@
             // 
             this.buttonAdminLoggaUt.BackColor = System.Drawing.Color.White;
             this.buttonAdminLoggaUt.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdminLoggaUt.Location = new System.Drawing.Point(413, 362);
-            this.buttonAdminLoggaUt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonAdminLoggaUt.Location = new System.Drawing.Point(826, 461);
+            this.buttonAdminLoggaUt.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAdminLoggaUt.Name = "buttonAdminLoggaUt";
             this.buttonAdminLoggaUt.Size = new System.Drawing.Size(193, 49);
-            this.buttonAdminLoggaUt.TabIndex = 1;
+            this.buttonAdminLoggaUt.TabIndex = 7;
             this.buttonAdminLoggaUt.Text = "Logga ut";
             this.buttonAdminLoggaUt.UseVisualStyleBackColor = false;
             this.buttonAdminLoggaUt.Click += new System.EventHandler(this.buttonAdminLoggaUt_Click);
@@ -58,11 +58,11 @@
             // 
             this.buttonEditContest.BackColor = System.Drawing.Color.White;
             this.buttonEditContest.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEditContest.Location = new System.Drawing.Point(413, 305);
-            this.buttonEditContest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEditContest.Location = new System.Drawing.Point(625, 461);
+            this.buttonEditContest.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEditContest.Name = "buttonEditContest";
             this.buttonEditContest.Size = new System.Drawing.Size(193, 49);
-            this.buttonEditContest.TabIndex = 2;
+            this.buttonEditContest.TabIndex = 6;
             this.buttonEditContest.Text = "Redigera tävling";
             this.buttonEditContest.UseVisualStyleBackColor = false;
             this.buttonEditContest.Click += new System.EventHandler(this.buttonEditContest_Click);
@@ -71,11 +71,11 @@
             // 
             this.buttonSearchContest.BackColor = System.Drawing.Color.White;
             this.buttonSearchContest.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSearchContest.Location = new System.Drawing.Point(413, 249);
-            this.buttonSearchContest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSearchContest.Location = new System.Drawing.Point(424, 461);
+            this.buttonSearchContest.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSearchContest.Name = "buttonSearchContest";
             this.buttonSearchContest.Size = new System.Drawing.Size(193, 49);
-            this.buttonSearchContest.TabIndex = 3;
+            this.buttonSearchContest.TabIndex = 5;
             this.buttonSearchContest.Text = "Sök";
             this.buttonSearchContest.UseVisualStyleBackColor = false;
             this.buttonSearchContest.Click += new System.EventHandler(this.buttonSearchContest_Click);
@@ -84,8 +84,8 @@
             // 
             this.buttonEraseContestW.BackColor = System.Drawing.Color.White;
             this.buttonEraseContestW.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEraseContestW.Location = new System.Drawing.Point(413, 192);
-            this.buttonEraseContestW.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEraseContestW.Location = new System.Drawing.Point(223, 461);
+            this.buttonEraseContestW.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEraseContestW.Name = "buttonEraseContestW";
             this.buttonEraseContestW.Size = new System.Drawing.Size(193, 49);
             this.buttonEraseContestW.TabIndex = 4;
@@ -97,11 +97,11 @@
             // 
             this.buttonCreateContest.BackColor = System.Drawing.Color.White;
             this.buttonCreateContest.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonCreateContest.Location = new System.Drawing.Point(413, 135);
-            this.buttonCreateContest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCreateContest.Location = new System.Drawing.Point(13, 461);
+            this.buttonCreateContest.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCreateContest.Name = "buttonCreateContest";
             this.buttonCreateContest.Size = new System.Drawing.Size(193, 49);
-            this.buttonCreateContest.TabIndex = 5;
+            this.buttonCreateContest.TabIndex = 3;
             this.buttonCreateContest.Text = "Skapa ny tävling";
             this.buttonCreateContest.UseVisualStyleBackColor = false;
             this.buttonCreateContest.Click += new System.EventHandler(this.buttonCreateContest_Click);
@@ -111,7 +111,7 @@
             this.admin_picture_box.BackColor = System.Drawing.Color.Transparent;
             this.admin_picture_box.Image = global::WindowsFormsApplication2.Properties.Resources.admin_icon;
             this.admin_picture_box.Location = new System.Drawing.Point(836, 15);
-            this.admin_picture_box.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.admin_picture_box.Margin = new System.Windows.Forms.Padding(4);
             this.admin_picture_box.Name = "admin_picture_box";
             this.admin_picture_box.Size = new System.Drawing.Size(193, 178);
             this.admin_picture_box.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -122,7 +122,7 @@
             // 
             this.Backgroundpicture_adminmeny.Image = global::WindowsFormsApplication2.Properties.Resources.swimming_pool_icon_png_3___kopia2;
             this.Backgroundpicture_adminmeny.Location = new System.Drawing.Point(3, 0);
-            this.Backgroundpicture_adminmeny.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Backgroundpicture_adminmeny.Margin = new System.Windows.Forms.Padding(4);
             this.Backgroundpicture_adminmeny.Name = "Backgroundpicture_adminmeny";
             this.Backgroundpicture_adminmeny.Size = new System.Drawing.Size(1049, 546);
             this.Backgroundpicture_adminmeny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -132,11 +132,11 @@
             // 
             // buttonStartContest
             // 
-            this.buttonStartContest.Location = new System.Drawing.Point(413, 28);
-            this.buttonStartContest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonStartContest.Location = new System.Drawing.Point(413, 45);
+            this.buttonStartContest.Margin = new System.Windows.Forms.Padding(4);
             this.buttonStartContest.Name = "buttonStartContest";
-            this.buttonStartContest.Size = new System.Drawing.Size(193, 49);
-            this.buttonStartContest.TabIndex = 10;
+            this.buttonStartContest.Size = new System.Drawing.Size(193, 75);
+            this.buttonStartContest.TabIndex = 1;
             this.buttonStartContest.Text = "Starta tävling";
             this.buttonStartContest.UseVisualStyleBackColor = true;
             this.buttonStartContest.Click += new System.EventHandler(this.buttonStartContest_Click);
@@ -145,11 +145,11 @@
             // 
             this.contestComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contestComboBox.FormattingEnabled = true;
-            this.contestComboBox.Location = new System.Drawing.Point(419, 102);
-            this.contestComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.contestComboBox.Location = new System.Drawing.Point(414, 156);
+            this.contestComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.contestComboBox.Name = "contestComboBox";
             this.contestComboBox.Size = new System.Drawing.Size(192, 37);
-            this.contestComboBox.TabIndex = 11;
+            this.contestComboBox.TabIndex = 2;
             this.contestComboBox.Click += new System.EventHandler(this.contestComboBox_Click);
             // 
             // AdminMeny_window
@@ -170,7 +170,7 @@
             this.Controls.Add(this.Backgroundpicture_adminmeny);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AdminMeny_window";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meny - Administratör";

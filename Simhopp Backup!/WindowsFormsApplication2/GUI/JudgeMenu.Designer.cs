@@ -40,10 +40,10 @@
             // Judge_Log_Out_button
             // 
             this.Judge_Log_Out_button.Location = new System.Drawing.Point(412, 315);
-            this.Judge_Log_Out_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Judge_Log_Out_button.Margin = new System.Windows.Forms.Padding(4);
             this.Judge_Log_Out_button.Name = "Judge_Log_Out_button";
             this.Judge_Log_Out_button.Size = new System.Drawing.Size(225, 52);
-            this.Judge_Log_Out_button.TabIndex = 1;
+            this.Judge_Log_Out_button.TabIndex = 2;
             this.Judge_Log_Out_button.Text = "Logga Ut";
             this.Judge_Log_Out_button.UseVisualStyleBackColor = true;
             this.Judge_Log_Out_button.Click += new System.EventHandler(this.buttonJudgeLogOut_Click);
@@ -51,10 +51,10 @@
             // Judge_Contest_button
             // 
             this.Judge_Contest_button.Location = new System.Drawing.Point(412, 240);
-            this.Judge_Contest_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Judge_Contest_button.Margin = new System.Windows.Forms.Padding(4);
             this.Judge_Contest_button.Name = "Judge_Contest_button";
             this.Judge_Contest_button.Size = new System.Drawing.Size(225, 52);
-            this.Judge_Contest_button.TabIndex = 2;
+            this.Judge_Contest_button.TabIndex = 1;
             this.Judge_Contest_button.Text = "Döm Tävling";
             this.Judge_Contest_button.UseVisualStyleBackColor = true;
             this.Judge_Contest_button.Click += new System.EventHandler(this.buttonJudgeContest_Click);
@@ -77,7 +77,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::WindowsFormsApplication2.Properties.Resources.Judge_icon;
             this.pictureBox1.Location = new System.Drawing.Point(16, 15);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(193, 178);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -88,7 +88,7 @@
             // 
             this.backgroundpicture_jugdemeny.Image = global::WindowsFormsApplication2.Properties.Resources.swimming_pool_icon_png_33;
             this.backgroundpicture_jugdemeny.Location = new System.Drawing.Point(-3, 0);
-            this.backgroundpicture_jugdemeny.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.backgroundpicture_jugdemeny.Margin = new System.Windows.Forms.Padding(4);
             this.backgroundpicture_jugdemeny.Name = "backgroundpicture_jugdemeny";
             this.backgroundpicture_jugdemeny.Size = new System.Drawing.Size(1053, 542);
             this.backgroundpicture_jugdemeny.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -106,7 +106,7 @@
             this.Controls.Add(this.Judge_Log_Out_button);
             this.Controls.Add(this.backgroundpicture_jugdemeny);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "JudgeMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Meny - Domare";

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Threading;
 using MetroFramework.Controls;
 using System.IO;
+using System.Globalization;
 
 
 
@@ -20,11 +21,15 @@ namespace WindowsFormsApplication2
         public ListViewItem lv1;
         Dictionary<string, string> mapObj = new Dictionary<string, string>();
 
+        List<string> LOC = new List<string>(); // Tar emot den nya listan av tävlingsnamn efter vi raderat vald fil
+        List<string> contestNameFiles = new List<string>();
+
         Thread th; //Skapar tråd objekt så vi kan skapa nya fönster
         string fileNameHolder = "";
         List<string> checkConflictID = new List<string>();
         string idThatTheAdminIsTryingToGiveToTheContender = String.Empty;
         bool allowedID = true;
+        string fileNaame;
         public AddContenders_Window()
         {
             InitializeComponent();
@@ -32,6 +37,7 @@ namespace WindowsFormsApplication2
         public AddContenders_Window(string dataRecieved) //skapar en ny konstruktor så vi kan ta emot info från andra forms
         {
             InitializeComponent();
+            fileNaame = dataRecieved;
             contestNameLabel.Text = contestNameLabel.Text + dataRecieved;  //Skriver ut tävlingens namn på fönstret
             fileNameHolder = dataRecieved; //ska hämta filnamn
 
@@ -69,7 +75,54 @@ namespace WindowsFormsApplication2
         {
             //Kod för ruta som frågar om den är säker på att avbryta (OK/CANCEL)
             //..
-            this.Close();
+            string cName = fileNaame + ".txt";
+            //frågar om man vill radera tävling(OK/CANCEL) kollar också om tävling existerar
+            if (File.Exists(cName))
+            {
+                DialogResult dialogResult = MessageBox.Show("All information kommer gå förlorad!\n\tÄr du säker?", fileNaame, MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    int underJuding = 0;
+                    int contestFinished = 0;
+                    using (StreamReader sr = new StreamReader(cName))
+                    {
+                        string line = "";
+                        line = sr.ReadLine();
+                        string[] holder = line.Split(';');
+                        underJuding = Convert.ToInt32(holder[4]);
+                        contestFinished = Convert.ToInt32(holder[5]);
+                    }
+                    if ((contestFinished == 0) && (underJuding == 0))
+                    {
+
+                        using (StreamReader sr = new StreamReader("ListOfContest.txt"))
+                        {
+                            string line;
+                            while ((line = sr.ReadLine()) != null)
+                            {
+                                if (!(line == fileNaame))
+                                {
+                                    LOC.Add(line);
+                                }
+                            }
+                        }
+                        FileStream fileStream = File.Open("ListOfContest.txt", FileMode.Open);
+                        fileStream.SetLength(0);
+                        fileStream.Close();
+                        using (StreamWriter sw = new StreamWriter("ListOfContest.txt"))
+                        {
+                            foreach (var x in LOC)
+                            {
+                                sw.WriteLine(x);
+                            }
+                        }
+
+                        File.Delete(fileNaame + ".txt");
+                        MessageBox.Show("Tävling är borttagen", "Radera tävling", MessageBoxButtons.OK);
+                        this.Close();
+                    }
+                }
+            }
         }
 
         private void buttonDone_Click(object sender, EventArgs e)
@@ -123,61 +176,75 @@ namespace WindowsFormsApplication2
                     else
                     {
                         //Första raden!//
+                        double doub = double.Parse(mapObj[Hopp1TextBox.Text], CultureInfo.InvariantCulture) * 30;
+                        String str = doub.ToString();
                         ListViewItem item = new ListViewItem();
                         item.Text = namn_input.Text; // Deltagarens namn //
                         item.SubItems.Add(deltagare_id_input.Text); //Lägger till deltagar ID//
                         item.SubItems.Add(nat_input.Text); //Lägger till nationalitet //
                         item.SubItems.Add(Hopp1TextBox.Text); // Lägger till vilket hopp man valt //
-                        item.SubItems.Add("MaxPoints");
+                        item.SubItems.Add(str);
                         //Funktion för att läsa av combobox val (hopp) och hämta avårighetsgrad till det!
 
                         //Rad 2 //
+                        double doub2 = double.Parse(mapObj[Hopp2TextBox.Text], CultureInfo.InvariantCulture) * 30;
+                        String str2 = doub2.ToString();
                         ListViewItem item1 = new ListViewItem();
                         item1.Text = namn_input.Text; // Deltagarens namn //
                         item1.SubItems.Add(deltagare_id_input.Text); //Lägger till deltagar ID//
                         item1.SubItems.Add(nat_input.Text); //Lägger till nationalitet //
                         item1.SubItems.Add(Hopp2TextBox.Text); // Lägger till vilket hopp man valt //
-                        item1.SubItems.Add("MaxPoints");
+                        item1.SubItems.Add(str2);
 
                         //Rad 3//
+                        double doub3 = double.Parse(mapObj[Hopp3TextBox.Text], CultureInfo.InvariantCulture) * 30;
+                        String str3 = doub3.ToString();
                         ListViewItem item3 = new ListViewItem();
                         item3.Text = namn_input.Text; // Deltagarens namn //
                         item3.SubItems.Add(deltagare_id_input.Text); //Lägger till deltagar ID//
                         item3.SubItems.Add(nat_input.Text); //Lägger till nationalitet //
                         item3.SubItems.Add(Hopp3TextBox.Text); // Lägger till vilket hopp man valt //
-                        item3.SubItems.Add("MaxPoints");
+                        item3.SubItems.Add(str3);
 
                         //Rad 4//
+                        double doub4 = double.Parse(mapObj[Hopp4TextBox.Text], CultureInfo.InvariantCulture) * 30;
+                        String str4 = doub4.ToString();
                         ListViewItem item4 = new ListViewItem();
                         item4.Text = namn_input.Text; // Deltagarens namn //
                         item4.SubItems.Add(deltagare_id_input.Text); //Lägger till deltagar ID//
                         item4.SubItems.Add(nat_input.Text); //Lägger till nationalitet //
                         item4.SubItems.Add(Hopp4TextBox.Text); // Lägger till vilket hopp man valt //
-                        item4.SubItems.Add("MaxPoints");
+                        item4.SubItems.Add(str4);
 
                         //Rad 5//
+                        double doub5 = double.Parse(mapObj[Hopp5TextBox.Text], CultureInfo.InvariantCulture) * 30;
+                        String str5 = doub5.ToString();
                         ListViewItem item5 = new ListViewItem();
                         item5.Text = namn_input.Text; // Deltagarens namn //
                         item5.SubItems.Add(deltagare_id_input.Text); //Lägger till deltagar ID//
                         item5.SubItems.Add(nat_input.Text); //Lägger till nationalitet //
                         item5.SubItems.Add(Hopp5TextBox.Text); // Lägger till vilket hopp man valt //
-                        item5.SubItems.Add("MaxPoints");
+                        item5.SubItems.Add(str5);
 
                         //Rad 6//
+                        double doub6 = double.Parse(mapObj[Hopp6TextBox.Text], CultureInfo.InvariantCulture) * 30;
+                        String str6 = doub6.ToString();
                         ListViewItem item6 = new ListViewItem();
                         item6.Text = namn_input.Text; // Deltagarens namn //
                         item6.SubItems.Add(deltagare_id_input.Text); //Lägger till deltagar ID//
                         item6.SubItems.Add(nat_input.Text); //Lägger till nationalitet //
                         item6.SubItems.Add(Hopp6TextBox.Text); // Lägger till vilket hopp man valt //
-                        item6.SubItems.Add("MaxPoints");
+                        item6.SubItems.Add(str6);
 
                         //Rad 7//
+                        double doub7 = double.Parse(mapObj[Hopp7TextBox.Text], CultureInfo.InvariantCulture) * 30;
+                        String str7 = doub7.ToString();
                         ListViewItem item7 = new ListViewItem();
                         item7.Text = namn_input.Text; // Deltagarens namn //
                         item7.SubItems.Add(deltagare_id_input.Text); //Lägger till deltagar ID//
                         item7.SubItems.Add(nat_input.Text); //Lägger till nationalitet //
                         item7.SubItems.Add(Hopp7TextBox.Text); // Lägger till vilket hopp man valt //
-                        item7.SubItems.Add("MaxPoints");
+                        item7.SubItems.Add(str7);
 
                         //Rad 8
                         ListViewItem item8 = new ListViewItem();
@@ -201,8 +268,8 @@ namespace WindowsFormsApplication2
 
                         //Tömmer alla input options //
                         namn_input.Clear();
-                        deltagare_id_input.Clear();
-                        nat_input.Clear();
+                        deltagare_id_input.Value = 1;
+                        nat_input.Text = "";
                         Hopp1TextBox.SelectedIndex = -1;
                         Hopp2TextBox.SelectedIndex = -1;
                         Hopp3TextBox.SelectedIndex = -1;

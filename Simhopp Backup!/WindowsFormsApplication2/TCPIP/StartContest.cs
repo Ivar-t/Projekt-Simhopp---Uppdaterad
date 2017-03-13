@@ -16,17 +16,16 @@ namespace WindowsFormsApplication2.Klasser
 
         public int gogogo(HandleTcpClient.TcpServer tcpServerObj, Contest contestObj, string infoStringforJudges, string PointString, int contestfinished)
         {
-            int j = 0;
-            
+            Thread.Sleep(1000);
                 if (tcpServerObj.ListHandleTcpClients.Count == 3)
                 {
                     try
                     {
-                        foreach (var x in contestObj.ContenderList)
+                        for (int j = 0; j < 7; j++)
                         {
                             for (int i = 0; i < contestObj.ContenderList.Count; i++)
                             {
-                                infoStringforJudges = (contestObj.ContenderList[i].Name + " " + contestObj.ContenderList[i].Nationality + " " + contestObj.ContenderList[i].ListJumps[j].Jumpstyle);
+                                infoStringforJudges = (contestObj.ContenderList[i].Name + " " + contestObj.ContenderList[i].Nationality + " " + contestObj.ContenderList[i].ListJumps[j].Jumpstyle + " " + (j + 1));
                                 tcpServerObj.SendToAllClients(infoStringforJudges);
                                 lock (tcpServerObj.ListHandleTcpClients)
                                 {
@@ -37,11 +36,13 @@ namespace WindowsFormsApplication2.Klasser
                                         Console.WriteLine(PointString);
                                         contestObj.ContenderList[i].ListJumps[j].Point += double.Parse(PointString, System.Globalization.NumberStyles.AllowDecimalPoint);
                                     }
+
                                 }
                                 contestObj.ContenderList[i].ListJumps[j].Point *= contestObj.ContenderList[i].ListJumps[j].jumpDifficulty; //Gångrar antalet poäng från judges med hoppets svårighetsgrad.
                             }
-                            j++;
                         }
+                            
+                        
                        
                     
                         foreach (var item in contestObj.ContenderList)    //// mio cambie a commentario ambos foreach loops

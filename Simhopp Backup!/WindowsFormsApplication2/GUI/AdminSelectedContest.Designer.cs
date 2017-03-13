@@ -35,33 +35,36 @@
             // buttonDone
             // 
             this.buttonDone.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.buttonDone.Location = new System.Drawing.Point(310, 387);
+            this.buttonDone.Location = new System.Drawing.Point(413, 476);
+            this.buttonDone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonDone.Name = "buttonDone";
-            this.buttonDone.Size = new System.Drawing.Size(169, 42);
-            this.buttonDone.TabIndex = 0;
+            this.buttonDone.Size = new System.Drawing.Size(225, 52);
+            this.buttonDone.TabIndex = 1;
             this.buttonDone.Text = "Klar";
             this.buttonDone.UseVisualStyleBackColor = true;
             this.buttonDone.Click += new System.EventHandler(this.buttonDone_Click);
             // 
             // contestInfoTextBox
             // 
-            this.contestInfoTextBox.Location = new System.Drawing.Point(89, 12);
+            this.contestInfoTextBox.Location = new System.Drawing.Point(119, 15);
+            this.contestInfoTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.contestInfoTextBox.Name = "contestInfoTextBox";
-            this.contestInfoTextBox.Size = new System.Drawing.Size(599, 339);
+            this.contestInfoTextBox.Size = new System.Drawing.Size(797, 416);
             this.contestInfoTextBox.TabIndex = 1;
             this.contestInfoTextBox.Text = "";
             // 
             // AdminSelectedContest_window
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.Swimiing_pools;
-            this.ClientSize = new System.Drawing.Size(784, 441);
+            this.ClientSize = new System.Drawing.Size(1045, 543);
             this.Controls.Add(this.contestInfoTextBox);
             this.Controls.Add(this.buttonDone);
             this.ForeColor = System.Drawing.SystemColors.Control;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdminSelectedContest_window";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Vald tävling";

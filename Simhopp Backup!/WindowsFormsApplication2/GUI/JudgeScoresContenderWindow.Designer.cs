@@ -33,9 +33,15 @@
             this.judgepointstrackbar = new System.Windows.Forms.TrackBar();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.labelinfodeltagare = new System.Windows.Forms.Label();
+            this.labelNamn = new System.Windows.Forms.Label();
             this.labelshowpoint = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelHoppnr = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labelNation = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.labelHoppNamn = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.judgepointstrackbar)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,25 +60,26 @@
             // 
             // buttonSubmitScore
             // 
+            this.buttonSubmitScore.Font = new System.Drawing.Font("Perpetua Titling MT", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSubmitScore.Image = global::WindowsFormsApplication2.Properties.Resources.SubmitJudgeScore;
             this.buttonSubmitScore.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonSubmitScore.Location = new System.Drawing.Point(631, 338);
+            this.buttonSubmitScore.Location = new System.Drawing.Point(611, 341);
             this.buttonSubmitScore.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSubmitScore.Name = "buttonSubmitScore";
-            this.buttonSubmitScore.Size = new System.Drawing.Size(256, 52);
-            this.buttonSubmitScore.TabIndex = 21;
-            this.buttonSubmitScore.Text = "Döm";
+            this.buttonSubmitScore.Size = new System.Drawing.Size(254, 100);
+            this.buttonSubmitScore.TabIndex = 2;
+            this.buttonSubmitScore.Text = "    Döm";
             this.buttonSubmitScore.UseVisualStyleBackColor = true;
             this.buttonSubmitScore.Click += new System.EventHandler(this.buttonSubmitScore_Click);
             // 
             // judgepointstrackbar
             // 
-            this.judgepointstrackbar.BackColor = System.Drawing.Color.DarkBlue;
-            this.judgepointstrackbar.Location = new System.Drawing.Point(529, 255);
+            this.judgepointstrackbar.BackColor = System.Drawing.Color.MediumBlue;
+            this.judgepointstrackbar.Location = new System.Drawing.Point(523, 245);
             this.judgepointstrackbar.Margin = new System.Windows.Forms.Padding(4);
             this.judgepointstrackbar.Name = "judgepointstrackbar";
             this.judgepointstrackbar.Size = new System.Drawing.Size(444, 56);
-            this.judgepointstrackbar.TabIndex = 23;
+            this.judgepointstrackbar.TabIndex = 1;
             this.judgepointstrackbar.Scroll += new System.EventHandler(this.judgepointstrackbar_Scroll);
             // 
             // label1
@@ -97,16 +104,16 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Nu hoppar";
             // 
-            // labelinfodeltagare
+            // labelNamn
             // 
-            this.labelinfodeltagare.AutoSize = true;
-            this.labelinfodeltagare.BackColor = System.Drawing.Color.Transparent;
-            this.labelinfodeltagare.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelinfodeltagare.Location = new System.Drawing.Point(97, 311);
-            this.labelinfodeltagare.Name = "labelinfodeltagare";
-            this.labelinfodeltagare.Size = new System.Drawing.Size(145, 24);
-            this.labelinfodeltagare.TabIndex = 26;
-            this.labelinfodeltagare.Text = "infoomdeltagare";
+            this.labelNamn.AutoSize = true;
+            this.labelNamn.BackColor = System.Drawing.Color.Transparent;
+            this.labelNamn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNamn.Location = new System.Drawing.Point(142, 279);
+            this.labelNamn.Name = "labelNamn";
+            this.labelNamn.Size = new System.Drawing.Size(64, 25);
+            this.labelNamn.TabIndex = 26;
+            this.labelNamn.Text = "Namn";
             // 
             // labelshowpoint
             // 
@@ -122,12 +129,76 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Elephant", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(68, 283);
+            this.label3.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(24, 279);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(217, 18);
+            this.label3.Size = new System.Drawing.Size(74, 26);
             this.label3.TabIndex = 28;
-            this.label3.Text = "Namn,    Nationalitet,    Hopp";
+            this.label3.Text = "Namn";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(108, 155);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(120, 20);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Hoppnummer";
+            // 
+            // labelHoppnr
+            // 
+            this.labelHoppnr.AutoSize = true;
+            this.labelHoppnr.BackColor = System.Drawing.Color.Transparent;
+            this.labelHoppnr.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHoppnr.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelHoppnr.Location = new System.Drawing.Point(234, 151);
+            this.labelHoppnr.Name = "labelHoppnr";
+            this.labelHoppnr.Size = new System.Drawing.Size(76, 25);
+            this.labelHoppnr.TabIndex = 30;
+            this.labelHoppnr.Text = "Hoppnr";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(-1, 323);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(134, 26);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "Nationalitet";
+            // 
+            // labelNation
+            // 
+            this.labelNation.AutoSize = true;
+            this.labelNation.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNation.Location = new System.Drawing.Point(143, 328);
+            this.labelNation.Name = "labelNation";
+            this.labelNation.Size = new System.Drawing.Size(68, 25);
+            this.labelNation.TabIndex = 32;
+            this.labelNation.Text = "Nation";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Elephant", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(16, 371);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 26);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Hopp";
+            // 
+            // labelHoppNamn
+            // 
+            this.labelHoppNamn.AutoSize = true;
+            this.labelHoppNamn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHoppNamn.Location = new System.Drawing.Point(146, 370);
+            this.labelHoppNamn.Name = "labelHoppNamn";
+            this.labelHoppNamn.Size = new System.Drawing.Size(59, 25);
+            this.labelHoppNamn.TabIndex = 34;
+            this.labelHoppNamn.Text = "Hopp";
             // 
             // JudgeScoresContenderWindow
             // 
@@ -136,9 +207,15 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.Swimiing_pools;
             this.ClientSize = new System.Drawing.Size(1045, 543);
+            this.Controls.Add(this.labelHoppNamn);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.labelNation);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.labelHoppnr);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.labelshowpoint);
-            this.Controls.Add(this.labelinfodeltagare);
+            this.Controls.Add(this.labelNamn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.judgepointstrackbar);
@@ -161,8 +238,14 @@
         private System.Windows.Forms.TrackBar judgepointstrackbar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label labelinfodeltagare;
+        private System.Windows.Forms.Label labelNamn;
         private System.Windows.Forms.Label labelshowpoint;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelHoppnr;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelNation;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label labelHoppNamn;
     }
 }

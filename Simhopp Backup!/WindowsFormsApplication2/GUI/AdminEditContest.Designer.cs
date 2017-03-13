@@ -40,9 +40,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(205, 92);
+            this.label1.Location = new System.Drawing.Point(273, 113);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(422, 29);
+            this.label1.Size = new System.Drawing.Size(526, 36);
             this.label1.TabIndex = 1;
             this.label1.Text = "Ange tävlingens namn som ska ändras";
             // 
@@ -51,9 +52,10 @@
             this.buttonCancelEditContest.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonCancelEditContest.Image = global::WindowsFormsApplication2.Properties.Resources.CancelIcon;
             this.buttonCancelEditContest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancelEditContest.Location = new System.Drawing.Point(415, 195);
+            this.buttonCancelEditContest.Location = new System.Drawing.Point(553, 240);
+            this.buttonCancelEditContest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCancelEditContest.Name = "buttonCancelEditContest";
-            this.buttonCancelEditContest.Size = new System.Drawing.Size(169, 42);
+            this.buttonCancelEditContest.Size = new System.Drawing.Size(225, 52);
             this.buttonCancelEditContest.TabIndex = 3;
             this.buttonCancelEditContest.Text = "Avbryt";
             this.buttonCancelEditContest.UseVisualStyleBackColor = true;
@@ -64,10 +66,11 @@
             this.buttonEditContest.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.buttonEditContest.Image = global::WindowsFormsApplication2.Properties.Resources.CheckMarkIcon;
             this.buttonEditContest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEditContest.Location = new System.Drawing.Point(240, 195);
+            this.buttonEditContest.Location = new System.Drawing.Point(320, 240);
+            this.buttonEditContest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonEditContest.Name = "buttonEditContest";
-            this.buttonEditContest.Size = new System.Drawing.Size(169, 42);
-            this.buttonEditContest.TabIndex = 0;
+            this.buttonEditContest.Size = new System.Drawing.Size(225, 52);
+            this.buttonEditContest.TabIndex = 2;
             this.buttonEditContest.Text = "Ändra";
             this.buttonEditContest.UseVisualStyleBackColor = true;
             this.buttonEditContest.Click += new System.EventHandler(this.buttonEditContest_Click);
@@ -76,20 +79,21 @@
             // 
             this.contestNameComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contestNameComboBox.FormattingEnabled = true;
-            this.contestNameComboBox.Location = new System.Drawing.Point(307, 141);
+            this.contestNameComboBox.Location = new System.Drawing.Point(409, 174);
+            this.contestNameComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.contestNameComboBox.Name = "contestNameComboBox";
-            this.contestNameComboBox.Size = new System.Drawing.Size(181, 32);
-            this.contestNameComboBox.TabIndex = 4;
+            this.contestNameComboBox.Size = new System.Drawing.Size(240, 37);
+            this.contestNameComboBox.TabIndex = 1;
             // 
             // AdminEditContest_window
             // 
             this.AcceptButton = this.buttonCancelEditContest;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.Swimiing_pools3;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 441);
+            this.ClientSize = new System.Drawing.Size(1045, 543);
             this.Controls.Add(this.contestNameComboBox);
             this.Controls.Add(this.buttonCancelEditContest);
             this.Controls.Add(this.label1);
@@ -97,6 +101,7 @@
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AdminEditContest_window";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminEditContest";

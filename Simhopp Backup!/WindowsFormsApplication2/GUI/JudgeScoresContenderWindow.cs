@@ -16,7 +16,9 @@ namespace WindowsFormsApplication2
     {
         Thread th;
         double show = 0;
-        String str = "";
+        string str = "";
+        int extra = 0;
+        string[] AdminInfo = new string[4];
         private JudgeMenu judgeMenuObj = null; //mio
         
         public ClassClient clientobj = new ClassClient();
@@ -30,10 +32,14 @@ namespace WindowsFormsApplication2
             judgepointstrackbar.TickFrequency = 1;
             labelshowpoint.Text = "0";
             judgeMenuObj = instanceOfJudgeConnectionCreatedInJudgeMenu;
+
             str = clientobj.streamReader.ReadLine();
-            labelinfodeltagare.Text = str;
-            
-          
+            AdminInfo = str.Split(' ');
+            labelNamn.Text = AdminInfo[0];
+            labelNation.Text = AdminInfo[1];
+            labelHoppNamn.Text = AdminInfo[2];
+            labelHoppnr.Text = AdminInfo[3];
+
         }
 
         #region buttonClicks
@@ -49,22 +55,30 @@ namespace WindowsFormsApplication2
             {
                 clientobj.streamWriter.WriteLine(show);
                 clientobj.streamWriter.Flush();
-                labelinfodeltagare.Text = clientobj.streamReader.ReadLine();
-                str = labelinfodeltagare.Text;
-                if (str.StartsWith("Vinn"))
+                str = clientobj.streamReader.ReadLine();
+                AdminInfo = str.Split(' ');
+                if (str.StartsWith("Vinnare"))
                 {
-                    labelinfodeltagare.Font = new Font("Latin", 22);
-                    labelinfodeltagare.ForeColor = System.Drawing.Color.Green;
-                    label2.Visible = false;
-                    label3.Visible = false;
+                    MessageBox.Show("Vinnaren är: " + str, "Tävlingen är avslutad", MessageBoxButtons.OK);
+
                     buttonSubmitScore.Text = "Avsluta";
+
+                    extra = 1;
                 }
-                else if (str.StartsWith("quit"))
+                else if (AdminInfo[0].Equals("quit") || extra == 1 )
                 {
                     clientobj.networkStream.Close();
                     clientobj.socketForServer.Close();
                     this.Close();
                 }
+                else
+                {
+                    labelNamn.Text = AdminInfo[0];
+                    labelNation.Text = AdminInfo[1];
+                    labelHoppNamn.Text = AdminInfo[2];
+                    labelHoppnr.Text = AdminInfo[3];
+                }
+                
             }
             catch (Exception exception)
             {

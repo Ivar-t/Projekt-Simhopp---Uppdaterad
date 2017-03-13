@@ -40,9 +40,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(290, 97);
+            this.label1.Location = new System.Drawing.Point(387, 119);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 29);
+            this.label1.Size = new System.Drawing.Size(254, 36);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tävlingens Namn!";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -51,9 +52,10 @@
             // 
             this.buttonCancelEraseContest.Image = global::WindowsFormsApplication2.Properties.Resources.CancelIcon;
             this.buttonCancelEraseContest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonCancelEraseContest.Location = new System.Drawing.Point(410, 237);
+            this.buttonCancelEraseContest.Location = new System.Drawing.Point(547, 292);
+            this.buttonCancelEraseContest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonCancelEraseContest.Name = "buttonCancelEraseContest";
-            this.buttonCancelEraseContest.Size = new System.Drawing.Size(169, 42);
+            this.buttonCancelEraseContest.Size = new System.Drawing.Size(225, 52);
             this.buttonCancelEraseContest.TabIndex = 3;
             this.buttonCancelEraseContest.Text = "Avbryt";
             this.buttonCancelEraseContest.UseVisualStyleBackColor = true;
@@ -63,9 +65,10 @@
             // 
             this.buttonEraseContest.Image = global::WindowsFormsApplication2.Properties.Resources.CheckMarkIcon;
             this.buttonEraseContest.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.buttonEraseContest.Location = new System.Drawing.Point(211, 237);
+            this.buttonEraseContest.Location = new System.Drawing.Point(281, 292);
+            this.buttonEraseContest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonEraseContest.Name = "buttonEraseContest";
-            this.buttonEraseContest.Size = new System.Drawing.Size(169, 42);
+            this.buttonEraseContest.Size = new System.Drawing.Size(225, 52);
             this.buttonEraseContest.TabIndex = 2;
             this.buttonEraseContest.Text = "Radera";
             this.buttonEraseContest.UseVisualStyleBackColor = true;
@@ -75,23 +78,25 @@
             // 
             this.contestNameComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contestNameComboBox.FormattingEnabled = true;
-            this.contestNameComboBox.Location = new System.Drawing.Point(312, 168);
+            this.contestNameComboBox.Location = new System.Drawing.Point(416, 207);
+            this.contestNameComboBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.contestNameComboBox.Name = "contestNameComboBox";
-            this.contestNameComboBox.Size = new System.Drawing.Size(170, 32);
-            this.contestNameComboBox.TabIndex = 4;
+            this.contestNameComboBox.Size = new System.Drawing.Size(225, 37);
+            this.contestNameComboBox.TabIndex = 1;
             // 
             // EraseContest_form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = global::WindowsFormsApplication2.Properties.Resources.Swimiing_pools1;
-            this.ClientSize = new System.Drawing.Size(784, 441);
+            this.ClientSize = new System.Drawing.Size(1045, 543);
             this.Controls.Add(this.contestNameComboBox);
             this.Controls.Add(this.buttonCancelEraseContest);
             this.Controls.Add(this.buttonEraseContest);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EraseContest_form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EraseContestWindow";

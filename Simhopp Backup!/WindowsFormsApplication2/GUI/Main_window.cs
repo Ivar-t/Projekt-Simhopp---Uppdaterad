@@ -146,5 +146,22 @@ namespace WindowsFormsApplication2
                 MessageBox.Show("Kryssa för rutan som du vill logga in som", "Logga in", MessageBoxButtons.OK);
             }
         }
+
+        private void checkBoxAdmin_Enter(object sender, EventArgs e)
+        {
+            if (checkBoxAdmin.Checked == true)
+            {
+                checkBoxdomare.Checked = false;
+            }
+        }
+
+        private void checkBoxdomare_Enter(object sender, EventArgs e)
+        {
+            if (checkBoxdomare.Checked == true)
+            {
+                checkBoxAdmin.Checked = false;
+            }
+        }
+
     }
 }

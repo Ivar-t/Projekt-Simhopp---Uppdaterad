@@ -30,12 +30,12 @@ namespace WindowsFormsApplication2
         {
             //skapar en fil för tävling
             //skriver in tävlings info i början av filen
-            string line = contestNameTextBox.Text + ";" + dateTimePicker1.Text + ";" + genderVar + ";" + jumpheightTextBox.Text + ";" + 0 + ";" + 0;
+            string line = contestNameTextBox.Text + ";" + dateTimePicker1.Text + ";" + genderVar + ";" + JumpHeightTextBox.Text + ";" + 0 + ";" + 0;
             //                 Name                             Date                   GenderContest                Jumpheight      ContestFinished  AreUnderJudging
 
             string cName = contestNameTextBox.Text + ".txt";
 
-            if (!File.Exists("ListOfContest.txt"))
+            if (!File.Exists("ListOfContest.txt") && !File.Exists(cName))
             {
                 FileStream fileOfContest = new FileStream("ListOfContest.txt", FileMode.CreateNew, FileAccess.ReadWrite); //lägger in tävlingsnamn vi skapat in i en fil
                 fileOfContest.Close();
@@ -45,7 +45,7 @@ namespace WindowsFormsApplication2
                     sw.WriteLine(contestNameTextBox.Text);
                 }
             }
-            else
+            else if(!File.Exists(cName))
             {
                 using (StreamWriter sw = File.AppendText("ListOfContest.txt"))   //öppnar och lägger in tävlingsnamn i filen
                 {
@@ -75,7 +75,7 @@ namespace WindowsFormsApplication2
                 dateTimePicker1.Text = "";
                 checkBoxman.Checked = false;
                 checkBoxwoman.Checked = false;
-                jumpheightTextBox.Text = "";
+                JumpHeightTextBox.Value = 3;
             }
         }
 

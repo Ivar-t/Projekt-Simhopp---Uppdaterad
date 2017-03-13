@@ -59,7 +59,7 @@
             this.buttonHelp.Margin = new System.Windows.Forms.Padding(4);
             this.buttonHelp.Name = "buttonHelp";
             this.buttonHelp.Size = new System.Drawing.Size(185, 65);
-            this.buttonHelp.TabIndex = 3;
+            this.buttonHelp.TabIndex = 6;
             this.buttonHelp.Text = "Hjälp";
             this.buttonHelp.UseVisualStyleBackColor = true;
             this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
@@ -71,7 +71,7 @@
             this.buttonAvsluta.Margin = new System.Windows.Forms.Padding(4);
             this.buttonAvsluta.Name = "buttonAvsluta";
             this.buttonAvsluta.Size = new System.Drawing.Size(185, 63);
-            this.buttonAvsluta.TabIndex = 5;
+            this.buttonAvsluta.TabIndex = 7;
             this.buttonAvsluta.Text = "Avsluta";
             this.buttonAvsluta.UseVisualStyleBackColor = true;
             this.buttonAvsluta.Click += new System.EventHandler(this.buttonAvsluta_Click);
@@ -166,7 +166,7 @@
             this.PasswordTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.Size = new System.Drawing.Size(132, 34);
-            this.PasswordTextBox.TabIndex = 13;
+            this.PasswordTextBox.TabIndex = 2;
             this.PasswordTextBox.UseSystemPasswordChar = true;
             // 
             // UsernameTextBox
@@ -176,7 +176,7 @@
             this.UsernameTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.UsernameTextBox.Name = "UsernameTextBox";
             this.UsernameTextBox.Size = new System.Drawing.Size(132, 34);
-            this.UsernameTextBox.TabIndex = 14;
+            this.UsernameTextBox.TabIndex = 1;
             // 
             // label1
             // 
@@ -207,7 +207,7 @@
             this.buttonLogin.Location = new System.Drawing.Point(344, 463);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(185, 65);
-            this.buttonLogin.TabIndex = 17;
+            this.buttonLogin.TabIndex = 5;
             this.buttonLogin.Text = "Logga in";
             this.buttonLogin.UseVisualStyleBackColor = true;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
@@ -220,10 +220,11 @@
             this.checkBoxdomare.Location = new System.Drawing.Point(581, 465);
             this.checkBoxdomare.Name = "checkBoxdomare";
             this.checkBoxdomare.Size = new System.Drawing.Size(97, 24);
-            this.checkBoxdomare.TabIndex = 18;
+            this.checkBoxdomare.TabIndex = 3;
             this.checkBoxdomare.Text = "Domare";
             this.checkBoxdomare.UseVisualStyleBackColor = false;
             this.checkBoxdomare.Click += new System.EventHandler(this.checkBoxdomare_Click);
+            this.checkBoxdomare.Enter += new System.EventHandler(this.checkBoxdomare_Enter);
             // 
             // checkBoxAdmin
             // 
@@ -233,10 +234,11 @@
             this.checkBoxAdmin.Location = new System.Drawing.Point(581, 493);
             this.checkBoxAdmin.Name = "checkBoxAdmin";
             this.checkBoxAdmin.Size = new System.Drawing.Size(144, 24);
-            this.checkBoxAdmin.TabIndex = 19;
+            this.checkBoxAdmin.TabIndex = 4;
             this.checkBoxAdmin.Text = "Administratör";
             this.checkBoxAdmin.UseVisualStyleBackColor = false;
             this.checkBoxAdmin.Click += new System.EventHandler(this.checkBoxAdmin_Click);
+            this.checkBoxAdmin.Enter += new System.EventHandler(this.checkBoxAdmin_Enter);
             // 
             // Main_Form1
             // 
